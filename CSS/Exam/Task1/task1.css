@@ -1,0 +1,83 @@
+﻿html,
+body,
+div,
+h1,
+img,
+p {
+  margin: 0;
+  padding: 0;
+}
+body div#wrapper {
+  width: 960px;
+  font-size: 16px;
+  font-family: Constantina, Georgia, 'Nimbus Roman No9 L', serif;
+}
+body div#wrapper div {
+  margin-top: 24px;
+  margin-left: 23px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background: #de28ff;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #de28ff 5%, #f9dbff 75%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #de28ff), color-stop(75%, #f9dbff));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #de28ff 5%, #f9dbff 75%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #de28ff 5%, #f9dbff 75%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #de28ff 5%, #f9dbff 75%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #de28ff 5%, #f9dbff 75%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{@from_color}', endColorstr='#{@to-color}', GradientType=0);
+  /* IE6-8 */
+
+}
+body div#wrapper div h1 {
+  font-weight: bold;
+  font-size: 29px;
+  padding: 15px 35px;
+  padding-bottom: 35px;
+}
+body div#wrapper div img.left-arrow {
+  float: left;
+  zoom: 1;
+}
+body div#wrapper div img.left-arrow:after {
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+body div#wrapper div img.right-arrow {
+  float: right;
+  zoom: 1;
+}
+body div#wrapper div img.right-arrow:after {
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+body div#wrapper div p.postedby {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  width: 395px;
+  margin: -30px 0 0 50px;
+  padding: 5px 0px;
+  text-align: center;
+}
+body div#wrapper div p.info {
+  padding: 35px;
+  text-align: justify;
+  padding-top: 20px;
+}

@@ -1,0 +1,55 @@
+﻿body {
+    background-color:#A9A9A9;
+}
+
+h1 {
+    color:#F3F7D2;
+}
+
+body>header{
+    text-align:center;
+    font-size:larger;
+
+}
+
+body>footer {
+    text-align:center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+nav {
+    font-size:larger;
+    font-weight:bold;
+}
+
+nav a {
+    color:#F8F8F8;
+    text-decoration:none;  
+}
+
+
+li:last-child > a {
+    text-decoration:underline;
+}
+
+footer a {
+    color: #000000;
+    text-decoration:none;  
+}
+
+ li>a.current {
+ background-color:#D3D3D3;
+}
+
+
+article > footer {
+    font-size:smaller
+}
+
+article > header {
+    font-size:x-large
+}
+

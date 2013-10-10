@@ -1,0 +1,204 @@
+﻿body,
+header,
+div,
+section,
+article,
+h1,
+h2,
+ul,
+li,
+a,
+aside,
+footer,
+nav,
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #9215f2;
+  color: white;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.72em;
+}
+body > header {
+  background: #d292fd;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #d292fd 20%, #9215f2 95%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #d292fd), color-stop(95%, #9215f2));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #d292fd 20%, #9215f2 95%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #d292fd 20%, #9215f2 95%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #d292fd 20%, #9215f2 95%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #d292fd 20%, #9215f2 95%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@from_color', endColorstr='@to-color', GradientType=0);
+  /* IE6-8 */
+
+}
+body > header div#header-container {
+  padding-top: 20px;
+}
+body > header div#header-container div#logo-container {
+  display: inline-block;
+  padding-left: 15px;
+}
+body > header div#header-container div#logo-container h1 a img {
+  height: 65px;
+  width: 280px;
+}
+body > header div#header-container div#reg-form-container {
+  padding-right: 25px;
+  float: right;
+  zoom: 1;
+}
+body > header div#header-container div#reg-form-container:after {
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+body > header div#header-container div#reg-form-container form div input {
+  border: 1.7px solid #000000;
+  border-radius: 8px;
+  background-color: #B35EF3;
+  outline: none;
+  margin: 5px;
+  width: 55%;
+}
+body > header div#header-container div#reg-form-container form button {
+  background-color: #B35EF3;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+  border: 1px outset #C0AFCE;
+  border-radius: 8px;
+}
+body > header div#header-container div#reg-form-container form button:hover {
+  border: 1px inset #C0AFCE;
+}
+body > header nav {
+  font-size: 1.3679999999999998em;
+  width: 73%;
+  padding: 10px 20px;
+  margin: 25px 30px;
+  border: 1.7px solid #000000;
+  border-radius: 12px;
+}
+body > header nav > ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+body > header nav > ul li a {
+  text-decoration: none;
+  color: white;
+}
+body > header nav > ul li ul {
+  position: absolute;
+}
+body > header nav > ul li ul li {
+  display: none;
+}
+body > header nav > ul li:hover > a {
+  text-decoration: underline;
+}
+body > header nav > ul li:hover ul {
+  background-color: rgba(189, 116, 247, 0.7);
+}
+body > header nav > ul li:hover ul li {
+  display: block;
+}
+body section {
+  width: 73%;
+  display: inline-block;
+  padding: 15px;
+}
+body section article {
+  border: 1.7px solid #000000;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+body section article h1 {
+  font-size: 1.44em;
+  padding: 5px;
+}
+body section article footer {
+  font-size: 1.296em;
+  text-align: end;
+  margin: 5px;
+}
+body section article footer p a {
+  color: #D49EF6;
+  text-decoration: none;
+}
+body section article footer p a:hover {
+  text-decoration: underline;
+}
+body section article footer p time {
+  font-family: Consolas;
+}
+body aside {
+  width: 22%;
+  margin-right: 30px;
+  margin-top: 20px;
+  float: right;
+  zoom: 1;
+}
+body aside:after {
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+body aside > ul {
+  list-style: none;
+}
+body aside > ul > li {
+  border: 1.7px solid #000000;
+  border-radius: 3px;
+  padding: 15px;
+  margin: 12px;
+}
+body aside > ul > li h2 {
+  font-size: 1.152em;
+  margin-bottom: 7px;
+}
+body aside > ul > li p a {
+  text-decoration: none;
+  color: #A9BAA1;
+}
+body aside > ul > li p a:hover {
+  text-decoration: underline;
+}
+body aside > ul > li p em {
+  color: #CEDDC8;
+  font-style: italic;
+}
+body aside > ul > li p strong {
+  color: #CEDDC8;
+  font-weight: bold;
+}
+body aside > ul > li ul {
+  padding-left: 35px;
+}
+body aside > ul > li ul li {
+  margin: 2px;
+  border: none;
+  list-style-image: url(images/li-dot.png);
+}
+body > footer p {
+  font-weight: bold;
+  text-align: center;
+}

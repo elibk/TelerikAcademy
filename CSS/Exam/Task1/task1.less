@@ -1,0 +1,80 @@
+﻿html, body, div, h1, img, p{
+	margin:0;
+	padding:0;
+}
+
+@base-font-size:16px;
+.clearfix() {
+    zoom: 1;
+
+    &:after {
+		display: block;
+		content:"";
+		clear:both;
+		height:0;
+
+    }    
+}
+
+.vert-linear-gradient(@from_color, @to-color, @from-position, @to-position) {
+	
+	background: @from_color; /* Old browsers */
+	background: -moz-linear-gradient(top,  @from_color @from-position, @to-color @to-position); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(@from-position,@from_color), color-stop(@to-position,@to-color)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* IE10+ */
+	background: linear-gradient(to bottom,  @from_color @from-position,@to-color @to-position); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{@from_color}', endColorstr='#{@to-color}',GradientType=0 ); /* IE6-8 */
+
+}
+
+body {
+
+    div#wrapper {
+        width: 960px;
+        font-size: @base-font-size;
+        font-family: Constantina, Georgia, 'Nimbus Roman No9 L', serif;
+
+        div {
+            margin-top: 24px;
+            margin-left: 23px;
+            border: 1px solid black;
+            border-radius: 15px;
+            
+            .vert-linear-gradient(#DE28FF,#F9DBFF,5%,75%);
+
+            h1 {
+                font-weight: bold;
+                font-size: 29px;
+				padding:15px 35px;
+				padding-bottom:35px;
+            }
+
+            img.left-arrow {
+                float: left;
+                .clearfix();
+            }
+
+            img.right-arrow {
+                float: right;
+                .clearfix();
+            }
+
+            p.postedby {
+				border-bottom:1px solid black;
+				border-top:1px solid black;
+				width:395px;
+				margin:-30px 0 0 50px;
+				padding: 5px 0px;
+				text-align:center;
+            }
+
+            p.info {
+				padding: 35px;
+				text-align:justify;
+				padding-top:20px;
+            }
+        }
+    }
+}

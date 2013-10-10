@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Programmer calculator</title>
+    <link href="4.homework_calculator.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="capacity_outside">
+        <header>
+        <img src="images/calculator.png"  id="logo"/>
+        <h1>Calculator</h1>
+        </header>
+        <div id="main_buttons">
+        <button id="minimize" class="main" title="Minimize"><img src="images/minimize.png" /></button><button id="maximize" class="main" disabled="disabled"><img src="images/maximize.png" /></button><button id="exit"class="main" title="Close"><img src="images/exit.png" /></button>
+        </div>
+        <form>
+            <div id="calculator">
+        <nav>
+            <ul>
+                <li class="menu">
+                   View
+                </li>
+                <li class="menu">
+                    Edit
+                </li>
+                <li class="menu">
+                    Help
+                </li>
+            </ul>
+        </nav>
+        <div>
+        <input type="text" value="777777"/> 
+        </div>
+        <div class="bitwize">
+            <div>
+                <ul>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                </ul>
+                <ul class="bits_count">
+                    <li>63</li>
+                    <li>47</li>
+                    <li>32</li>
+                </ul>
+                <ul>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                    <li>0000</li>
+                </ul>
+                <ul class="bits_count">
+                    <li>31</li>
+                    <li>15</li>
+                    <li>&nbsp;0</li>
+                </ul>
+            </div>
+        </div>
+        <table>
+            <tbody>
+                <tr>
+                <td>
+                    <div class="numeral_systems">
+                        <ul>
+                            <li>
+                                <input type="radio" name="numeral_system" id="hex"/>
+                                <label for="hex" >Hex</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="numeral_system" id="dec" checked="checked"/>
+                                <label for="dec" >Dec</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="numeral_system" id="oct"/>
+                                <label for="oct" >Oct</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="numeral_system" id="bin"/>
+                                <label for="bin" >Bin</label>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td rowspan="2">
+                <table id="calculator_buttons">
+                    <tbody>
+                        <tr>
+                            <td>
+                               <button disabled="disabled"> </button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">Mod</button>
+                            </td>
+                            <td>
+                               <button disabled="disabled" class="hex_buttons">A</button>
+                            </td>
+                            <td>
+                               <button class="memory_buttons">MC</button>
+                            </td>
+                            <td>
+                               <button class="memory_buttons">MR</button>
+                            </td>
+                            <td>
+                               <button class="memory_buttons">MS</button>
+                            </td>
+                            <td>
+                               <button class="memory_buttons">M+</button>
+                            </td>
+                            <td>
+                               <button class="memory_buttons">M-</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               <button class="operators_buttons">(</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">)</button>
+                            </td>
+                            <td>
+                               <button disabled="disabled" class="hex_buttons">B</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons"><img src="images/arrow.png" /></button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons" type="reset">CE</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons" type="reset">C</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">&#177</button>
+                            </td>
+                            <td>
+                               <button disabled="disabled">&#8730</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               <button class="operators_buttons">RoL</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">RoR</button>
+                            </td>
+                            <td>
+                               <button disabled="disabled" class="hex_buttons">C</button>
+                            </td>
+                            <td>
+                               <button class="digits_buttons">7</button>
+                            </td>
+                            <td>
+                               <button class="digits_buttons">8</button>
+                            </td>
+                            <td>
+                               <button class="digits_buttons">9</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">/</button>
+                            </td>
+                            <td>
+                               <button disabled="disabled">%</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               <button class="operators_buttons">Or</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">Xor</button>
+                            </td>
+                            <td>
+                               <button disabled="disabled" class="hex_buttons">D</button>
+                            </td>
+                            <td>
+                               <button class="digits_buttons">4</button>
+                            </td>
+                            <td>
+                               <button class="digits_buttons">5</button>
+                            </td>
+                            <td>
+                               <button class="digits_buttons">6</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">*</button>
+                            </td>
+                            <td>
+                               <button disabled="disabled">1/x</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               <button class="operators_buttons">Lsh</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">Rsh</button>
+                            </td>
+                            <td>
+                               <button disabled="disabled" class="hex_buttons">E</button>
+                            </td>
+                            <td>
+                               <button class="digits_buttons">1</button>
+                            </td>
+                            <td>
+                               <button class="digits_buttons">2</button>
+                            </td>
+                            <td>
+                               <button class="digits_buttons">3</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">-</button>
+                            </td>
+                            <td rowspan="2">
+                               <button class="operators_buttons" id="equal"><img src="images/equal.png" /></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               <button class="operators_buttons">Not</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">And</button>
+                            </td>
+                            <td>
+                               <button disabled="disabled" class="hex_buttons">F</button>
+                            </td>
+                            <td colspan="2">
+                               <button class="digits_buttons" id="zero">0</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">,</button>
+                            </td>
+                            <td>
+                               <button class="operators_buttons">+</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </td>
+            </tr>
+                <tr>
+                <td>
+                    <div class="numeral_systems">
+                        <ul>
+                            <li>
+                                <input type="radio" name="binary_len" id="long"/>
+                                <label for="long" >Qword</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="binary_len" id="int" checked="checked" />
+                                <label for="int" >Dword</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="binary_len" id="short"/>
+                                <label for="short" >Word</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="binary_len" id="byte"/>
+                                <label for="byte" >Byte</label>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        </form>
+    </div>
+    
+</body>
+</html>

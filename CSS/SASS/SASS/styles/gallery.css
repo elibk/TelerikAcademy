@@ -1,0 +1,24 @@
+body {
+  zoom: 1; }
+  body div img {
+    display: none; }
+  body div input[type=radio] {
+    display: none; }
+    body div input[type=radio]:checked + img {
+      display: block; }
+  body nav {
+    width: 100%; }
+    body nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin: 0; }
+      body nav ul li {
+        margin: 0;
+        padding: 0;
+        display: inline; }
+        body nav ul li label {
+          width: 19.2%; }
+          body nav ul li label img {
+            width: 19.2%; }
+

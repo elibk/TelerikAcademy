@@ -1,0 +1,201 @@
+﻿html,
+body,
+div,
+p,
+hgroup,
+h2,
+h3,
+img,
+ul,
+li,
+a,
+span {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  font-size: 16px;
+}
+body div#wrapper {
+  width: 960px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+body div#wrapper > div {
+  float: left;
+  width: 150px;
+  border-left: 2px solid #D3D7DA;
+  border-top: 2px solid #D3D7DA;
+  border-bottom: 2px solid #D3D7DA;
+}
+body div#wrapper > div:last-of-type {
+  border-right: 2px solid #D3D7DA;
+}
+body div#wrapper > div:last-of-type hgroup {
+  margin-top: 15px;
+  padding-bottom: 5px;
+  background-image: url(imgs/about.png);
+  background-repeat: no-repeat;
+}
+body div#wrapper > div:last-of-type hgroup h2 {
+  margin-left: 25px;
+}
+body div#wrapper > div:last-of-type div {
+  margin-bottom: 0;
+}
+body div#wrapper > div:nth-of-type(5) {
+  border-right: 2px solid #D3D7DA;
+}
+body div#wrapper > div:nth-of-type(5) hgroup {
+  margin-top: 15px;
+  padding-bottom: 5px;
+  background-image: url(imgs/twitter.png);
+  background-repeat: no-repeat;
+}
+body div#wrapper > div:nth-of-type(5) hgroup h2 {
+  margin-left: 25px;
+}
+body div#wrapper > div:nth-of-type(5) div {
+  margin-bottom: 0;
+}
+body div#wrapper > div:nth-of-type(4) {
+  border-right: 2px solid #D3D7DA;
+}
+body div#wrapper > div:nth-of-type(4) hgroup {
+  margin-top: 15px;
+  padding-bottom: 5px;
+  margin-right: 0px;
+  padding-right: 5px;
+  background-image: url(imgs/openSource.png);
+  background-repeat: no-repeat;
+}
+body div#wrapper > div:nth-of-type(4) hgroup h2 {
+  margin-left: 25px;
+}
+body div#wrapper > div:nth-of-type(4) div {
+  margin-bottom: 0;
+}
+body div#wrapper > div:nth-of-type(3) {
+  border-right: 2px solid #D3D7DA;
+}
+body div#wrapper > div:nth-of-type(3) hgroup {
+  margin-top: 15px;
+  padding-bottom: 5px;
+  margin-right: 0px;
+  padding-right: 5px;
+  background-image: url(imgs/manage.png);
+  background-repeat: no-repeat;
+  vertical-align: top;
+}
+body div#wrapper > div:nth-of-type(3) hgroup h2 {
+  margin-left: 25px;
+}
+body div#wrapper > div:nth-of-type(3) hgroup h3 {
+  margin-top: 0px;
+  margin-left: 25px;
+}
+body div#wrapper > div:nth-of-type(3) div {
+  margin-bottom: 0;
+}
+body div#wrapper > div:nth-of-type(2) {
+  border-right: 2px solid #D3D7DA;
+}
+body div#wrapper > div:nth-of-type(2) hgroup {
+  margin-top: 15px;
+  padding-bottom: 5px;
+  margin-right: 0px;
+  padding-right: 5px;
+  background-image: url(imgs/tuneUp.png);
+  background-repeat: no-repeat;
+  vertical-align: top;
+}
+body div#wrapper > div:nth-of-type(2) hgroup h2 {
+  margin-left: 25px;
+}
+body div#wrapper > div:nth-of-type(2) hgroup h3 {
+  margin-top: 0px;
+  margin-left: 25px;
+}
+body div#wrapper > div:nth-of-type(2) div {
+  margin-bottom: 0;
+}
+body div#wrapper > div:nth-of-type(1) {
+  border-right: 2px solid #D3D7DA;
+}
+body div#wrapper > div:nth-of-type(1) hgroup {
+  margin-top: 15px;
+  padding-bottom: 5px;
+  margin-right: 0px;
+  padding-right: 5px;
+  background-image: url(imgs/install.png);
+  background-repeat: no-repeat;
+  vertical-align: top;
+}
+body div#wrapper > div:nth-of-type(1) hgroup h2 {
+  margin-left: 25px;
+}
+body div#wrapper > div:nth-of-type(1) hgroup h3 {
+  margin-top: 0px;
+  margin-left: 25px;
+}
+body div#wrapper > div:nth-of-type(1) div {
+  margin-bottom: 25px;
+}
+body div#wrapper > div:nth-of-type(2n) {
+  background: #ffffff;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #ffffff 5%, #f1f2f3 95%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #ffffff), color-stop(95%, #f1f2f3));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #ffffff 5%, #f1f2f3 95%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #ffffff 5%, #f1f2f3 95%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #ffffff 5%, #f1f2f3 95%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #ffffff 5%, #f1f2f3 95%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{@from_color}', endColorstr='#{@to-color}', GradientType=0);
+  /* IE6-8 */
+
+}
+body div#wrapper > div hgroup {
+  padding: 15px;
+  margin: 5px;
+}
+body div#wrapper > div hgroup h3 {
+  font-size: 16px;
+}
+body div#wrapper > div hgroup h2 {
+  font-size: 16px;
+}
+body div#wrapper > div p {
+  padding: 5px;
+}
+body div#wrapper > div div {
+  padding: 5px;
+}
+body div#wrapper > div div a {
+  display: block;
+  text-decoration: none;
+  color: #D12D2F;
+}
+body div#wrapper > div div a span {
+  text-transform: uppercase;
+}
+body div#wrapper > div div.yellowBox {
+  border: 1px solid #FFFF00;
+  margin-bottom: 40px;
+}
+body div#wrapper > div div.yellowBox a {
+  display: inline;
+}

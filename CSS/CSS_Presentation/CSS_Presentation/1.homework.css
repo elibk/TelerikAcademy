@@ -1,0 +1,22 @@
+﻿body {
+    font-family:Consolas, Times, serif;
+    color:#0094ff;
+}
+
+p:first-line{
+    font-size:large;
+    font-weight:bold;
+}
+
+
+@font-face
+{
+font-family: EdwardianScriptITC;
+src: url('fonts/Edwardian Script ITC.ttf'),
+    url('fonts/Edwardian_Script_ITC.eot');/* IE9 */
+}
+
+p:first-letter {
+    font-family:EdwardianScriptITC;
+    font-size:xx-large;
+}

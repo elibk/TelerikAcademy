@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Application form</title>
+</head>
+<body>
+    <form method="post" action="www.nowhere.com">
+		    <table border="1">
+			    <tr>
+				    <td>
+					    <label for="lastName">Last name:*</label>
+                    </td>
+				    <td>
+					    <input id="lastName" type="text" required="required"/>
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+					    <label for="firstName">First name:*</label>
+				    </td>
+				    <td>
+				    <input id="firstName" type="text"  required="required"/>
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+					    <label for="address">Address(Street/Street Number):</label>
+				    </td>
+				    <td>
+					    <input id="address" type="text"/>
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+				    <label for="city">City:*</label></td>
+				    <td>
+				    <input id="city" type="text" required="required" />
+				    <label for="state">State:</label>
+				    <input id="state" type="text"/>
+				
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+					    <label for="zip">Zip/Postal code</label>
+				    </td>
+				    <td>
+					    <input id="zip" type="number"/>
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+					    <label for="country">Country:*</label>
+				    </td>
+				    <td>
+					    <select id="country"  required="required" >
+					    <option value="Value 1" selected="selected" disabled="disabled" >-------------------</option>
+					    <option value="Value 2">Bulgaria</option>
+					    <option value="Value 2">USA</option>
+					    <option value="Value 2">Other</option>
+					    </select>
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+					    <label for="phone">Phone(coyntry code,area code, number)</label></td>
+				    <td>
+					    <input type="number" value="00359"/>
+					    <input type="number" value="02"/>
+					    <input id="phone" type="number"/>
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+					    <label for="mail">Email:*</label>
+				    </td>
+				    <td>
+					    <input id="mail" type="email"  required="required" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="sth@somewhere.com"/>
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+					    <label>Birth date:</label>
+				    </td>
+				    <td>
+					    <label for="bMounth"> Mounth:</label>
+					    <input id="bMounth" type="number" min="1" max="12" value="1"/>
+					    <label for="bDay"> Day:</label>
+					    <input id="bDay" type="number"  min="1" max="31" value="1"/>
+					    <label for="bYear"> Year:</label>
+					    <input id="bYear" type="number"min="1900" max="2012" value="1900"/>
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+					    <label for="gender">Gender:</label>
+				    </td>
+				    <td>
+					    <select id="gender" >
+					    <option value="Value 1" disabled="disabled"
+						    selected="selected">----------</option>
+					    <option value="Value 2">Male</option>
+					    <option value="Value 2">Female</option>
+					    </select>
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+					    <label>Starting date:*</label>
+				    </td>
+				    <td>
+					    <label for="startSum">Summer 2013</label>
+					    <input id="startSum"   required="required" type="radio" name="start"/>
+					    <label for="startWin">Winter 2013</label>
+					    <input id="startWin"  required="required" type="radio" name="start" />
+				    </td>
+			    </tr>
+			    <tr>
+				    <td>
+					    <label for="comment">Comments/Questions:</label>
+				    </td>
+				    <td>
+					    <textarea id="comment" style="height:100px; width:150px">Can enter more information...</textarea>
+				    </td>
+			    </tr>
+			    <tr style="background:skyblue">
+				    <td>
+					    <input type="submit" value="Apply Now" />
+				    </td>
+				    <td>
+					    <input type="reset" name="resetBtn" value="Reset the form" />
+				    </td>
+			    </tr>
+		    </table>
+	    </form>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿html, body, div, h1, img, ul, li, a, span {
+	margin:0;
+	padding:0;
+}
+
+@base-color:#9215F2; 
+@base-font-size:16px;
+.clearfix() {
+    zoom: 1;
+
+    &:after {
+		display: block;
+		content:"";
+		clear:both;
+		height:0;
+
+    }    
+}
+
+.vert-linear-gradient(@from_color, @to-color, @from-position, @to-position) {
+	
+	background: @from_color; /* Old browsers */
+	background: -moz-linear-gradient(top,  @from_color @from-position, @to-color @to-position); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(@from-position,@from_color), color-stop(@to-position,@to-color)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* IE10+ */
+	background: linear-gradient(to bottom,  @from_color @from-position,@to-color @to-position); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{@from_color}', endColorstr='#{@to-color}',GradientType=0 ); /* IE6-8 */
+
+}
+
+body {
+    font-size: @base-font-size;
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+
+    div#wrapper {
+        width: 960px;
+        padding: 15px;
+
+        > div {
+            width: 680px;
+            background-color: #CCCCCC;
+            padding: 10px;
+            border-radius: 5px;
+
+            div.holder {
+
+                img {
+                    border-radius: 5px;
+                    width: 550px;
+                }
+            }
+
+            div.playlist {
+
+                ul {
+                    list-style: none;
+                    float: right;
+                    .clearfix();
+                    margin-top: -418px;
+                    text-align: center;
+
+                    li {
+                        padding: 1px;
+
+                        a {
+                            text-decoration: none;
+                            color: black;
+
+                            span {
+                                padding: 0 5px;
+                                padding-bottom: 5px;
+                                display: block;
+                                border-bottom: 1px solid black;
+                                font-weight: bold;
+                            }
+
+                            img {
+                                border-radius: 10px;
+                                margin-bottom: -2px;
+                                margin-top: 3px;
+                            }
+
+                            
+                        }
+						&:hover {
+                                a {
+									text-decoration:underline;
+                                }
+                            }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,130 @@
+.clearfix, body header div#reg-form-container {
+  zoom: 1; }
+  .clearfix:after, body header div#reg-form-container:after {
+    display: block;
+    height: 0;
+    content: "";
+    clear: both; }
+
+body {
+  background: #cf90fa;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #cf90fa 10%, #9215f2 25%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #cf90fa), color-stop(25%, #9215f2));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #cf90fa 10%, #9215f2 25%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #cf90fa 10%, #9215f2 25%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #cf90fa 10%, #9215f2 25%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #cf90fa 10%, #9215f2 25%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cf90fa', endColorstr='#9215f2',GradientType=0 );
+  /* IE6-9 */
+  background-attachment: fixed;
+  padding: 2%;
+  color: white; }
+  body header div#header-container div#logo-container {
+    display: inline-block; }
+    body header div#header-container div#logo-container h1 {
+      margin: 0;
+      padding: 0; }
+  body header div#reg-form-container {
+    display: inline-block;
+    float: right; }
+    body header div#reg-form-container form div input {
+      background-color: #B35EF3;
+      border: 1px solid black;
+      border-radius: 50px;
+      outline: none;
+      margin: 5px;
+      width: 55%; }
+    body header div#reg-form-container form div label {
+      display: inline-block;
+      text-align: center;
+      width: 80px; }
+    body header div#reg-form-container form button#btn-register {
+      background-color: #B35EF3;
+      padding: 5px 10px;
+      color: white;
+      font-weight: bold;
+      border: 1px outset #C0AFCE;
+      border-radius: 8px; }
+      body header div#reg-form-container form button#btn-register:hover {
+        border: 1px inset #C0AFCE; }
+  body nav {
+    width: 75%; }
+    body nav > ul {
+      padding: 0;
+      border: 1px solid black;
+      border-radius: 15px; }
+      body nav > ul li {
+        display: inline-block;
+        padding: 1%; }
+        body nav > ul li a {
+          color: white;
+          text-decoration: none;
+          font-size: x-large; }
+        body nav > ul li ul {
+          position: absolute;
+          background-color: rgba(189, 116, 247, 0.7);
+          display: none; }
+          body nav > ul li ul li {
+            display: block; }
+        body nav > ul li:hover ul {
+          display: block; }
+        body nav > ul li:hover > a {
+          text-decoration: underline; }
+  body section {
+    width: 70%;
+    display: inline-block; }
+    body section article {
+      border: 1px solid black;
+      border-radius: 22px;
+      padding: 1%;
+      margin-top: 1%;
+      margin-bottom: 1%; }
+      body section article footer p {
+        text-align: right; }
+        body section article footer p a {
+          color: #BD74F7;
+          text-decoration: none; }
+          body section article footer p a:hover {
+            text-decoration: underline; }
+        body section article footer p time {
+          font-family: Consolas; }
+  body aside {
+    width: 28%;
+    float: right;
+    margin-top: 22px; }
+    body aside > ul {
+      list-style-type: none; }
+      body aside > ul li {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 3%;
+        margin: 2%; }
+        body aside > ul li h2 {
+          margin: 1%; }
+        body aside > ul li p a {
+          text-decoration: none;
+          color: #A9BAA1; }
+          body aside > ul li p a:hover {
+            text-decoration: underline; }
+        body aside > ul li p em {
+          color: #CEDDC8;
+          font-style: italic; }
+        body aside > ul li p strong {
+          color: #CEDDC8;
+          font-weight: bold; }
+        body aside > ul li ul {
+          list-style-image: url("/images/li-dot.png"); }
+          body aside > ul li ul li {
+            border-width: 0;
+            padding: 0; }
+  body > footer {
+    font-weight: bold;
+    text-align: center; }
+

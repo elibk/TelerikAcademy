@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>
+		LinkedIn
+	</title>
+	<script src="modernizr.custom.86339.js"></script>
+</head>
+<body>
+	<header style="background-color:red">
+		<h1>
+			<a href="#">LinkedIn</a>
+		</h1>
+		<nav>
+		<ul>
+			<li>
+				<a href="#" id="sth">Home</a>
+			</li>
+			<li>
+				<a href="#">What is LinkedIn?</a>
+			</li>
+			<li>
+				<a href="#">Join Today</a>
+			</li>
+			<li>
+			</li>
+		</ul>
+		<form method="post" action="https://www.linkedin.com" style="padding-left: 40px;">
+			<fieldset id="SingIn" style=" padding-top: 0px;" >
+				<legend>Sing in</legend>
+				<ul style=list-style-type:circle>
+					<li>
+						<label for="mail" >Email:</label>
+						<input id="mail" type="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Unvalid e-mail!" />
+					</li>
+					<li>
+						<label for="password" >Password:</label>
+						<input id="password" type="password" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" title="Unvalid"/>
+					</li>
+					<li>
+						<input type="submit" value="Sing in" disabled="disabled"/>
+				</ul>
+			</fieldset>
+		</form>			
+		<hr>
+		</nav>
+	</header>
+	<section>
+		<article>
+			<header>
+				<h1>
+					Over 175 million professionals use LinkedIn to exchange information, ideas and opportunities
+				</h1>
+			</header>
+			<ul>
+				<li>
+					Stay informed about your contacts and industry
+				</li>
+				<li>
+					Find the people & knowledge you need to achieve your goals
+				</li>
+				<li>
+					Control your professional identity online
+				</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>
+					Join LinkedIn Today
+				</h2>
+			</header>
+			<form method="post" action="https://www.linkedin.com">
+				<fieldset>
+					<legend>
+						Sing Up
+					</legend>
+					<ul>
+						<li>
+							<label for="FN-for-singUp" >
+								First Name:
+							</label>
+							<input id="FN-for-singUp" type="text" />
+						</li>
+						<li>
+							<label for="LN-for-singUp" >
+								Last Name:
+							</label>
+							<input id="LN-for-singUp" type="text" />
+						</li>
+						<li>
+							<label for="mail-for-singUp">
+								Email:
+							</label>
+							<input id="mail-for-singUp" type="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Unvalid e-mail!" />
+						</li>
+						<li>
+							<label for="pass-for-singUp" >
+								Password:
+							</label>
+							<input id="pass-for-singUp" type="password" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" title="
+                                6 or more characters,
+                                must contains one digit from 0-9,must contains one lowercase characters,
+                                must contains one uppercase characters,must contains one special symbols " />
+							<p>
+								6 or more characters
+							</p>
+						</li>
+					</ul>
+					<p>
+						<input type="submit" value="Join Now" />
+						<a href="#">*</a>
+					</p>
+					<p>
+						Already on LinkedIn?
+						<a href="#SingIn">Sign in.</a>
+					</p>
+				</fieldset>
+			</form>
+		</article>
+	</section>
+	<section id="search">
+		<article>
+			<header>
+				<h3>
+					Search for someone by name:
+				</h3>
+			</header>
+			<form method="get" action="https://www.linkedin.com">
+				<ul>
+					<li>
+						<label for="FN-search">
+							First Name
+						</label>
+						<input id="FN-search" type="text" value="First Name"/>
+					</li>
+					<li>
+						<label for="LN-search">
+							Last Name
+						</label>
+						<input id="LN-search" type="text" value="Last Name"/>
+					</li>
+				</ul>
+				<input type="submit" value="Go" />
+			</form>	
+		</article>
+	</section>
+</body></html>

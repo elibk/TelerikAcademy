@@ -1,0 +1,71 @@
+﻿body {
+    background-color:#1E3741;
+    color: #7A98A1;
+    word-wrap:break-word;
+}
+
+section {
+    border:1px solid #2A636F;
+    width:60%;
+    border-radius:5px;
+    overflow:auto;
+}
+
+ul {
+    list-style:none;
+    padding:0;
+}
+
+a {
+    color:#7A98A1;
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+
+nav ul li {
+    display:inline;
+    background:#4B5F67;
+    padding:10px;
+    margin:0;
+    border-right:1px solid #1E3741;
+    line-height:50px;
+}
+
+nav a {
+    display:inline-block;
+}
+
+nav li:first-child {
+    background-color:#1E3741;
+    color:white;
+    word-wrap:normal;
+}
+
+
+article {
+    width:40%;
+    vertical-align:top;
+}
+
+    article ul {
+        margin:0;
+    }
+
+    article li {
+        padding:10px;
+    
+    }
+
+        article li:first-child {
+            background-color:#00968C;
+            color:white;
+        }
+
+
+iframe,article {
+    display:inline-block;
+}
+
+

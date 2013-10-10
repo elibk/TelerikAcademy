@@ -1,0 +1,244 @@
+﻿html, body, div, p, hgroup, h2,h3, img, ul, li, a, span {
+	margin:0;
+	padding:0;
+}
+
+@base-color:#9215F2; 
+@base-font-size:16px;
+.clearfix() {
+    zoom: 1;
+
+    &:after {
+		display: block;
+		content:"";
+		clear:both;
+		height:0;
+
+    }    
+}
+
+.vert-linear-gradient(@from_color, @to-color, @from-position, @to-position) {
+	
+	background: @from_color; /* Old browsers */
+	background: -moz-linear-gradient(top,  @from_color @from-position, @to-color @to-position); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(@from-position,@from_color), color-stop(@to-position,@to-color)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* IE10+ */
+	background: linear-gradient(to bottom,  @from_color @from-position,@to-color @to-position); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{@from_color}', endColorstr='#{@to-color}',GradientType=0 ); /* IE6-8 */
+
+}
+
+body {
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 16px;
+
+    div#wrapper {
+        width: 960px;
+        padding-left: 20px;
+        padding-top: 20px;
+
+        > div {
+            float: left;
+            width: 150px;
+            border-left: 2px solid #D3D7DA;
+            border-top: 2px solid #D3D7DA;
+            border-bottom: 2px solid #D3D7DA;
+
+            &:last-of-type {
+                border-right: 2px solid #D3D7DA;
+
+                hgroup {
+                    margin-top: 15px;
+					padding-bottom:5px;
+                    background-image: url(imgs/about.png);
+                    background-repeat: no-repeat;
+
+                    h2 {
+                        margin-left: 25px;
+                    }
+                }
+
+                div {
+
+					margin-bottom:0;
+                }
+            }
+
+
+			 &:nth-of-type(5) {
+                border-right: 2px solid #D3D7DA;
+
+                hgroup {
+                    margin-top: 15px;
+					padding-bottom:5px;
+                    background-image: url(imgs/twitter.png);
+                    background-repeat: no-repeat;
+
+                    h2 {
+                        margin-left: 25px;
+                    }
+                }
+
+                div {
+
+					margin-bottom:0;
+                }
+            }
+
+			  &:nth-of-type(4) {
+                border-right: 2px solid #D3D7DA;
+
+                hgroup {
+                    margin-top: 15px;
+					padding-bottom:5px;
+					margin-right:0px;
+					padding-right:5px;
+                    background-image: url(imgs/openSource.png);
+                    background-repeat: no-repeat;
+
+                    h2 {
+                        margin-left: 25px;
+                    }
+                }
+
+                div {
+
+					margin-bottom:0;
+                }
+            }
+
+			   &:nth-of-type(3) {
+                border-right: 2px solid #D3D7DA;
+
+                hgroup {
+                    margin-top: 15px;
+					padding-bottom:5px;
+					margin-right:0px;
+					
+					padding-right:5px;
+                    background-image: url(imgs/manage.png);
+                    background-repeat: no-repeat;
+					vertical-align:top;
+
+                    h2 {
+						
+                        margin-left: 25px;
+                    }
+					h3 {
+						margin-top: 0px;
+                        margin-left: 25px;
+                    }
+                }
+
+                div {
+
+					margin-bottom:0;
+                }
+            }
+
+			   &:nth-of-type(2) {
+                border-right: 2px solid #D3D7DA;
+
+                hgroup {
+                    margin-top: 15px;
+					padding-bottom:5px;
+					margin-right:0px;
+					
+					padding-right:5px;
+                    background-image: url(imgs/tuneUp.png);
+                    background-repeat: no-repeat;
+					vertical-align:top;
+
+                    h2 {
+						
+                        margin-left: 25px;
+                    }
+					h3 {
+						margin-top: 0px;
+                        margin-left: 25px;
+                    }
+                }
+
+                div {
+
+					margin-bottom:0;
+                }
+            }
+
+
+			    &:nth-of-type(1) {
+                border-right: 2px solid #D3D7DA;
+
+                hgroup {
+                    margin-top: 15px;
+					padding-bottom:5px;
+					margin-right:0px;
+					
+					padding-right:5px;
+                    background-image: url(imgs/install.png);
+                    background-repeat: no-repeat;
+					vertical-align:top;
+
+                    h2 {
+						
+                        margin-left: 25px;
+                    }
+					h3 {
+						margin-top: 0px;
+                        margin-left: 25px;
+                    }
+                }
+
+                div {
+
+					margin-bottom:25px;
+                }
+            }
+            &:nth-of-type(2n) {
+                .vert-linear-gradient(white,#F1F2F3,5%,95%)
+            }
+
+            hgroup {
+                padding: 15px;
+                margin: 5px;
+
+                h3 {
+                    font-size: 16px;
+                }
+
+                h2 {
+                    font-size: 16px;
+                }
+            }
+
+            p {
+                padding: 5px;
+            }
+
+            div {
+                padding: 5px;
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    color: #D12D2F;
+
+                    span {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+                div.yellowBox {
+                    border: 1px solid #FFFF00;
+                    margin-bottom: 40px;
+
+                    a {
+                        display: inline;
+                    }
+                }
+        }
+    }
+}

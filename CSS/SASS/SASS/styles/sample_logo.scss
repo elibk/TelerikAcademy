@@ -1,0 +1,246 @@
+.clearfix{
+	zoom:1;
+	&:after{
+		display:block;
+		height:0;
+		content:"";
+		clear:both;
+	}
+}
+
+@mixin linear-gradient($from_color,$to_color,$from_position,$to_position) {
+
+	background: $from_color; /* Old browsers */
+	background: -moz-linear-gradient(top,  $from_color $from_position, $to_color $to_position); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop($from_position,$from_color), color-stop($to_position,$to_color)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  $from_color $from_position,$to_color $to_position); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  $from_color $from_position,$to_color $to_position); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  $from_color $from_position,$to_color $to_position); /* IE10+ */
+	background: linear-gradient(to bottom,  $from_color $from_position,$to_color $to_position); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from_color}', endColorstr='#{$to_color}',GradientType=0 ); /* IE6-9 */
+	
+	background-attachment:fixed;
+}
+
+@mixin border_radius($radius:22px){
+
+	border:1px solid black;
+	border-radius:$radius;
+}
+
+body{
+
+	@include linear-gradient(#CF90FA,#9215F2,10%,25%);
+	padding:2%;
+	color:white;
+
+	header {
+
+		div#header-container{
+			
+			div#logo-container{
+			display:inline-block;
+			
+			h1{
+				margin:0;
+				padding:0;
+			}
+		}
+		}
+		
+
+		div#reg-form-container{
+			@extend .clearfix;
+			display:inline-block;
+			float:right;
+			form{
+				
+				div{
+					
+					input{
+						background-color:#B35EF3;
+						@include border_radius(50px);
+						outline:none;
+                        margin: 5px;
+						width:55%;
+					}
+
+					label{
+					
+						display:inline-block;
+						text-align:center;
+						width:80px;
+					}
+
+					
+					}
+					button#btn-register{
+					
+						background-color: #B35EF3;
+                        padding: 5px 10px;
+                        color: white;
+                        font-weight: bold;
+                        border: 1px outset #C0AFCE;
+                        border-radius: 8px;
+
+						 &:hover {
+                            border: 1px inset #C0AFCE;
+                        }
+				}
+			}
+		}
+	}
+	
+	nav{
+
+		width:75%;
+		
+		& > ul {
+			
+				padding:0;
+				
+
+				@include border_radius(15px);
+
+			li{
+				display:inline-block;
+				padding:1%;
+
+				a{
+				
+					color:white;
+					text-decoration:none;
+					font-size:x-large;
+				}
+
+				ul{
+
+					position:absolute;
+					background-color: rgba(189,116,247,0.7);
+					display:none;
+					
+					li{
+						display:block;
+					}									
+				}
+
+				&:hover{
+
+						ul{
+							
+							display:block;
+						}
+
+						& > a{
+						
+							text-decoration:underline;
+						}
+						
+					}
+				
+			}
+			
+			
+		}
+	}
+
+	section{
+		width:70%;
+		display:inline-block;
+		
+		article{
+			@include border_radius;
+			padding:1%;
+			margin-top: 1%;
+			margin-bottom: 1%;
+
+			footer{
+
+				p{
+					
+					text-align:right;
+
+					a{
+						color:#BD74F7;
+						text-decoration:none;
+
+						&:hover{
+						
+							text-decoration:underline;
+						}
+					}
+					time {
+                        font-family: Consolas;
+                    }
+
+				}
+			
+		}
+		}
+
+		
+	}
+
+	aside{
+	
+		@extend clearfix;
+		width:28%;
+		float:right;
+		margin-top:22px;
+
+		& > ul{
+				list-style-type:none;
+				
+				li{
+			
+					@include border_radius(5px);
+					padding:3%;
+					margin:2%;
+
+					h2{
+					
+						margin:1%;
+					}
+
+					p {
+                    a {
+                        text-decoration: none;
+                        color: #A9BAA1;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    em {
+                        color: #CEDDC8;
+                        font-style: italic;
+                    }
+
+                    strong {
+                        color: #CEDDC8;
+                        font-weight: bold;
+                    }
+                }
+
+
+					ul{
+						
+						list-style-image:url('/images/li-dot.png');
+					
+						li{
+							
+							border-width:0;
+							padding:0;
+							
+						}
+					}
+				}
+		}
+	}
+
+	> footer{
+		font-weight:bold;
+		text-align:center;
+	}
+}

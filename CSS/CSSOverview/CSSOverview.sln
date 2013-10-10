@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H1Ticket", "H1Ticket\H1Ticket.csproj", "{9FF21950-A519-43CD-935D-F5B2D7F1EEBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H2Table", "H2Table\H2Table.csproj", "{8C6F8158-E5CE-4BBB-898B-B7BBAC91A793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H3AddCSS", "H3AddCSS\H3AddCSS.csproj", "{7E733B6D-CE6B-4232-B52B-13F3B137D5A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FF21950-A519-43CD-935D-F5B2D7F1EEBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF21950-A519-43CD-935D-F5B2D7F1EEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF21950-A519-43CD-935D-F5B2D7F1EEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF21950-A519-43CD-935D-F5B2D7F1EEBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C6F8158-E5CE-4BBB-898B-B7BBAC91A793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C6F8158-E5CE-4BBB-898B-B7BBAC91A793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C6F8158-E5CE-4BBB-898B-B7BBAC91A793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C6F8158-E5CE-4BBB-898B-B7BBAC91A793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E733B6D-CE6B-4232-B52B-13F3B137D5A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E733B6D-CE6B-4232-B52B-13F3B137D5A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E733B6D-CE6B-4232-B52B-13F3B137D5A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E733B6D-CE6B-4232-B52B-13F3B137D5A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

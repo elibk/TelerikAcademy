@@ -1,0 +1,246 @@
+@base-color:#9215F2;
+@base-font-size:0.72em;
+@base-border:1.7px solid black;
+
+.clearfix() {
+    zoom: 1;
+
+    &:after {
+		display: block;
+		content:"";
+		clear:both;
+		height:0;
+
+    }    
+}
+
+.linear-gradient(@from_color, @to-color, @from-position, @to-position) {
+	
+	background: @from_color; /* Old browsers */
+	background: -moz-linear-gradient(top,  @from_color @from-position, @to-color @to-position); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(@from-position,@from_color), color-stop(@to-position,@to-color)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  @from_color @from-position,@to-color @to-position); /* IE10+ */
+	background: linear-gradient(to bottom,  @from_color @from-position,@to-color @to-position); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@from_color', endColorstr='@to-color',GradientType=0 ); /* IE6-8 */
+
+}
+
+body, header, div, section, article, h1, h2, ul, li, a, aside, footer, nav,p{
+	margin:0;
+	padding:0;
+}
+
+body {
+    background-color: @base-color;
+    color: white;
+    font-family: 'Times New Roman', serif;
+    font-size: @base-font-size;
+
+    > header {
+        .linear-gradient(#D292FD,@base-color,20%,95%);
+
+        div#header-container {
+            padding-top: 20px;
+
+            div#logo-container {
+                display: inline-block;
+                padding-left: 15px;
+
+                h1 {
+                    a {
+                        img {
+                            height: 65px;
+                            width: 280px;
+                        }
+                    }
+                }
+            }
+
+            div#reg-form-container {
+                padding-right: 25px;
+                float: right;
+                .clearfix;
+
+                form {
+                    div {
+
+                        input {
+                            border: @base-border;
+                            border-radius: 8px;
+                            background-color: #B35EF3;
+                            outline: none;
+                            margin: 5px;
+							width:55%;
+                        }
+                    }
+
+                    button {
+                        background-color: #B35EF3;
+                        padding: 5px 10px;
+                        color: white;
+                        font-weight: bold;
+                        border: 1px outset #C0AFCE;
+                        border-radius: 8px;
+
+
+                        &:hover {
+                            border: 1px inset #C0AFCE;
+                        }
+                    }
+                }
+            }
+        }
+
+        nav {
+            font-size: @base-font-size * 1.9;
+            width: 73%;
+            padding: 10px 20px;
+            margin: 25px 30px;
+            border: @base-border;
+            border-radius: 12px;
+
+            > ul {
+
+                li {
+                    display: inline-block;
+                    margin-right: 10px;
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+
+                    ul {
+                        position: absolute;
+
+                        li {
+                            display: none;
+                        }
+                    }
+
+                    &:hover {
+
+                        > a {
+                            text-decoration: underline;
+                        }
+
+                        ul {
+                            background-color: rgba(189, 116, 247, 0.7);
+
+                            li {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section {
+        width: 73%;
+        display: inline-block;
+        padding: 15px;
+
+        article {
+            border: @base-border;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+
+            h1 {
+                font-size: @base-font-size * 2;
+                padding: 5px;
+            }
+
+            p {
+            }
+
+            footer {
+                font-size: @base-font-size * 1.8;
+                text-align: end;
+                margin: 5px;
+
+                p {
+                    a {
+                        color: #D49EF6;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    time {
+                        font-family: Consolas;
+                    }
+                }
+            }
+        }
+    }
+
+    aside {
+        width: 22%;
+        margin-right: 30px;
+        margin-top: 20px;
+        float: right;
+        .clearfix;
+
+        > ul {
+            list-style: none;
+
+            > li {
+                border: @base-border;
+                border-radius: 3px;
+                padding: 15px;
+                margin: 12px;
+
+                h2 {
+                    font-size: @base-font-size * 1.6;
+                    margin-bottom: 7px;
+                }
+
+                p {
+                    a {
+                        text-decoration: none;
+                        color: #A9BAA1;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    em {
+                        color: #CEDDC8;
+                        font-style: italic;
+                    }
+
+                    strong {
+                        color: #CEDDC8;
+                        font-weight: bold;
+                    }
+                }
+
+                ul {
+                    padding-left: 35px;
+
+                    li {
+                        margin: 2px;
+                        border: none;
+                        list-style-image: url(images/li-dot.png);
+                    }
+                }
+            }
+        }
+    }
+
+    > footer {
+
+		p{
+			font-weight:bold;
+			text-align:center;
+		}
+    }
+}
