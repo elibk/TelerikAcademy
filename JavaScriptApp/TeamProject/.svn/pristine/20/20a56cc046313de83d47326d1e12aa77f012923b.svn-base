@@ -1,0 +1,20 @@
+﻿body {
+    text-align: center;
+}
+
+#weapper {
+
+}
+
+#game-container {
+    border: solid 1px black;
+    width: 700px;
+    height: 600px;
+    background-image:url(../images/background.jpg)
+}
+
+.trash-bin {
+    position:relative;
+    top: 350px;
+
+}

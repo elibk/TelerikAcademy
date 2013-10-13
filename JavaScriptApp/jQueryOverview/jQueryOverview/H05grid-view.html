@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Grid View</title>
+    <link href="style/gridView.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+
+    </div>
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/jquery-2.0.2.js"></script>
+    <script src="scripts/string-extention.js"></script>
+    <script src="scripts/grid-row.js"></script>
+    <script src="scripts/grid-view.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var grid = new GridView(4);
+            grid.addHeader("I'm grid.");
+            grid.addRow().addCells();
+            var subGrid = grid.addRow().addGrid(8);
+
+            var subSubGrid = subGrid.addRow().addGrid(2);
+
+            subGrid.addRow().addCells();
+            subGrid.addHeader("I'm nested grid.");
+            //subGrid.addHeader("I'm nested grid."); // -> this will couse Error : Each GridView can have at most one header row
+
+            // subGrid.addRow().addGrid(2); // -> this will couse Error : Each GridView can have at most one nested GridView
+
+            
+            subSubGrid.addHeader("I'm nested grid in nested grid.");
+            subSubGrid.addRow().addCells();
+            grid.appendTo($('#wrapper'));
+        });
+    </script>
+</body>
+</html>

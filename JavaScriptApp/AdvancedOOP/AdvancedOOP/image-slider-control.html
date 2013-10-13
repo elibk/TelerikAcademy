@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Image Slider</title>
+    <!--<link href="styles-img-slider/styles.css" rel="stylesheet" />-->
+</head>
+<body>
+    <div id="wrapper"></div>
+    <script src="scripts-image-slider-control/cross-browser-events.js"></script>
+    <script src="scripts-image-slider-control/string-extention.js"></script>
+    <script src="scripts-image-slider-control/object-create.js"></script>
+    <script src="scripts-image-slider-control/image-item.js"></script>
+    <script src="scripts-image-slider-control/slider.js"></script>
+    <script>
+
+        var slider = Object.create(Slider).init("#wrapper").initEvents();
+        
+        slider.addImage('img-02', 'imgs-slider/img-02.jpg');
+        slider.addImage('img-03', 'imgs-slider/img-03.jpg');
+        slider.addImage('img-04', 'imgs-slider/img-04.jpg');
+        slider.addImage('img-05', 'imgs-slider/img-05.jpg');
+
+        slider.render();
+
+    </script>
+</body>
+</html>

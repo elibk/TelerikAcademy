@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/ask-for-player-name.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/jquery-2.0.2.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    <script src="scripts/random-from-to.js"></script>
+    <script src="scripts/string-extention.js"></script>
+    <script src="scripts/RecyclingGameNS.js"></script>
+    <script src="scripts/scoreboard.js"></script>
+    <script src="scripts/timer.js"></script>
+    <script src="scripts/recyclingType.js"></script>
+    <script src="scripts/TrashBinsNS.js"></script>
+    <script src="scripts/trash-bin.js"></script>
+    <script src="scripts/recycling-trash-bin.js"></script>
+    <script src="scripts/TrashNS.js"></script>
+    <script src="scripts/trash.js"></script>
+    <script src="scripts/recycling-trash.js"></script>
+    <script src="scripts/game-engine.js"></script>
+    <script src="scripts/local-storage-extensions.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+       <div id="dialog" title="Basic dialog">
+            <p>
+                Би се геройски но не е толкова лесно да изчистиш света от боклуци! Моля, въведи името си да видим дали ще се намери място за теб на стената на славата. ;)
+            </p>
+            <input type="text" value ="anonymous" />>
+        </div>
+        <div id="game-container">
+
+            <a href="#" id="new-game">
+                New Game
+            </a>
+            <a href="#" id="pause">
+                Pause
+            </a>
+            <a href="#" id="resume">
+                Resume
+            </a>
+            <input type="text" id="timer" />
+            <div id="dumpsite"></div>
+        </div>
+        <div id="highScores"></div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            var highScoreInstance = new RecyclingGameNS.Scoreboard('#highScores', 5);
+            var timerInstance = new RecyclingGameNS.Timer();
+            var engine = new RecyclingGameNS.GameEngine(highScoreInstance, timerInstance);
+        });
+        
+    </script>
+</body>
+</html>

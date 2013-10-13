@@ -1,0 +1,84 @@
+﻿/// <reference path="prototype.js" />
+/// <reference path="jquery-2.0.2.js" />
+/// <reference path="RecyclingGameNS.js" />
+/// <reference path="string-extention.js" />
+/// <reference path="local-storage-extensions.js" />
+
+RecyclingGameNS.Scoreboard = Class.create({
+
+    initialize: function initScoreboard(highScoreContainer, topPlayersCount) {
+    
+        this._container = highScoreContainer;
+        this._topPlayersCount = topPlayersCount;
+        this._countRecords = 0;
+
+        this.currentLevel = $j("#current-level-info");
+        this.currentLevel.hide();
+    },
+
+    getPlayerName: function getPlayerName() {
+    
+        var name = prompt("Би се геройски, но не е толкова лесно да изчистиш света от боклуци! Въведи името си да видим дали ще се намери място за теб на стената на славата. ;)", "anonymous");
+        if (name === null) {
+            name = 'anonymous';
+        }
+        return name;
+    },
+
+    saveData: function saveData(playerName, playerScore) {
+        var newRecord = { playerName: playerName, playerScore: playerScore };
+
+        var records = localStorage.getObject('trashGameHighScores');
+        if (!records || records.length == 0) {
+            records = [];
+        }
+        records.push(newRecord);
+
+        //Sorting the array data
+        records.sort(function compare(a, b) {
+            if (b.playerScore > a.playerScore)
+                return 1;
+            else if (b.playerScore < a.playerScore)
+                return -1;
+            else {
+                if (b.playerName > a.playerName)
+                    return -1;
+                else
+                    return 1;
+            }
+
+            return 0;
+        });
+
+        localStorage.setObject("trashGameHighScores", records);
+
+        this._countRecords = records.length;
+    },
+
+    loadData: function loadData() {
+        $j(this._container).html('');
+        var records = localStorage.getObject('trashGameHighScores');
+        if (!records) {
+            records = [];
+        }
+
+        var totalRecords = (records.length > this._topPlayersCount) ? this._topPlayersCount : records.length;
+
+        if (totalRecords > 0) {
+            var element = $j('<ul style="list-style-type: decimal;"></ul>'); // should be in css file
+            for (i = 0; i < totalRecords; i++) {
+                var listItem = '<li>' + records[i].playerName + ': ' + records[i].playerScore + '</li>';
+                $j(listItem).appendTo(element);
+            }
+
+            $j('<h2>Стена на славата</h2>').appendTo(this._container);
+            element.appendTo(this._container);
+        }
+    },
+
+    calculateScore: function calcScore(time, currentLevel) {
+
+        return time + currentLevel * 10;
+    }
+
+});

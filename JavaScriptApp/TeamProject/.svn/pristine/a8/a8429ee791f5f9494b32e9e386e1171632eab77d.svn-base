@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="styles/themes/base/jquery-ui.css" />
+    <link href="styles/next-level.css" rel="stylesheet" />
+    <link href="styles/buttons.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/q.js"></script>
+    <script src="scripts/jquery-2.0.2.js"></script>
+    <script type="text/javascript">
+        jQuery.noConflict();
+        var $j = jQuery;
+    </script>
+    <script src="scripts/jquery-ui.js"></script>
+    <script src="scripts/random-from-to.js"></script>
+    <script src="scripts/string-extention.js"></script>
+    <script src="scripts/RecyclingGameNS.js"></script>
+    <script src="scripts/scoreboard.js"></script>
+    <script src="scripts/timer.js"></script>
+    <script src="scripts/recyclingType.js"></script>
+    <script src="scripts/TrashBinsNS.js"></script>
+    <script src="scripts/trash-bin.js"></script>
+    <script src="scripts/recycling-trash-bin.js"></script>
+    <script src="scripts/TrashNS.js"></script>
+    <script src="scripts/trash.js"></script>
+    <script src="scripts/recycling-trash.js"></script>
+    <script src="scripts/game-engine.js"></script>
+    <script src="scripts/local-storage-extensions.js"></script>
+    <script src="scripts/shareButtons.js"></script>
+</head>
+<body>
+    <div id="dialog" title=""></div>
+    <div id="wrapper">
+        <div id="game-container">
+            <input type="text" id="timer" />
+            <a href="#" id="new-game">
+                New Game
+            </a>
+            <a href="#" id="pause">
+                Pause
+            </a>
+            <a href="#" id="resume">
+                Resume
+            </a>
+            <div id="dumpsite"><h2 id="current-level"></h2> </div>
+
+        </div>
+        <div id="highScores"></div>
+    </div>
+
+
+    <script>
+        $j(document).ready(function () {
+            var highScoreInstance = new RecyclingGameNS.Scoreboard('#highScores', 5);
+            var timerInstance = new RecyclingGameNS.Timer();
+            var engine = new RecyclingGameNS.GameEngine(highScoreInstance, timerInstance);
+        });
+        
+    </script>
+</body>
+</html>

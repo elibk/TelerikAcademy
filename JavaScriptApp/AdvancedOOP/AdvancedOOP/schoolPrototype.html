@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script src="scripts-prototype/string-extention.js"></script>
+        <script src="scripts-prototype/object-create.js"></script>
+        <script src="scripts-prototype/person.js"></script>
+        <script src="scripts-prototype/student.js"></script>
+        <script src="scripts-prototype/teacher.js"></script>
+        <script src="scripts-prototype/class-of-students.js"></script>
+        <script src="scripts-prototype/school.js"></script>
+
+        <script>
+       
+            var techer1 = Object.create(Teacher);
+            techer1.init("Misho", "Popravkata", 45, "expert in everything");
+
+            var techer2 = Object.create(Teacher);
+            techer2.init("Pesho", "Daskala", 45, "expert in nothing");
+
+
+            var classOfStudents1 = Object.create(ClassOfStudents);
+            classOfStudents1.init("1111JavaScript", 15, techer1);
+
+            var classOfStudents2 = Object.create(ClassOfStudents);
+            classOfStudents2.init("2222C Sharp", 12, techer2);
+
+
+            var i;
+
+            for (i = 0; i < 10; i++) {
+                classOfStudents1.addStudent(Object.create(Student).init("Tsetso" + i, "Studenta" + i, 13 + i, i % 6));
+            }
+
+            for (i = 0; i < 12; i++) {
+                classOfStudents2.addStudent(Object.create(Student).init("Gosho" + i, "Zubyra" + i, 10 + i, i % 5));
+            }
+            // classOfStudents2.addStudent(Object.create(Student).init("Gosho" + i, "Zubyra" + i, 10 + i, i % 5));
+            // -> this will cost exception
+         
+      
+            var school = Object.create(School);
+            school.init("The Special ones", "Gorno Koinare");
+            school.classes.push(classOfStudents1);
+            school.classes.push(classOfStudents2);
+
+            console.log(school.getFullReport());
+            console.log('---------------------------------------------');
+      
+            var schoolOther = Object.create(School).init("The Cool ones", "Dolni Tryn",
+                new Array(
+                     Object.create(ClassOfStudents).init("Hrytkite", 30, Object.create(Teacher).init("Kolio", "Kolev", 56, "Qkite macki")),
+                     Object.create(ClassOfStudents).init("Kuchkite", 30, Object.create(Teacher).init("Mara", "Podrobnata", 56, "Qkite pichove"))
+                ));
+
+            schoolOther.classes[0].addStudent(Object.create(Student).init("Pesho", "Peshev", 15, 5));
+            schoolOther.classes[0].addStudent(Object.create(Student).init("Kiro", "Kirev", 13, 2));
+            schoolOther.classes[0].addStudent(Object.create(Student).init("Pesho", "Botev", 11, 3));
+
+            schoolOther.classes[1].addStudent(Object.create(Student).init("Ninka", "Boteva", 10, 4));
+            schoolOther.classes[1].addStudent(Object.create(Student).init("Pena", "Kireva", 17, 6));
+            schoolOther.classes[1].addStudent(Object.create(Student).init("Maca", "Pesheva", 13, 1));
+
+            console.log(schoolOther.getFullReport());
+
+        </script>
+    </body>
+</html>

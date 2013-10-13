@@ -1,0 +1,233 @@
+﻿/// <reference path="prototype.js" />
+/// <reference path="jquery-2.0.2.js" />
+/// <reference path="random-from-to.js" />
+/// <reference path="RecyclingGameNS.js" />
+/// <reference path="string-extention.js" />
+/// <reference path="TrashBinsNS.js" />
+/// <reference path="trash-bin.js" />
+/// <reference path="recycling-trash-bin.js" />
+/// <reference path="TrashNS.js" />
+/// <reference path="trash.js" />
+/// <reference path="recycling-trash.js" />
+/// <reference path="scoreboard.js" />
+/// <reference path="timer.js" />
+/// <reference path="recyclingType.js" />
+/// <reference path="shareButtons.js" />
+
+
+
+RecyclingGameNS.GameEngine = Class.create({
+
+    initialize: function initGame(scoreboard, timer) {
+        this.container = $j('#game-container');
+        this.dumpsite = $j('#dumpsite');
+
+        this.scoreboard = scoreboard;
+        this.timer = timer;
+
+        this.initialTrashCount = 3;
+        this.stepOfIncreasing = 3;
+        this.initailTime = 300;
+
+        this.scoreUpToNow = 0;
+        this.currentLevel = 0;
+        this.remainingTrash = 0;
+
+        this.trashBins = [
+             new RecyclingGameNS.TrashBins.RecyclingTrashBin('images/plastic-and-iron-can.png', RecyclingGameNS.recyclingType.plasticAndIron),
+             new RecyclingGameNS.TrashBins.RecyclingTrashBin('images/glass-can.png', RecyclingGameNS.recyclingType.glass),
+             new RecyclingGameNS.TrashBins.RecyclingTrashBin('images/paper-can.png', RecyclingGameNS.recyclingType.paper),
+        ];
+        
+        this._renderTrashBins();
+        this._initEvents();
+        this.scoreboard.loadData();
+        $j("#pause").hide();
+        $j("#resume").hide();
+        $j("#overlay").hide();
+        this.trash = [];
+    },
+
+    _renderTrashBins: function renderTrashBins() {
+        for (var i = 0; i < this.trashBins.length; i += 1) {
+            this.trashBins[i].setInTheField(this.container);
+            this.trashBins[i].initEvents(this);
+        }
+    },
+    _initEvents: function renderTrashBins() {
+        var that = this;
+        $j("#new-game").on('click', onClickNewGame);
+        function onClickNewGame(e) {
+            e.preventDefault();
+            that.newGame();
+        }
+
+        $j("#pause").on('click', onClickPause);
+        function onClickPause(e) {
+            e.preventDefault();
+            that.timer.pause();
+            $j(this).hide();
+            $j("#resume").show();
+            that._hideTrash();
+        }
+
+        $j("#resume").on('click', onClickResume);
+        function onClickResume(e) {
+            e.preventDefault();
+            that.timer.resume(that);
+            $j(this).hide();
+            $j("#pause").show();
+            that._showTrash();
+        }
+    },
+
+    newGame: function newGame() {
+       
+        this.scoreUpToNow = 0;
+        this.currentLevel = 0;
+        this.remainingTrash = 0;
+        this._cleanOldTrash();
+        this.nextLevel();
+        $j("#pause").show();
+        $j("#resume").hide();
+    },
+
+    _cleanOldTrash: function cleanOldTrash() {
+
+        for (var i = 0; i < this.trash.length; i++) {
+            this.trash[i].dispose();
+        }
+
+        this.trash = [];
+    },
+
+    _hideTrash: function cleanOldTrash() {
+
+        for (var i = 0; i < this.trash.length; i++) {
+            this.trash[i].hide();
+        }
+    },
+
+    _showTrash: function cleanOldTrash() {
+
+        for (var i = 0; i < this.trash.length; i++) {
+            this.trash[i].show();
+        }
+    },
+
+    _generateTrash: function generateTrash(currentTrashCount) {
+        this.remainingTrash = currentTrashCount;
+        var paperTrashCount = $j.randomFromTo(0, currentTrashCount);
+        currentTrashCount = currentTrashCount - paperTrashCount;
+        var plasticTrashCount = $j.randomFromTo(0, currentTrashCount);
+        var glassTrashCount = currentTrashCount - plasticTrashCount;
+        
+        var i;
+        var id = 0;
+        var newTrash;
+        var currentObject;
+
+        for (i = 0; i < paperTrashCount; i++) {
+            if (i % 2 === 0) {
+                currentObject = 'images/paper.png';
+            } else {
+                currentObject = 'images/cardboard-box.png';
+            }
+            
+            newTrash = new RecyclingGameNS.TrashItems.RecyclingTrash(currentObject, RecyclingGameNS.recyclingType.paper);
+            newTrash.setId(id++);
+            newTrash.throwIt(this.dumpsite);
+            this.trash.push(newTrash);
+        }
+
+        for (i = 0; i < plasticTrashCount; i++) {
+            if (i % 3 === 0) {
+                currentObject = 'images/can.png';
+            }
+            else if (i % 3 === 1) {
+                currentObject = 'images/platic-cup.png';
+            }
+            else {
+                currentObject = 'images/plastic-bottle.png';
+            }
+
+            newTrash = new RecyclingGameNS.TrashItems.RecyclingTrash(currentObject, RecyclingGameNS.recyclingType.plasticAndIron);
+            newTrash.setId(id++);
+            newTrash.throwIt(this.dumpsite);
+            this.trash.push(newTrash);
+        }
+
+        for (i = 0; i < glassTrashCount; i++) {
+            if (i % 2 === 0) {
+                currentObject = 'images/bottle.png';
+            } else {
+                currentObject = 'images/glass.png';
+            }
+
+            newTrash = new RecyclingGameNS.TrashItems.RecyclingTrash(currentObject, RecyclingGameNS.recyclingType.glass);
+            newTrash.setId(id++);
+            newTrash.throwIt(this.dumpsite);
+            this.trash.push(newTrash);
+        }
+    },
+
+    _cleanTrash: function (currentTrashElement, currentTrashBinType) {
+        var dragetTrashId = $j(currentTrashElement).attr('id');
+        var currentTrash = this.trash[dragetTrashId];
+        if (currentTrash.getType() === currentTrashBinType) {
+
+            currentTrash.dispose();
+            //this.trash.splice(parseInt(dragetTrashId, 10), 1);
+            this.remainingTrash--;
+            if (this.remainingTrash === 0) {
+                this.scoreUpToNow += this.scoreboard.calculateScore(this.timer.pastTime, this.currentLevel);
+                this.trash = [];
+                this.nextLevel();
+            }
+        }
+        else {
+
+            return;
+        }
+    },
+
+    nextLevel: function nextLevel() {
+        this.currentLevel++;
+        var currentTrashCount = this.currentLevel * this.stepOfIncreasing + this.initialTrashCount;
+        $j("#current-level").html("Ниво " + this.currentLevel);
+        this.timer.start(this.initailTime, this);
+       
+        this._generateTrash(currentTrashCount);
+    },
+
+    gameOver: function gameOver() {
+       
+        var playerName = this.scoreboard.getPlayerName();
+        this.showDialog(playerName, this.scoreUpToNow);
+        this.scoreboard.saveData(playerName, this.scoreUpToNow);
+        this.scoreboard.loadData();
+        this._cleanOldTrash();
+        $j("#resume").hide();
+        $j("#pause").hide();
+    },
+
+    showDialog: function showDialog(playerName, playerScore) {
+        $j("#dialog").dialog({
+            autoOpen: true,
+            height: 180,
+            width: 450,
+            modal: true,
+            buttons: {
+                OK: function () {
+                    $j(this).dialog("close");
+                },
+                'Share on facebook': function (e) {
+                    e.preventDefault();
+                    $j(e.target).attr('id', 'fbShare');
+                    shareButtons.addFBShareButton('#fbShare');
+                }
+            }
+        });
+        $j("#dialog").html('<strong>' + playerName + '</strong> твоят резултат е ' + playerScore + ' точки.');
+    }
+});

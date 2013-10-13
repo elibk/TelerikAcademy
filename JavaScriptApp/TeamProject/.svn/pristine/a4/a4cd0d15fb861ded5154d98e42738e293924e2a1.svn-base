@@ -1,0 +1,20 @@
+﻿/// <reference path="prototype.js" />
+/// <reference path="jquery-2.0.2.js" />
+/// <reference path="RecyclingGameNS.js" />
+/// <reference path="TrashNS.js" />
+/// <reference path="trash.js" />
+/// <reference path="string-extention.js" />
+
+RecyclingGameNS.TrashItems.RecyclingTrash = Class.create(RecyclingGameNS.TrashItems.Trash,{
+
+    initialize: function initScoreboard(src, type) {
+        $super(src);
+        this.type = type;
+    },
+
+    initEvents: function initEvents() {
+
+        
+    },
+
+});

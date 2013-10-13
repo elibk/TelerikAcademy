@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <div id="wrapper"></div>
+
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/jquery-2.0.2.js"></script>
+    <script src="scripts/string-extention.js"></script>
+    <script src="scripts/Student.js"></script>
+    <script src="scripts/students-table.js"></script>
+    
+    <script>
+
+        var table = new StudentsTable('#wrapper');
+        table.addStudent(new Student("Pesho", "Ivanov", "6"));
+        table.addStudent(new Student("Ivan", "Petrov", "4"));
+        table.addStudent(new Student("Maria", "Mileva", "5"));
+
+    </script>
+</body>
+</html>

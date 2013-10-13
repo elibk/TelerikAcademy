@@ -1,0 +1,20 @@
+﻿/// <reference path="prototype.js" />
+/// <reference path="jquery-2.0.2.js" />
+/// <reference path="RecyclingGameNS.js" />
+/// <reference path="TrashBinsNS.js" />
+/// <reference path="trash-bin.js" />
+/// <reference path="string-extention.js" />
+
+RecyclingGameNS.TrashBins.RecyclingTrashBin = Class.create(RecyclingGameNS.TrashBins.TrashBin, {
+
+    initialize: function init(src, type) {
+        //$super(src);
+        this.src = src;
+        this.type = type;
+    },
+
+    initEvents: function initEvents() {
+        $super();
+    },
+
+});

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="style/slider-styles.css" rel="stylesheet" />
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/jquery-2.0.2.js"></script>
+    <script src="scripts/slider-control.js"></script>
+
+    <title>Slider</title>
+
+</head>
+<body>
+    <div id="wrapper">
+
+     <ul id="simple-ul">
+      <li>
+        <a href="#">Item 1</a>
+      </li>
+      <li>
+        <a href="#">Item 1</a>
+      </li>
+      <li>
+        <a href="#">Item 1</a>
+      </li>
+    </ul>
+
+        <p id="just-text">
+            Lorem ipsum dolor sit amet, 
+            consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, 
+            consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, 
+            consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <div id="images">
+            <img src="images/img-05.jpg" />
+            <img src="images/img-04.jpg" />
+            <img src="images/img-03.jpg" />
+            <img src="images/img-02.jpg" />
+        </div>
+      
+
+        <div class="sites-bar">
+            <div>
+                <p>Favorite Site Bars</p>
+                <ul>
+                    <li>
+                        <a href="http://telerikacademy.com/" target="_blank">Telerik Academy</a>
+
+                    </li>
+                    <li>
+                        <a href="http://www.w3schools.com/" target="_blank">W3School</a>
+                    </li>
+                </ul>
+                <div>
+                    <p>Social Networks</p>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank">Twitter</a>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="holder"></div>
+    </div>
+ <script>
+     var slider = new Slider('#holder');
+     slider.addSlide('#images');
+     slider.addSlide('#just-text');
+     slider.addSlide('.sites-bar');
+     slider.addSlide('#simple-ul');
+</script>
+</body>
+</html>

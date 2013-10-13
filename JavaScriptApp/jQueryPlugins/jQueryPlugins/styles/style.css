@@ -1,0 +1,31 @@
+﻿body,
+ul,
+a,
+li,
+div {
+  padding: 0;
+  margin: 0;
+}
+ul.tree-view > li {
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+ul.tree-view > li ul {
+  list-style: none;
+  border-radius: 5px;
+  background-color: aqua;
+  padding: 20px;
+  position: absolute;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+a.nested {
+  color: blueviolet;
+}
+a:hover {
+  text-decoration: underline;
+}

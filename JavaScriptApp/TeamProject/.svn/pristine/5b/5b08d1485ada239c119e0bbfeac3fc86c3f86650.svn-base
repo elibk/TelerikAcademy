@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/jquery-2.0.2.js"></script>
+    <script src="scripts/string-extention.js"></script>
+    <script src="scripts/RecyclingGameNS.js"></script>
+    <script src="scripts/scoreboard.js"></script>
+    <script src="scripts/timer.js"></script>
+    <script src="scripts/recyclingType.js"></script>
+    <script src="scripts/TrashBinsNS.js"></script>
+    <script src="scripts/trash-bin.js"></script>
+    <script src="scripts/recycling-trash-bin.js"></script>
+    <script src="scripts/TrashNS.js"></script>
+    <script src="scripts/trash.js"></script>
+    <script src="scripts/recycling-trash-bin.js"></script>
+    <script src="scripts/game-engine.js"></script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="game-container">
+
+            <a href="#" id="new-game">
+                New Game
+            </a>
+            <a href="#" id="pause">
+                Pause
+            </a>
+            <a href="#" id="resume">
+                Resume
+            </a>
+            <input type="text" id="timer" />
+            <div id="trash-field"></div>
+            <!--<table>
+                //ToDo - update with knockout
+            </table>-->
+        </div>
+
+    </div>
+
+
+    <script>
+
+        var engine = new RecyclingGameNS.GameEngine(new RecyclingGameNS.Scoreboard(5), new RecyclingGameNS.Timer());
+       engine.newGame();
+    </script>
+</body>
+</html>

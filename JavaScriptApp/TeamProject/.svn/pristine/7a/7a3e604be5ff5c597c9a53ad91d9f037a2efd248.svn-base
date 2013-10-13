@@ -1,0 +1,121 @@
+﻿/// <reference path="prototype.js" />
+/// <reference path="jquery-2.0.2.js" />
+/// <reference path="RecyclingGameNS.js" />
+/// <reference path="string-extention.js" />
+/// <reference path="TrashBinsNS.js" />
+/// <reference path="trash-bin.js" />
+/// <reference path="recycling-trash-bin.js" />
+/// <reference path="TrashNS.js" />
+/// <reference path="trash.js" />
+/// <reference path="recycling-trash.js" />
+/// <reference path="scoreboard.js" />
+/// <reference path="timer.js" />
+/// <reference path="recyclingType.js" />
+
+
+RecyclingGameNS.GameEngine = Class.create({
+
+    initialize: function initGame(scoreboard, timer) {
+        this.scoreboard = scoreboard;
+        this.timer = timer;
+
+        this.initialTrashCount = 5;
+        this.stepOfIncreasing = 3;
+        this.initailTime = 300;
+
+        this.scoreUpToNow = 0;
+        this.currentLevel = 0;
+        this.remainingTrash = 0;
+
+        this.trashBins = [
+            new RecyclingGameNS.TrashBins.RecyclingTrashBin('../images/plastic-and-iron-can.png', RecyclingGameNS.recyclingType.plasticAndIron),
+             new RecyclingGameNS.TrashBins.RecyclingTrashBin('../images/glass-can.png', RecyclingGameNS.recyclingType.glass),
+             new RecyclingGameNS.TrashBins.RecyclingTrashBin('../images/paper-can.png', RecyclingGameNS.recyclingType.paper),
+        ];
+        
+        this._initEvents();
+        this.trash = [];
+    },
+
+    _initEvents: function initEvents() {
+
+        function initEvBins (ev) {
+    
+            var dragetTrashId = ev.dataTransfer.getData("dragged-trash");
+            var draggedTrashType = $('#' + dragetTrashId).attr('type');
+            if (draggedTrashType === $(this).attr('type')) {
+                trashField.remove('#' + dragetTrashId);
+            }
+            else {
+                return;
+            }
+
+        }
+
+        var container = $('#game-container');
+        var trashField = $('#trash-field');
+        for (var i = 0; i < this.trashBins.length; i += 1) {
+            var newTrashBin = $(String.format('<img src="{0}" type="{1}"/>', this.trashBins[i].src, this.trashBins[i].type));
+            newTrashBin.on('drop', initEvBins);
+            container.append(newTrashBin);
+        }
+    },
+
+    _renderTrashBins: function renderTrashBins() {
+
+    },
+
+    _renderTrash: function renderTrashBins() {
+
+    },
+
+    newGame: function newGame() {
+       
+        this.scoreUpToNow = 0;
+        this.currentLevel = 0;
+        this.remainingTrash = 0;
+        //ToDo: clean old trahs
+        this.nextLevel();
+    },
+
+    _generateTrash: function generateTrash(currentTrashCount) {
+
+        function initEvTrash(ev) {
+           
+            ev.dataTransfer.setData("dragged-trash", ev.target.id);
+        }
+
+       
+        var trashField = $('#trash-field');
+        for (var i = 0; i < currentTrashCount; i += 1) {
+            var newTrash = $(String.format('<img src="{0}" type="{1}" id="trash{2}"/>', '../images/paper.png', RecyclingGameNS.recyclingType.paper, i));
+            newTrash.on('dragstart', initEvTrash);
+            trashField.append(newTrash);
+        }
+
+    },
+
+    nextLevel: function nextLevel() {
+        this.currentLevel++;
+        var currentTrashCount = this.currentLevel * this.stepOfIncreasing + this.initialTrashCount;
+        // time ???
+        //ToDo: setTimer
+        this._generateTrash(currentTrashCount);
+    },
+
+    decreaseTrashCount: function decreaseTrashCount() {
+        this.remainingTrash--;
+        if (this.remainingTrash === 0) {
+            this.scoreUpToNow += this.scoreboard.calculateScore(this.timer.pastTime, this.currentLevel);
+
+            this.nextLevel();
+        }
+    },
+
+    gameOver: function gameOver() {
+       
+        var playerName = this.scoreboard.getPlayersName();
+        this.scoreboard.saveData(playerName, this.scoreUpToNow);
+    },
+
+});
