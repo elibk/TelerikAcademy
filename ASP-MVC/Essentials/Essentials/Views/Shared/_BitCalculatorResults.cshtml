@@ -1,0 +1,23 @@
+﻿@using Essentials.Models;
+@using System.Collections;
+
+@model IEnumerable<IUnit>
+
+@{
+    ViewBag.Title = "Bit Calculator";
+}
+<p>
+    @if (@ViewBag.Kilo != null)
+    {
+        <text> @(string.Format("{0} (Kilo = {1} bits)", @ViewBag.Kilo.ToString(), (int)@ViewBag.Kilo))</text>
+    }
+</p>
+<table class="table table-bordered">
+    @foreach (var item in @Model)
+    {
+        <tr>
+            <td>  @(string.Format("{0}{1}", item.Prefix, (item.IsBit ? (item.Prefix != string.Empty ? "bit" : "Bit") : (item.Prefix != string.Empty ? "byte" : "Byte")))) </td>
+            <td>  @(item.Quantity.ToString().Length > 6 ? item.Quantity.ToString("E1") : item.Quantity.ToString()) </td>
+        </tr>
+    }
+</table>

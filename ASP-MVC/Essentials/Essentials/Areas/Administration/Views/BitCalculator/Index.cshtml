@@ -1,0 +1,27 @@
+﻿@using Essentials.Models;
+@using System.Collections;
+@using System.Linq;
+
+@model IEnumerable<IUnit>
+
+@using (Html.BeginForm("Index", "BitCalculator"))
+ {
+     @Html.DropDownList("UnitInitials", 
+            new SelectList(
+                Model.Select(x => new { Value = x, Text = x }),
+                "Value",
+                "Text"
+            ))
+    <button type="submit">Submit</button>
+ }
+
+@if (ViewBag.SelectedUnit != null)
+	{
+        Html.RenderPartial("_UnitDetails",
+            (Model.FirstOrDefault(u => (u.ToString() == ViewBag.SelectedUnit.ToString()))));
+	}
+
+
+@section MainMenu{
+    <p>Admin area</p>
+    }

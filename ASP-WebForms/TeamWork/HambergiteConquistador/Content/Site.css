@@ -1,0 +1,28 @@
+﻿body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+/* styles for removing the background from form */
+.no-color {
+  background-color: white;
+  border-style:none;
+}
+
+div.notificationsBox {
+    height:100px;
+}
+
+.list-group-item .list-group-item-text span {
+    color:#718eef;
+}
+
+div.edit-content{
+    padding:10px;
+}
+
+#MainContent_RadioButtonListAnswers li {
+    margin: 35px 15px;
+}
+
+

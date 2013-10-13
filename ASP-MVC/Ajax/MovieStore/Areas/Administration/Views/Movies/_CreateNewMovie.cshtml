@@ -1,0 +1,75 @@
+﻿@model MovieStore.Models.MovieModel
+
+@using (Html.BeginForm("Create", "Movies")) 
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Movie</legend>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Title, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Title)
+                @Html.ValidationMessageFor(model => model.Title, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Year, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Year)
+                @Html.ValidationMessageFor(model => model.Year, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Director</label>
+            <div class="control-group">
+                <div class="controls">
+                    @Html.DropDownList("Director",(IEnumerable<SelectListItem>)ViewBag.MembersInMovie)
+                   
+                </div>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label">Leading Male Role</label>
+            <div class="control-group">
+                <div class="controls">
+                    @Html.DropDownList("LeadingMale", (IEnumerable<SelectListItem>)ViewBag.MembersInMovie)
+
+                    </div>
+                </div>
+            </div>
+        <div class="control-group">
+            <label class="control-label">Leading Female Role</label>
+            <div class="control-group">
+                <div class="controls">
+                    @Html.DropDownList("LeadingFemale", (IEnumerable<SelectListItem>)ViewBag.MembersInMovie)
+
+                    </div>
+                </div>
+            </div>
+        <div class="control-group">
+            <label class="control-label">Studio</label>
+            <div class="control-group">
+                <div class="controls">
+                    @Html.DropDownList("Studio", (IEnumerable<SelectListItem>)ViewBag.Studios)
+
+                    </div>
+                </div>
+            </div>
+
+        <div class="form-actions no-color">
+            <form method="post">
+                <input type="submit" value="Create" class="btn" />
+            </form>
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

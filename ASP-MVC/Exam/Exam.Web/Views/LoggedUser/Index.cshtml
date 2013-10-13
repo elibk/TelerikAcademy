@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "All tickets";
+}
+ 
+<div class="row-fluid">
+    <div class="span3">
+        <strong> Title  </strong>
+    </div>
+    <div class="span2">
+        <strong>Category</strong>
+    </div>
+    <div class="span2">
+        <strong>Author</strong>
+    </div>
+    <div class="span2">
+        <strong>Priority</strong>
+    </div>
+    <div class="span2">
+        
+    </div>
+</div>
+  
+@(Html.Kendo()
+    .ListView<Exam.Web.Models.ListedTicketModel>()
+        .Name("tickets")
+    .TagName("div")
+    .ClientTemplateId("tickets-template")
+    .Pageable( p => p.PreviousNext(true))
+    .DataSource(data =>
+    {
+        data.Read("GetTicketsData", "LoggedUser");
+        data.ServerOperation(true);
+        data.PageSize(5);
+        
+    }))
+
+<script id="tickets-template" type="text/x-kendo-template">
+    <div class="row-fluid">
+        <div class="span3">
+            <p>#: Title # </p>
+        </div>
+        <div class="span2">
+            <p>#: CategoryName # </p>
+        </div>
+        <div class="span2">
+            <p>#: AuthorName # </p>
+        </div>
+        <div class="span2">
+            <p>#: Priority == 1 ? "Low" : Priority== 2 ? "Medium" : "High" # </p>
+        </div>
+        <div class="span2">
+            <p><a href="../../Home/TicketDetails?TicketId=#: TicketId #" class="btn">Details</a></p>
+        </div>
+    </div>
+</script>

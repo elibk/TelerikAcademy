@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="InternationalWebSite.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="Scripts/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="Scripts/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <title>Iternational company</title>
+    <script src="Scripts/jquery-1.8.2.js"></script>
+    <script src="Scripts/bootstrap/js/bootstrap.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="MainForm" runat="server">
+        <header>
+            <h1 class="hero-unit">International company - we are with you every where you go</h1>
+          
+                <ul class="nav nav-pills">
+                    <li><a runat="server" href="~/Bulgaria/Home.aspx">Bulgaria</a></li>
+                    <li><a runat="server" href="~/England/Home.aspx">England</a></li>
+                    <li><a runat="server" href="~/Italia/Home.aspx">Italia</a></li>
+                </ul>
+        
+        </header>
+    <div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

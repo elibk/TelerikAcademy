@@ -1,0 +1,17 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NestedMasterItalia.master.cs" Inherits="InternationalWebSite.NestedMasterItalia" %>
+
+<asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
+    <aside class="tabbable tabs-left">
+           
+                <ul class="nav nav-tabs">
+                    <li><a runat="server" href="~/Italia/Home.aspx">Home</a></li>
+                    <li><a runat="server" href="~/Italia/About.aspx">Chi siamo</a></li>
+                    <li><a runat="server" href="~/Italia/Contact.aspx">Contatti</a></li>
+                </ul>
+            
+            <div class="tab-content">
+                <asp:ContentPlaceHolder ID="Content" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </aside>
+</asp:Content>

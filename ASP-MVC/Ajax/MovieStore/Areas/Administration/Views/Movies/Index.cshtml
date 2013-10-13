@@ -1,0 +1,109 @@
+﻿@model IEnumerable<MovieStore.Models.MovieModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @using (Ajax.BeginForm("CreateNewMovie", new AjaxOptions
+            {
+                UpdateTargetId = "action",
+                InsertionMode = InsertionMode.Replace,
+               
+            }))
+    {
+        <button class="btn btn-large" type="submit">Crate new</button>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadingActors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadingActresses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Directors)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @if (item.LeadingActors.ToList().Count() > 0)
+                    {
+                        <ul>
+                            @foreach (var member in item.LeadingActors)
+                            {
+                                <li>
+                                    @member.Name
+                                </li>
+                            }
+                        </ul>
+                    }
+                </td>
+                <td>
+                    @if (item.LeadingActors.ToList().Count() > 0)
+                    {
+                        <ul>
+                            @foreach (var member in item.LeadingActresses)
+                            {
+                                <li>
+                                    @member.Name
+                                </li>
+                            }
+                        </ul>
+                    }
+                </td>
+                <td>
+                    @if (item.LeadingActors.ToList().Count() > 0)
+                    {
+                        <ul>
+                            @foreach (var member in item.Directors)
+                            {
+                                <li>
+                                    @member.Name
+                                </li>
+                            }
+                        </ul>
+                    }
+                </td>
+                <td>
+                    @*@using (Ajax.BeginForm("LoadResults", new AjaxOptions
+                    {
+                        UpdateTargetId = "results",
+                        InsertionMode = InsertionMode.Replace,
+                        
+                    }))
+                    {
+                         <button class="btn btn-large" type="submit">Edit</button>
+                    }*@
+
+                    Edit - not implemented
+                </td>
+            </tr>
+    }
+</table>
+
+
+<div id="action">
+    @*@Html.RenderPartial("_CreateNewMovie");*@
+</div>
+

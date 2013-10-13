@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Exam.Web.Models.CategoryModel>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h2>Categories</h2>
+
+@(Html.Kendo().Grid<Exam.Web.Models.CategoryModel>()
+    .Name("Categories")
+    .Columns(column =>
+        {
+           // column.Bound(p => p.CategoryId);
+            column.Bound(p => p.Name);
+            column.Template(p => @Html.Action("Edit", "CategoriesAdministration", new { id = p.CategoryId }))
+                .ClientTemplate(
+                "<a class='btn btn-primary' href='/CategoriesAdministration/Edit?id=#= CategoryId #'>Edit</a>  |  " +
+                "<a class='btn btn-primary' href='/CategoriesAdministration/Delete?id=#= CategoryId #'>Delete</a>")
+                .Title("Action").Width(150);
+        })
+     .Pageable()
+     .Sortable()
+     .Selectable()
+     .DataSource(data => data
+         .Ajax()
+         .ServerOperation(true)
+         .PageSize(5)
+         .Events(events => events.Error("error_handler"))
+         .Model(model =>
+         {
+             model.Id(p => p.CategoryId);
+         })
+             .Read(read => read.Action("Read", "CategoriesAdministration")))
+         )
+
+<div>
+    <br/>
+    @Html.ActionLink("Create New", "Create", new { area = "" }, new { @class = "btn btn-primary" })
+</div>
+
+<script>
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/kendo")
+}
+        

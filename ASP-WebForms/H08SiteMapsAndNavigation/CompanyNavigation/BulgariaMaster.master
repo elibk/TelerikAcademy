@@ -1,0 +1,7 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BulgariaMaster.master.cs" Inherits="CompanyNavigation.BulgariaMaster" %>
+<asp:Content ID="ContentBulgaria" ContentPlaceHolderID="MainContent" runat="server">
+    <h1>Bulgaria</h1>
+    <asp:ContentPlaceHolder ID="BulgariaContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+</asp:Content>

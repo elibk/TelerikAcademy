@@ -1,0 +1,49 @@
+﻿@using Essentials.Models;
+@using System.Collections;
+@using System.Linq;
+
+@model IEnumerable<IUnit>
+@{
+    ViewBag.Title = "Bit Calculator";
+}
+
+<header>
+    <img width="50" class="inline" src="~/img/binaryIcon.png" alt="logo" />
+    <h2 class="inline">@ViewBag.Title</h2>
+</header>
+
+
+@using (Ajax.BeginForm("LoadResults" , new AjaxOptions
+{
+    UpdateTargetId = "results",
+    InsertionMode = InsertionMode.Replace
+}))
+{
+        <div class="span12">
+            <label for="quantity"></label>
+            <input type="text" name="quantity" id="quantity" />
+
+          
+            @Html.DropDownList("UnitInitials", 
+            new SelectList(
+                Model.Select(x => new { Value = x, Text = x }),
+                "Value",
+                "Text"
+            ))
+
+            <select id="MovieType" name="kilo">
+
+                <option value="1000">1000</option>
+
+                <option value="1024">1024</option>
+
+            </select>
+
+            <button class="btn btn-large" type="submit">Go</button>
+        </div>
+}
+
+<div id="results">
+    @Html.Partial("_BitCalculatorResults")
+</div>
+

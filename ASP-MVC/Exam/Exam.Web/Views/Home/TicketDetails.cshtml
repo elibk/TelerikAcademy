@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Details";  
+}
+
+@model Exam.Web.Models.TicketModelDetails
+
+@{
+    ViewBag.Title = "Ticket Details";
+}
+
+<hgroup>
+    <h1>Ticketing System</h1>
+    <h2> @(Model.Title) </h2>
+    <h3>Category: @(Model.CategoryName)</h3>
+</hgroup>
+
+<div class="row-fluid">
+    <div class="span4">
+        <p>
+           <strong> @Html.DisplayNameFor(model => model.AuthorName) :</strong>
+           @Html.DisplayFor(model => model.AuthorName)
+        </p>
+        <p>
+            <strong> @Html.DisplayNameFor(model => model.PriorityTitle) :</strong>
+                    @Html.DisplayFor(model => model.PriorityTitle)
+        </p>
+    </div>
+
+    <div class="span4">
+
+        @if (Model.UrlScreenshot != null)
+        {
+             <img src="@(Model.UrlScreenshot)" />
+        }
+        else
+        {
+            @:no screenshot
+        }
+
+
+    </div>
+
+    <div class="span4">
+        @if (Model.Description != null)
+        {
+           <strong> @Html.DisplayNameFor(model => model.Description)</strong> @: : @Html.DisplayFor(model => model.Description)
+        }
+        else
+        {
+                @:no description
+        }
+    </div>
+</div>
+<div id="comments">
+    @Html.Partial("_Comments", Model.Comments)
+</div>
+
+
+@if (ViewBag.IsAutenticated as bool? == true)
+{
+    using (Ajax.BeginForm("CreateComment", new AjaxOptions
+    {
+        UpdateTargetId = "comments",
+        InsertionMode = InsertionMode.Replace,
+    }))
+    {
+        <input type="hidden" name="TicketId" value="@(Model.TicketId)" />
+            <textarea name="Content"></textarea>
+            <button class="btn btn-large" type="submit">Submit Comment</button>
+    }
+
+}
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/unobrtrusive")
+
+}*@

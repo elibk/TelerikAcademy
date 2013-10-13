@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CompanyNavigation.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="Site.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <form id="form" runat="server">
+        <header>
+            <h1>
+                Company Navigation
+            </h1>
+        </header>
+        <div>
+            <nav>
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" SkipLinkText=""
+                    EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                    DataSourceID="SiteMapDataSource" StaticDisplayLevels="2" staticMenuStyle-CssClass="nav nav-tabs" >
+                </asp:Menu>
+                <asp:SiteMapPath ID="SiteMapPathBreadcrump" runat="server" />
+            </nav>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+     <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+</body>
+</html>

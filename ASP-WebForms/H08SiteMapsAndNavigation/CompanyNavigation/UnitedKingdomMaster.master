@@ -1,0 +1,6 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UnitedKingdomMaster.master.cs" Inherits="CompanyNavigation.UnitedKingdomMaster" %>
+<asp:Content ID="ContentUnitedKingdom" ContentPlaceHolderID="MainContent" runat="server">
+    <h1>United Kingdom</h1>
+    <asp:ContentPlaceHolder ID="UnitedKingdomContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+</asp:Content>
