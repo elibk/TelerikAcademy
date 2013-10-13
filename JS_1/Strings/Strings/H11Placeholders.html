@@ -1,0 +1,87 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Placeholders</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+	    textarea {
+            width:200px;
+            height:200px;
+	    }
+	</style>
+</head>
+<body>
+    <p>
+      <strong> Write a function that formats a string using placeholders:The function should work with up to 30 placeholders and all types</strong>
+	</p>
+   
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+
+	        var text = "Hello, {0} {1} ! <br/> Verify the information bellow. <br/> Age: {2}; FistName: {0}; LastName: {1};<br/> Age: {2}; FistName: {0}; LastName: {1};<br/> Age: {2}; FistName: {0}; LastName: {1};<br/> Age: {2}; FistName: {0}; LastName: {1};<br/> Age: {2}; FistName: {0}; LastName: {1};<br/> Age: {2}; FistName: {0}; LastName: {1};<br/> Age: {2}; FistName: {0}; LastName: {1};<br/> Age: {2}; FistName: {0}; LastName: {1};<br/> Age: {2}; FistName: {0}; LastName: {1};<br/> Age: {2}; FistName: {0}; LastName: {1};<br/> Age: {2}; FistName: {0}; LastName: {1};";
+	        var arrgumentsForFill = ['Peter', 'Petrov' , 32];
+	        
+	        jsConsole.writeLine('Initial text : <br/>' + text);
+	        jsConsole.writeLine('-----------------------------------');
+	        jsConsole.writeLine('Text with filled placeholders : <br/>' + stringFormat(text, arrgumentsForFill));
+	        
+	    }
+
+	    function stringFormat(text, arrgumentsForFill) {
+            //// finding only first match of reg expresion one or more digits in { }.
+	        var placeholdStartIndex = text.indexOf(text.match(/{\d+}/));
+	        var placeholdEndIndex;
+	        var placeholdNum;
+            //// while there is match
+	        while (placeholdStartIndex > 0) {
+	            
+	            placeholdEndIndex = ++placeholdStartIndex; // from placeholStartIndex = ++placeholdPos to placeholEndIndex  to get the length of placeholdIndex
+	            for (var i = placeholdStartIndex; text.charAt(i) !== '}'; i++) {
+	                placeholdEndIndex++;
+	            }
+	           
+	            placeholdNum = parseInt(text.substring(placeholdStartIndex, placeholdEndIndex));
+	            if (arrgumentsForFill[placeholdNum] === undefined) {
+	                throw new Error('FormatError: The index of a format item is less than zero, or greater than or equal to the length of the args array.');
+	            }
+	            text = text.replace(/{\d+}/, arrgumentsForFill[placeholdNum]);
+	            placeholdStartIndex = text.indexOf(text.match(/{\d+}/));
+	        }
+
+	        return text;
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+

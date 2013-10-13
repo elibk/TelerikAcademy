@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="wrapper"></div>
+    <script src="H02MovingShapes.js"></script>
+    <button onclick="addToRectangle()">add to rect</button>
+    <button onclick="addToEllipse()">add to ellipse</button>
+    
+<script>
+
+    var module = new movingShapesModule();
+    function addToRectangle() {
+        module.add("rect");
+    }
+   
+    function addToEllipse() {
+        module.add("ellipse");
+    }
+    
+
+    </script>
+</body>
+</html>

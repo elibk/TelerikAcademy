@@ -1,0 +1,101 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Return The Last Digit</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+       Write a function that returns the last digit of given integer as an English word.
+    </p>
+	<label for="tb-number">Integer </label>
+	<input type="text" id="tb-number" value="20" />
+	<br />
+    
+	<a href="#" onclick="main()">Return The Last Digit</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+	        var number = jsConsole.readInteger('#tb-number');
+	        var output = returnTheLastDigit(number);
+	        output = digitToTextConvertor(output);
+	        jsConsole.writeLine(output);
+	    }
+
+	    function returnTheLastDigit(number) {
+	        
+	        var numString = number.toString();
+	        return numString.substr(numString.length - 1);
+           
+	    }
+
+	    function digitToTextConvertor(digit) {
+	        switch (digit.toString()) { // toString() just in case you want to implement another method returnTheLastDigit(number) that return 	e.g. number 
+	            case "0":
+	                return "zero";
+	                break;
+	            case "1":
+	                return "one";
+	                break;
+	            case "2":
+	                return "two";
+	                break;
+	            case "3":
+	                return "three";
+	                break;
+	            case "4":
+	                return "four";
+	                break;
+	            case "5":
+	                return "five";
+	                break;
+	            case "6":
+	                return "six";
+	                break;
+	            case "7":
+	                return "seven";
+	                break;
+	            case "8":
+	                return "seven";
+	                break;
+	            case "9":
+	                return "seven";
+	                break;
+
+	            default:
+	                return "Incorect input!";
+	                break;
+	        }
+	    }
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->

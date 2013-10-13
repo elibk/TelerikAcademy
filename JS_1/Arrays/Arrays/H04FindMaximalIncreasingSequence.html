@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Find Maximal IncreasingSequence</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+      Write a script that finds the maximal increasing sequence in an array. 
+    </p>
+	<label for="tb-sequence">Sequence: </label>
+	<input type="text" id="tb-sequence" value="9, 8, 6, 6, 5, 6, 9, 9" />
+	<br />
+   
+    
+	<a href="#" onclick="FindMaximalIncreasingSequence()">Find Maximal Increasing Sequence</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function FindMaximalIncreasingSequence() {
+
+	        var sequence = document.getElementById('tb-sequence').value;
+	        var array = sequence.split(", ");
+	        for (var i = 0; i < array.length; i++) {
+	            array[i] = parseInt(array[i]);
+	        }
+	        var maxLen = 1,
+                currentLen = 1,
+                mostCommonNumInd = 0;
+
+
+
+	        for ( i = 0; i < array.length - 1; i++) {
+	            if (array[i] < array[i + 1]) {
+	                currentLen++;
+	            }
+
+	            else if (maxLen < currentLen) {
+	                mostCommonNumInd = i;
+	                maxLen = currentLen;
+	                currentLen = 1;
+	            }
+	        }
+
+	        if (maxLen < currentLen) {
+	            mostCommonNumInd = array.length - 1;
+	            maxLen = currentLen;
+	            currentLen = 1;
+	        }
+	        mostCommonNumInd -= maxLen-1;
+	        if (maxLen > 1) {
+
+	            for (i = 0; i < maxLen ; i++) {
+	                jsConsole.write(array[mostCommonNumInd++] + ";");
+	            }
+
+	            jsConsole.writeLine("");
+	        }
+	        else {
+	            jsConsole.writeLine("There aren't any sequences of equal elements.");
+	        }
+	    }
+	</script>
+</body>
+</html>

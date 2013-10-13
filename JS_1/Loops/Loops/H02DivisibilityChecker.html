@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Divisibility Check</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time</p>
+	<label for="tb-number">N: </label>
+	<input type="text" id="tb-number" />
+	<br />
+    <label for="tb-firstDivider">Divider: </label>
+	<input type="text" id="tb-firstDivider" value="3" />
+	<br />
+    <label for="tb-secondDivider">Divider: </label>
+	<input type="text" id="tb-secondDivider" value ="7" />
+	<br />
+	<a href="#" onclick="DivisibilityChecker()">Divisibility Check</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function DivisibilityChecker() {
+	        var number = jsConsole.readFloat("#tb-number");
+	        var firstDivider = jsConsole.readFloat("#tb-firstDivider");
+	        var secondDivider = jsConsole.readFloat("#tb-secondDivider");
+	        for (var count = 1; count <= number; count++) {
+	            if (count % firstDivider && count % secondDivider) {
+	                jsConsole.writeLine( count + " is not divisible by 3 and 7 at the same time.");
+	            }
+	        }
+	    }
+	</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Point Within Circle Checker</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p> Enter point's (x,  y) to check if it is within a circle the circle K((1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2). </p>
+    <label for="tb-x">Point X cordinate: </label>
+	<input type="text" id="tb-x" />
+	<br />
+    <label for="tb-y">Point Y cordinate: </label>
+	<input type="text" id="tb-y" />
+	<br />
+	<a href="#" onclick="CheckPoint()">Check Point</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function CheckPoint() {
+	        var x = jsConsole.readFloat("#tb-x");
+	        var y = jsConsole.readFloat("#tb-y");
+
+	        if ((x - 1) * (x - 1) + (y - 1) * (y - 1) <= 9) {
+
+	            if ((y <= 1 && y >= -1) && (x > 1)) {
+	                jsConsole.writeLine("The point is within the circle and within the rectangle.");
+	            }
+	            else {
+	                jsConsole.writeLine("The point is within circle and out of the the rectangle.");
+	            }
+	            
+	        }
+	        else {
+	            jsConsole.writeLine("The point is out of the circle.");
+	        }
+	    }
+	</script>
+</body>
+</html>

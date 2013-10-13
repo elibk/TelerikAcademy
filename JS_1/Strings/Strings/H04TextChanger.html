@@ -1,0 +1,150 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Substring Finder</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+	    textarea {
+            width:200px;
+            height:200px;
+	    }
+	</style>
+</head>
+<body>
+    <p>
+        You are given a text. Write a function that changes the text in all regions:
+         to uppercase.
+        to lowercase
+        to mix casing(random)
+
+	</p>
+   
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    
+	    function main() {
+
+	        var text = "We are <mixcase>living</mixcase> in a <upcase>yellow <mixcase>|some text in nested tag|</mixcase>submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>ANYthing</lowcase> else.";
+	        jsConsole.writeLine(text);
+	        jsConsole.writeLine('-----------------------------------------------------------------');
+	        text = ChangeText(text);
+	        jsConsole.writeLine("CHANGED : " + text);
+	        jsConsole.writeLine('-----------------------------------------------------------------');
+
+	    }
+
+	    function ChangeText(text) {
+	        var functionQueue = [];
+	        var command = [];
+	        var newText = [];
+	      
+	        for (var i = 0; i < text.length; i++) {
+
+
+	            if (functionQueue.length > 0) {
+
+                    //// check for nested tag
+	                if (text.charAt(i) === '<' && text.charAt(i + 1) === '/') {
+	                    while (text.charAt(++i) !== '>') {
+	                    }
+	                    //// remove command from the Queue;
+	                    functionQueue.pop();
+	                }
+	                else if (text.charAt(i) === '<') {
+
+	                    while (text.charAt(++i) !== '>') {
+	                        command.push(text[i]);
+	                    }
+	                    command = command.join('');
+	                    functionQueue.push(command);
+	                    command = [];
+	                }
+	                else {
+	                    if (isLetter(text[i])) {
+	                        newText.push(commandManager(functionQueue[functionQueue.length - 1], text[i])); //// I aways use the last open tag
+	                    }
+	                    else {
+	                        newText.push(text[i]);
+	                    }
+	                    
+	                }
+	            }
+	            else if (text.charAt(i) === '<') {
+
+	                while (text.charAt(++i) !== '>') {
+	                    command.push(text[i]);
+	                }
+	                command = command.join('');
+	                functionQueue.push(command);
+	                command = [];
+	            }
+	            else {
+	                newText.push(text.charAt(i));
+	            }
+	        }
+
+	        return newText.join("");
+	    }
+
+	    function commandManager(command, str) {
+	        switch (command) {
+	            case "mixcase":
+	                if (getRandomInt(1,3) === 1) {
+	                    return str.toLowerCase();
+	                }
+	                else {
+	                    return str.toUpperCase();
+	                }
+	                break;   
+	            case "lowcase":
+	                return str.toLowerCase();
+	                break;
+	            case "upcase":
+	                return str.toUpperCase();
+	                break;
+	            default:
+	                throw new Error("Invalid argument for command " + command);
+	                break;
+	        }
+	    }
+
+	    function getRandomInt(min, max) {
+	        return Math.floor(Math.random() * (max - min + 1)) + min;
+	    }
+
+	    function isLetter(str) {
+            //// works winth English letters only
+	        return str.length === 1 && str.match(/^[a-zA-Z]$/);
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->

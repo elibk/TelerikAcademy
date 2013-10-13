@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Point Within Circle Checker</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p> Check if given point (x,  y) is within a circle K(O, 5). </p>
+    <label for="tb-x">Point X cordinate: </label>
+	<input type="text" id="tb-x" />
+	<br />
+    <label for="tb-y">Point Y cordinate: </label>
+	<input type="text" id="tb-y" />
+	<br />
+	<a href="#" onclick="CheckPoint()">Check Point</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function CheckPoint() {	     
+	        var x = jsConsole.readFloat("#tb-x");
+	        var y = jsConsole.readFloat("#tb-y");
+
+	        if (x * x + y * y < 25) {
+	            jsConsole.writeLine("The point with cordinates X:" + x + " and Y:" + y + " is <strong>within</strong> the circle.");
+	        }
+	        else {
+	            jsConsole.writeLine("The point with cordinates X:" + x + " and Y:" + y + " is <strong>NOT within</strong> the circle.");
+
+	            if (x * x + y * y == 25) {
+	                jsConsole.writeLine("The ecxact point's place is on the border of the circle.");
+	            }
+	        }
+	    }
+	</script>
+</body>
+</html>

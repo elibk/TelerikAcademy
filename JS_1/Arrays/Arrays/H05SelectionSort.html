@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Selection Sort</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+       Sorting an array means to arrange its elements in increasing order.
+       Write a script to sort an array. Use the "selection sort" algorithm: 
+       Find the smallest element, move it at the first position, 
+       find the smallest from the rest, move it at the second position, etc.
+    </p>
+	<label for="tb-sequence">Sequence: </label>
+	<input type="text" id="tb-sequence" value="ma, mo, mi, mam, min" />
+	<br />
+   
+    
+	<a href="#" onclick="sort()">Find min and max</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+        //FOR SORTING NUMBERS
+	    //function orderBy(a, b) {
+	    //    return (a == b) ? 0 : (a > b) ? 1 : -1 
+	    //};
+
+	   
+
+	    function sort() {
+      
+	        var elements = document.getElementById('tb-sequence').value.split(", ");
+	        var smallerNum = elements[0];
+	        var sortedArray = new Array(elements.length);
+	        var indexSmaller = 0;
+	        var position;
+	        var i;
+	        // numbers.sort(orderBy);
+	        for (position = 0; position < elements.length; position++){
+	            smallerNum = elements[position];  
+	            for (i = 0; i < elements.length; i++){
+	                if (elements[i] <= smallerNum) {
+	                   smallerNum = elements[i];
+                       indexSmaller = i;
+                   }
+	            }
+	            elements[indexSmaller] = 'zzzzzzzzzzzzzzzzzz';
+	            sortedArray[position] = smallerNum;
+	        }
+
+	        jsConsole.writeLine(sortedArray.join([', ']));
+        }
+
+	</script>
+</body>
+</html>

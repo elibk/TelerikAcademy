@@ -1,0 +1,15 @@
+﻿body {
+}
+
+.TODO-list a {
+
+    display: inline-block;
+    text-decoration:none;
+    color : black;
+    padding : 5px;
+
+    border: 1px solid black;
+}
+    a:hover {
+        text-decoration: underline;
+    }

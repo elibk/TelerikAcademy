@@ -1,0 +1,76 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Element Remover</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+        Write a function that removes all elements with a given value
+        var arr = [1,2,1,4,1,3,4,1,111,3,2,1,"1"];
+        arr.remove(1); //arr = [2,4,3,4,111,3,2,"1"];
+        Attach it to the array class
+        Read about prototype and how to attach methods
+
+	</p>
+
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+	        
+	        var arr = [1, 2, 1, 4, 1, 3, 4, 1, 111, 3, 2, 1, "1"];
+	        PrintArray(arr);
+	        arr.remove(1);
+	        PrintArray(arr);
+	        
+	    }
+
+	    Array.prototype.remove = function (value) {
+	        for (var i = 0; i < this.length; i++) {
+	            if (this[i] === value) {
+	                this.splice(i,1);
+	            }
+	        }
+	        return this;
+	    };
+	   
+	    function PrintArray(array) {
+
+	        for (var i = 0; i < array.length; i++) {
+	            jsConsole.write(array[i] + ", ");
+	        }
+	        jsConsole.writeLine("");
+	    }
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->

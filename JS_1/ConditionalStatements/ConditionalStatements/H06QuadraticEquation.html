@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Find the Biggest number</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>Write a script that enters the coefficients a, b and c of a quadratic equation
+		a*x2 + b*x + c = 0
+		and calculates and prints its real roots. </p>
+    <label for="tb-firstValue">a : </label>
+	<input type="text" id="tb-firstValue" />
+	<br />
+	<label for="tb-secondValue">b : </label>
+	<input type="text" id="tb-secondValue" />
+	<br />
+    <label for="tb-thirdValue">c : </label>
+	<input type="text" id="tb-thirdValue" />
+	<br />
+	<a href="#" onclick="FindRealRoots()">Find Real Roots</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function FindRealRoots() {
+	        var a = jsConsole.readFloat("#tb-firstValue");
+	        var b = jsConsole.readFloat("#tb-secondValue");
+	        var c = jsConsole.readFloat("#tb-thirdValue");
+	        var x1;
+	        var x2;
+	        var discriminant = b * b - 4 * a * c;
+	      
+	        if (discriminant < 0) {
+
+	            jsConsole.writeLine("The ecuation doesn't have real roots!");
+	        }
+	        else if (discriminant > 0) {
+
+	            x1 = (b * b + Math.sqrt(4 * a * c)) / (2 * a);
+	            jsConsole.writeLine("x1 = " + x1);
+	            x2 = (b * b - Math.sqrt(4 * a * c)) / (2 * a);
+	            jsConsole.writeLine("x2 = " + x2);
+	        }
+
+	        else if (discriminant == 0) {
+	            if (a == 0 && b == 0 && c == 0) {
+	                jsConsole.writeLine("Every real number can be root of the ecuation!");
+	            }
+
+	            if (a == 0 && b != 0) {
+	                x1 = -c / b;
+	                jsConsole.writeLine(" x1 = x2 = " + x1);
+	            }
+
+	            if (a == 0 && b == 0 && c != 0) {
+	                jsConsole.writeLine("The ecuation doesn't have solvetion!");
+	            }
+	        }
+	    }
+	</script>
+</body>
+</html>

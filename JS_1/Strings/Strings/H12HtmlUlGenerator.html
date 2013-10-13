@@ -1,0 +1,85 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>List generator</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+	    textarea {
+            width:200px;
+            height:200px;
+	    }
+	</style>
+</head>
+<body>
+    <p>
+      <strong> Write a function that creates a HTML UL using a template for every HTML LI. The source of the list should an array of elements. Replace all placeholders marked with –{…}–   with the value of the corresponding property of the object.</strong>
+	</p>
+   <div data-type="template" id="list-item">
+ <strong>-{name}-</strong> <span>-{age}-</span>
+   </div>
+
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+
+	        var tempalate = document.getElementById('list-item').innerHTML;
+	        var people = [{ name: "Peter", age: 14 }, { name: "John", age: 34 }, { name: "Mia", age: 17 }, { name: "Maik", age: 23 }];
+
+	        var peopleList = gernerateList(people, tempalate);
+
+	        jsConsole.writeLine(peopleList);
+
+	       // jsConsole.writeLine(divList.getAttribute("data-type"));
+
+	    }
+
+	    function gernerateList(listData, tempalate) {
+	        
+	        var list = [], filledTempl = tempalate, prop, i;
+	        list.push('<ul>');
+	        for (i = 0; i < listData.length; i++) {
+	            list.push('<li>');
+	            for (prop in listData[i]) {
+	                filledTempl = filledTempl.replace('-{' + prop + '}-', listData[i][prop]);
+	            }
+	            list.push(filledTempl);
+	            filledTempl = tempalate;
+	            list.push('</li>');
+	        }
+	        list.push('</ul>');
+	        return list.join('');
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+

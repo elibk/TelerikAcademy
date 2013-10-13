@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Digit Translator</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>Enter number [0...9] to see the english and the italian word for it.</p>
+    <label for="tb-digit">Number: </label>
+	<input type="text" id="tb-digit" />
+	<br />
+	
+	<a href="#" onclick="DigitTranslator()">Translate digit</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function DigitTranslator() {
+	        var digit = jsConsole.readFloat("#tb-digit");
+	        
+	        switch (digit) {
+	            case 0:
+	                jsConsole.writeLine("Zero or \"Zero\"");
+	                break;
+	            case 1:
+	                jsConsole.writeLine("One or \"Uno\"");
+	                break;
+	            case 2:
+	                jsConsole.writeLine("Two or \"Due\"");
+	                break;
+	            case 3:
+	                jsConsole.writeLine("Three or \"Tre\"");
+	                break;
+	            case 4:
+	                jsConsole.writeLine("Four or \"Quattro\"");
+	                break;
+	            case 5:
+	                jsConsole.writeLine("Five or \"Cinque\"");
+	                break;
+	            case 6:
+	                jsConsole.writeLine("Six or \"Sei\"");
+	                break;
+	            case 7:
+	                jsConsole.writeLine("Seven or \"Sette\"");
+	                break;
+	            case 8:
+	                jsConsole.writeLine("Eight or \"Otto\"");
+	                break;
+	            case 9:
+	                jsConsole.writeLine("Nine or \"Nove\"");
+	                break;
+	            default:
+	                jsConsole.writeLine("Incorrect input!");
+	                break;
+	        }
+	    }
+	</script>
+</body>
+</html>

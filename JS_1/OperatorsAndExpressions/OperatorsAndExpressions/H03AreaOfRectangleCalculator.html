@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Rectangle's Area Calculator</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+	<label for="tb-width">Width: </label>
+	<input type="text" id="tb-width" />
+	<br />
+    <label for="tb-height">Height: </label>
+	<input type="text" id="tb-height" />
+	<br />
+	<a href="#" onclick="CalculateArea()">Calculate Area</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function CalculateArea() {
+	        var width = jsConsole.readFloat("#tb-width");
+	        var height = jsConsole.readFloat("#tb-height");
+	        var area = width * height;
+	        
+	        jsConsole.writeLine("The area of rectangle with width " + width + " and height " + height + " is " + area + ".")
+	        
+	    }
+	</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Word Finder</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+      Write a function that finds all the occurrences of word in a text
+      The search can case sensitive or case insensitive
+      Use function overloading
+    </p>
+	
+	<label for="tb-word">Word </label>
+	<input type="text" id="tb-word" value="word" />
+	<br />
+    
+	<a href="#" onclick="showText()">Show Text </a>
+    <a href="#" onclick="countOccurenceOfAWord(true)">Count word case sensitive </a>
+    <a href="#" onclick="countOccurenceOfAWord()">Count word case insensitive </a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+
+	    var text = "Some word, and another wOrd, and some other WorD, so many woRds.";
+	   
+	    function countOccurenceOfAWord(isCaseSensitive) {
+	            var word = document.getElementById('tb-word').value.toString();
+	            isCaseSensitive = isCaseSensitive || false;
+	            var count = 0;
+	            var strArr;
+
+	            if (isCaseSensitive === false) {
+	                strArr = text.toLowerCase().split(word.toLowerCase());
+
+	                count = strArr.length - 1;
+	                jsConsole.writeLine("The count of word '" + word + "' (case-insensitive search) is: " + count)
+	            }
+	            else {
+	                strArr = text.split(word);
+	                count = strArr.length - 1;
+	                jsConsole.writeLine("The count of word '" + word + "' (case-sensitive search) is: " + count)
+	            }
+	        }
+	    
+	    function showText() {
+
+	        jsConsole.writeLine(text);
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->

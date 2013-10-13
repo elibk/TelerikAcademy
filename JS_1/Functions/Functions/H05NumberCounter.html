@@ -1,0 +1,75 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Number Counter</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}   
+	</style>
+</head>
+<body>
+    <p>
+        Write a function that counts how many times given number appears in given array. 
+        Write a test function to check if the function is working correctly.
+
+    </p>
+	
+	<label for="tb-array">Array </label>
+	<input type="text" id="tb-array" value="1, 2, 23, 12, 12, 1, 12, 12" />
+	<br />
+    <label for="tb-number">Number </label>
+	<input type="text" id="tb-number" value="12" />
+	<br />
+    
+	<a href="#" onclick="main()">Count </a>
+    
+	<div id="console">
+	</div>  
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function main() {
+	        var array = document.getElementById('tb-array').value.split(', ');
+            var number = jsConsole.readFloat('#tb-number');
+            jsConsole.writeLine(countElements(array, number));
+	    }
+
+	    function countElements(array,number) {
+
+	        var count = 0;
+	        for (var i in array) {
+	            array[i] = parseFloat(array[i]);
+	            if (array[i] === number) {
+	                count++;
+	            }
+
+	        }
+	        return count;
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->

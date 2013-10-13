@@ -1,0 +1,73 @@
+﻿
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Replace Urls In Html</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+	    textarea {
+            width:200px;
+            height:200px;
+	    }
+	</style>
+</head>
+<body>
+    <p>
+       Write a JavaScript function that replaces in a HTML document given as string all the tags a href="…">…/a with corresponding tags [URL=…]…/URL]. 
+	</p>
+    <p id="text">Please visit <a href="http://academy.telerik.com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+
+	        var html = document.getElementById('text').innerHTML;
+	        html = replaceLinks(html);
+
+	        
+	        jsConsole.writeLine(html);
+	        
+
+	    }
+
+
+	    function replaceLinks(html) {
+
+	        var output = html.replace(/<a href="/g, "[URL=");
+	        output = output.replace(/">/g, "]");
+	        output = output.replace(/<\/a>/g, "[/URL]");
+	        return output;
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+

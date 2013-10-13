@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+
+        p {
+            border :  5px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+
+    </div>
+    <script src="H01DomModule.js"></script>
+    <script>
+
+        var domModule = new DomModule();
+        domModule.appendChild(document.createElement('div'), '#wrapper');
+        domModule.appendChild(document.createElement('div'), '#wrapper');
+        domModule.appendChild(document.createElement('div'), '#wrapper');
+
+        domModule.removeChild('#wrapper', 'div');
+       
+        
+        for (var i = 0; i < 100; i++) {
+
+            domModule.appendToBuffer('#wrapper','p');
+        }
+
+        domModule.appendChild(document.createTextNode("Hello"), 'p', false);
+
+    </script>
+</body>
+</html>

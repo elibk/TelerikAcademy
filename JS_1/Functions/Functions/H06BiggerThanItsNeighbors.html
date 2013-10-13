@@ -1,0 +1,63 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Bigger Than Its Neighbors Checker</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}   
+	</style>
+</head>
+<body>
+    <p>
+        Write a function that counts how many times given number appears in given array. 
+        Write a test function to check if the function is working correctly.
+
+    </p>
+	
+	<label for="tb-array">Array </label>
+	<input type="text" id="tb-array" value="1, 2, 23, 12, 12, 1, 12, 12" />
+	<br />
+    <label for="tb-index">Index </label>
+	<input type="text" id="tb-index" value="2" />
+	<br />
+    
+	<a href="#" onclick="main()">Count </a>
+    
+	<div id="console">
+	</div>  
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script src="BiggerThanItsNeighborsChecker.js"></script>
+	<script>
+	    function main() {
+	        var array = document.getElementById('tb-array').value.split(', ');
+	        var index = jsConsole.readInteger('#tb-index');
+	        var check =  isBiggerThanItsNeighbors(array, index);
+	        jsConsole.writeLine("Number " + array[index] + " under index " + index + " is bigger than its neighbors -> " + check);
+	    }
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->

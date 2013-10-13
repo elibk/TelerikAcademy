@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Smallest and largest property </title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    
+	<a href="#" onclick="FindMin(document)">Find lexicographically smallest property in document. </a>
+    <a href="#" onclick="FindMax(document)">Find lexicographically largest property in document. </a>
+    <br />
+    <a href="#" onclick="FindMin(window)">Find lexicographically smallest property in window. </a>
+    <a href="#" onclick="FindMax(window)">Find lexicographically largest property in window. </a>
+    <br />
+    <a href="#" onclick="FindMin(navigator)">Find lexicographically smallest property in navigator. </a>
+    <a href="#" onclick="FindMax(navigator)">Find lexicographically largest property in navigator. </a>
+    <br />
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    var property;
+	    function FindMin(object) {
+	       var min = GetFirstValue(object);
+	        for (property in object) {
+	            if (property < min) {
+	                min = property;
+	            }
+	        }
+	        jsConsole.writeLine(min + ' is lexicographically smallest property in ' + object);
+	    }
+
+	    function FindMax(object) {
+	      var max = GetFirstValue(object);
+	        for (property in object) {
+	            if (property > max) {
+	                max = property;
+	            }
+	        }
+	        jsConsole.writeLine(max + ' is lexicographically largest property in ' + object);
+	    }
+
+
+	    function GetFirstValue(object) {
+	        for (property in object) {
+	            return property;
+	        }
+	    }
+	</script>
+</body>
+</html>

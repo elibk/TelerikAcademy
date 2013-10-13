@@ -1,0 +1,98 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>IClonable</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+       Write a function that makes a deep copy of an object
+       The function should work for both primitive and reference types
+	</p>
+
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+
+	        var innerArray = ['some', 2, new String('some object')];
+
+	        var arr = [1, 2, 1, 4, 1, innerArray, 4, 1, 111, 3, 2, 1, new String('some object String')];
+	        var arrCopy = clone(arr);
+	        jsConsole.writeLine('--------------------------The original array-------------------');
+	        PrintObject(arr);
+	        jsConsole.writeLine("");
+	        
+	        for (var i = 0; i < arr.length; i++) {
+	            arr[i] = 'new'
+	        }
+	        jsConsole.writeLine('------------------------------The changed array-------------------');
+	        PrintObject(arr);
+	        jsConsole.writeLine("");
+	        jsConsole.writeLine('------------------------------The copy------------------------');
+	        PrintObject(arrCopy);
+	        jsConsole.writeLine("");
+	        
+	    }
+
+	   
+
+	    function clone(original, copy) {
+	        var copy = copy || (original.constructor === Array) ? [] : {};
+	        for (var i in original) {
+	            if (typeof original[i] === 'object') {
+	                copy[i] = (original[i].constructor === Array) ? [] : {};
+	                copy[i] = clone(original[i], copy[i]);
+	            } else copy[i] = original[i];
+	        }
+	        return copy;
+	    }
+	   
+	    function PrintObject(obj) {
+	        jsConsole.write('(|this is an object|)');
+	        for (var prop in obj) {
+
+	            if (typeof(obj[prop]) == 'object') {
+	                PrintObject(obj[prop]);
+	            }
+	            else {
+	                jsConsole.write(obj[prop] + " ");
+	            }
+	           
+	        }
+            
+	        
+	    }
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+

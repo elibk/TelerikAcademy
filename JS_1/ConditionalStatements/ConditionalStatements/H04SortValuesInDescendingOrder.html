@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Sort Values In Descending Order</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>Sort 3 real values in descending order using nested if statements.</p>
+    <label for="tb-firstValue">Number: </label>
+	<input type="text" id="tb-firstValue" />
+	<br />
+	<label for="tb-secondValue">Number: </label>
+	<input type="text" id="tb-secondValue" />
+	<br />
+    <label for="tb-thirdValue">Number: </label>
+	<input type="text" id="tb-thirdValue" />
+	<br />
+	<a href="#" onclick="SortInDescendingOrder()">Sort Values In Descending Order</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function SortInDescendingOrder() {
+	        var firstValue = jsConsole.readFloat("#tb-firstValue");
+	        var secondValue = jsConsole.readFloat("#tb-secondValue");
+	        var thirdValue = jsConsole.readFloat("#tb-thirdValue");
+
+	        if (firstValue < 0 || secondValue < 0 || thirdValue < 0) {
+	            jsConsole.writeLine("The numbers should be non negative.");
+	        }
+
+	       else if (firstValue >= secondValue && thirdValue <= secondValue) {
+	            jsConsole.writeLine(firstValue + " " + secondValue + " " + thirdValue);
+	        }
+	        else if (firstValue >= secondValue && thirdValue >= secondValue) {
+	            if (firstValue > thirdValue) {
+	                jsConsole.writeLine(firstValue + " " + thirdValue + " " + secondValue);
+	            }
+	            else if (firstValue <= thirdValue) {
+	                jsConsole.writeLine(thirdValue + " " + firstValue + " " + secondValue);
+	            }
+	        }
+	        else if (secondValue >= firstValue && thirdValue <= firstValue) {
+	            jsConsole.writeLine(secondValue + " " + firstValue + " " + thirdValue);
+	        }
+	        else if (secondValue >= firstValue && thirdValue >= firstValue) {
+	            if (secondValue > thirdValue) {
+	                jsConsole.writeLine(secondValue + " " + thirdValue + " " + firstValue);
+	            }
+	            else if (secondValue <= thirdValue) {
+	                jsConsole.writeLine(thirdValue + " " + secondValue + " " + firstValue);
+	            }
+	        }
+	    }
+	</script>
+</body>
+</html>

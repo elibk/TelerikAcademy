@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Prime number Checker</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    
+    <label for="tb-number">Number: </label>
+	<input type="text" id="tb-number" />
+	<br />
+	<a href="#" onclick="IsPrime()">Check if numer is prime</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function IsPrime() {
+	        var number = jsConsole.readFloat("#tb-number");
+	       
+	        var sqrt = Math.sqrt(number);
+	        var isPrime = true;
+
+	        for (var divider = 2; divider < sqrt; divider++) {
+	            if (number % divider == 0) {
+	                isPrime = false;
+	                break;
+	            }
+	        }
+	        jsConsole.writeLine(isPrime);
+	    }
+
+	</script>
+</body>
+</html>

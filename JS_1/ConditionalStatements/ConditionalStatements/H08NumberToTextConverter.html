@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Number Translator</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>Enter number[0...999]  to see it in english.</p>
+    <label for="tb-number">Number: </label>
+	<input type="text" id="tb-number" />
+	<br />
+	
+	<a href="#" onclick="NumberTranslator()">Translate number</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function GetTens(secondDigit) {
+
+	        var tens;
+
+	        switch (secondDigit) {
+	            case '2':
+	                tens = "Twenty";
+	                break;
+	            case '3':
+	                tens = "Thirty";
+	                break;
+	            case '4':
+	                tens = "Fourty";
+	                break;
+	            case '5':
+	                tens = "Fifty";
+	                break;
+	            case '6':
+	                tens = "Sixty";
+	                break;
+	            case '7':
+	                tens = "Seventy";
+	                break;
+	            case '8':
+	                tens = "Eighty";
+	                break;
+	            case '9':
+	                tens = "Ninty";
+	                break;
+	        }
+
+	        return tens;
+	    }
+	    function GetUnits(firstDigit) {
+	        var units;
+
+	        switch (firstDigit) {
+	            case '0':
+	                units = "Zero";
+	                break;
+	            case '1':
+	                units = "One";
+	                break;
+	            case '2':
+	                units = "Two";
+	                break;
+	            case '3':
+	                units = "Three";
+	                break;
+	            case '4':
+	                units = "Four";
+	                break;
+	            case '5':
+	                units = "Five";
+	                break;
+	            case '6':
+	                units = "Six";
+	                break;
+	            case '7':
+	                units = "Seven";
+	                break;
+	            case '8':
+	                units = "Eight";
+	                break;
+	            case '9':
+	                units = "Nine";
+	                break;
+
+	        }
+	        return units;
+	    }
+	    function GetTeens(teens) {
+
+	        var teen;
+	        switch (teens) {
+	            case "10":
+	                teen = "Ten";
+	                break;
+	            case "11":
+	                teen = "Elevan";
+	                break;
+	            case "12":
+	                teen = "Twelve";
+	                break;
+	            case "13":
+	                teen = "Thirdteen";
+	                break;
+	            case "14":
+	                teen = "Fourteen";
+	                break;
+	            case "15":
+	                teen = "Fifteen";
+	                break;
+	            case "16":
+	                teen = "Sixteen";
+	                break;
+	            case "17":
+	                teen = "Seventeen";
+	                break;
+	            case "18":
+	                teen = "Eighteen";
+	                break;
+	            case "19":
+	                teen = "Nineteen";
+	                break;
+	        }
+	        return teen;
+	    }
+
+	    function NumberTranslator() {
+	        var number = jsConsole.readFloat("#tb-number");
+           
+	        if (number < 20)
+	        {
+	            if (number < 10)
+	            {
+	               number = number.toString();
+	               var firstDigit = number.charAt(0);
+	                
+	                jsConsole.writeLine(GetUnits(firstDigit));
+	            }
+	            else
+	            {
+	                number = number.toString();
+	                var teens = number.substring(number.length - 2);
+	                
+	                jsConsole.writeLine(GetTeens(teens));
+	            } 
+	        }
+
+	        else if (number > 19 && number < 100)
+	        {
+	            number = number.toString();
+	            secondDigit = number.charAt(0);
+	            firstDigit = number.charAt(1);
+
+	            if (firstDigit == '0')
+	            {
+	                jsConsole.writeLine(GetTens(secondDigit));
+	            }
+	            else
+	            {
+	                jsConsole.writeLine(GetTens(secondDigit) + " " + GetUnits(firstDigit));
+	            }
+	        }
+	        else if (number > 99 && number < 1000) {
+	            number = number.toString();
+	            firstDigit = number.charAt(0);
+
+	            var hundreds = GetUnits(firstDigit);
+	            secondDigit = number.charAt(1);
+	            firstDigit = number.charAt(2);
+	            teens = number.substring(number.length - 2);
+
+	            if (secondDigit == '1') {
+
+	                jsConsole.writeLine(hundreds + " hundred and " + GetTeens(teens));
+	            }
+	            else if (secondDigit == '0') {
+	                if (firstDigit == '0') {
+	                    jsConsole.writeLine(hundreds + " hundred");
+	                }
+	                else {
+	                    jsConsole.writeLine(hundreds + " hundred and " + GetUnits(firstDigit));
+	                }
+	            }
+	            else {
+	                jsConsole.writeLine(hundreds + " hundred " + GetTens(secondDigit) + " " + GetUnits(firstDigit));
+	            }
+	        }
+	        else {
+	            jsConsole.writeLine("Incorrect input")
+	        }
+	    }
+	</script>
+</body>
+</html>

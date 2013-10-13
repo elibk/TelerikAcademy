@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/gallery-style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper"></div>
+
+    <script src="scripts/escape-special-symbols.js"></script>
+    <script src="scripts/cross-browser-events.js"></script>
+    <script src="scripts/web-storage-objects.js"></script>
+    <script src="scripts/image.js"></script>
+    <script src="scripts/album.js"></script>
+    <script src="scripts/gallery.js"></script>
+    <script src="scripts/controls.js"></script>
+    <script src="scripts/image-gallery-repository.js"></script>
+
+    <script>
+
+         //task 1
+        var gallery = controls.getImageGallery("#wrapper");
+        gallery.addImage('imggg', 'pics/img-02.jpg');
+        gallery.addImage('imggg', 'pics/img-01.jpg');
+        gallery.addImage('imggg', 'pics/img-02.jpg');
+        var mainAlbum = gallery.addAlbum("I'm <br/>album");
+        mainAlbum.addImage('imggg', 'pics/img-03.jpg');
+        mainAlbum.addImage('imggg', 'pics/img-05.jpg');
+        mainAlbum.addImage('imggg', 'pics/img-03.jpg');
+        gallery.render();
+        //task 1
+
+        //task 2
+        var subAlbum = mainAlbum.addAlbum("I'm subAlbum");
+        subAlbum.addImage('img<li>gg', 'pics/img-01.jpg');
+        subAlbum.addImage('img<li>gg', 'pics/img-04.jpg');
+        gallery.render();
+        //task 2
+
+        // task 3
+        // just click on the title of album
+        //task 3
+
+        //task 4, task 5
+        var data = gallery.getImageGalleryData();
+        imageGalleryRepository.save('saved-gallery', data);
+        //task 4, task 5
+
+        // task 6
+        var dataFromRepository = imageGalleryRepository.load('saved-gallery');
+        var newGallery = controls.buildImageGallery("#wrapper", dataFromRepository);
+        newGallery.render();
+        // task 6
+
+        // task 7
+        // Just click on picture 
+        // task 7
+    </script>
+
+</body>
+</html>

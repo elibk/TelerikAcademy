@@ -1,0 +1,81 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Replace Urls In Html</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+	    textarea {
+            width:200px;
+            height:200px;
+	    }
+	</style>
+</head>
+<body>
+    <p>
+      <strong> Write a function for extracting all email addresses from given text. All substrings that match the format identifier@host…domain should be recognized as emails. Return the emails as array of strings.</strong>
+	</p>
+    <p id="first-paragraph"> rlalphonse@sault.com Electronic mail, dpc31351@yahoo.com  commonly referred to as email or e-mail, is a method of exchanging digital messages from an author 
+	    to one or more recipients. Modern email operates across the Internet or other computer networks. Some early email systems 
+	    required that the author and the recipient both be online at the same time, in common with instant messaging. Today's 
+	    email systems are based on a cadam21@verizon.net store-and-forward model. Email servers accept, forward, deliver and store messages. Neither 
+	    the users nor their computers are required to be online simultaneously; they need connect only briefly, typically to an 
+	    email server, for as long as it takes to send or receive messages.
+        Historically, the term adamsrib@ktis.net electronic mail was used generically for any electronic document transmission. 
+        For example, several writers in the early 1970s used the term to jamesw3300@aol.com describe fax document transmission.
+        As a result, it is difficult to find the first citation for the use of the term with the more specific meaning it has today.
+        An Internet email message[NB 1] consists of three components, the message envelope, the message header, and the message body.
+        The message header bill.heine@snet.net contains rflynn-cv9@juno.com control information, including, minimally, an originator's email 
+        address and one or more recipient addresses. Usually albs56@aol.com descriptive information is also added, such as a subject header 
+        field Edward.Kubisek@HP.com and ajefferis@san.rr.com a message rbh1948@i-55.com  submission date/time stamp  lee73120@aol.com.;
+    </p>
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+
+	        var text = document.getElementById('first-paragraph').innerHTML;
+	        var emails = extractEmail(text);
+	        var i;
+	        for (i = 0; i < emails.length; i++) {
+	            jsConsole.writeLine(emails[i]);
+	        }	      
+	    }
+
+	    function extractEmail(text) {
+
+	        var emails = text.match(/\b[A-Z0-9a-z._%+-]+@[A-Z0-9a-z.-]+\.[A-Za-z]+\b/g);
+	        return emails;
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+

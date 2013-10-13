@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Binary Search</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+      Write a program that finds the index of given element in a sorted array of integers by using the binary search algorithm.
+    </p>
+	
+    <label for="tb-searchedNumber">Searched number: </label>
+	<input type="text" id="tb-searchedNumber" value="5" />
+	<br />
+   
+     <a href="#" onclick="printArray()">Print array</a>
+    <br />
+	<a href="#" onclick="binarySearch()">Find number index in sorted array.</a>
+   
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+
+	<script>
+
+	   var array = [1, 2, 3, 5, 6, 7, 8, 10, 11, 12, 15, 16, 17, 18, 20, 21];
+	    //FOR SORTING NUMBERS
+	    function orderBy(a, b) {
+	        return (a == b) ? 0 : (a > b) ? 1 : -1
+	    };
+
+	    function printArray() {
+	        
+	        jsConsole.writeLine(array.join(', '));
+	        for (var i = 0; i < array.length; i++) {
+	            array[i] = parseInt(array[i]);
+	        }
+	    };
+
+	    function binarySearch() {
+	        
+	        var searchedNumber = document.getElementById('tb-searchedNumber').value;
+	        searchedNumber = parseInt(searchedNumber);
+	        array.sort(orderBy);
+
+	        var arrayMiddle = Math.floor(array.length / 2),
+            arrayStart = 0,
+            arrayEnd = array.length - 1,
+            arrayLen = array.length;
+            
+	        while (arrayStart !== arrayEnd) {
+	            if (array[arrayMiddle] < searchedNumber) {
+	                arrayStart = arrayMiddle + 1;
+	            }
+	            else if (array[arrayMiddle] > searchedNumber) {
+	                arrayEnd = arrayMiddle - 1;
+	            }
+	            else {
+	                break;
+	            }
+
+	            arrayLen = arrayStart + arrayEnd + 1;
+	            arrayMiddle = Math.floor(arrayLen / 2);
+	        }
+	        if (arrayStart === arrayEnd) {
+	            if (array[arrayMiddle] === searchedNumber) {
+	                jsConsole.writeLine("Found under index:" + arrayMiddle);
+	            }
+	            else {
+	                jsConsole.writeLine("Not found in the array.");
+	            }
+	        }
+	        else {
+	            jsConsole.writeLine("Found under index:" + arrayMiddle);
+	        }
+	       
+	    }
+
+	</script>
+</body>
+</html>

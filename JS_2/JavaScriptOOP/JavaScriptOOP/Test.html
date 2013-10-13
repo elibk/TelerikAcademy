@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>View the report in the console.</h1>
+    <script src="inheritance-extentions.js"></script>
+    <script src="PropulsionUnit.js"></script>
+    <script src="PropellingNozzle.js"></script>
+    <script src="Propeller.js"></script>
+    <script src="Wheel.js"></script>
+
+    <script src="Vehicle.js"></script>
+    <script src="AirVechicle.js"></script>
+    <script src="LandVechicle.js"></script>
+    <script src="WaterVechicle.js"></script>
+    <script src="AmphibiousVehicle.js"></script>
+    <script src="Transportation.js"></script>
+
+    <script>
+
+
+        var test = [
+             new TransportationNS.LandVehicle(280, 10),
+              new TransportationNS.AirVehicle(280, 10),
+              new TransportationNS.AirVehicle(280, 10),
+               new TransportationNS.WaterVehicle(280, 2, 5),
+              new TransportationNS.AmphibiousVehicle(280, 5, 5, 5),
+              new TransportationNS.AmphibiousVehicle(280,5,5,5)
+             
+            
+        ]
+        
+        console.log("Land Vechicle(wheel radius:", test[0].getWheelRadius(), ") initial speed :",test[0].getSpeed());
+        console.log("ATTENTION ACCELERATE!");
+        test[0].accelerate();
+        console.log("Land Vechicle speed after acceleration:", test[0].getSpeed());
+
+        console.log("##########################");
+
+        console.log("Air Vehicle with", test[1].getNozzlePower(), "nozzle power initial speed: ", test[1].getSpeed());
+        console.log("the aftervuter is initialy ", test[1].getPropulsionUnits()[0].getAfterburnerPowerState());
+        console.log("ATTENTION ACCELERATE!");
+        test[1].accelerate();
+        console.log("speed after acceleration: ", test[1].getSpeed());
+        console.log("--------------------------");
+        console.log("Other Air Vehicle with", test[2].getNozzlePower(), "nozzle power and aftervuter ", test[2].getPropulsionUnits()[0].getAfterburnerPowerState(), " initial speed: ", test[2].getSpeed());
+        test[2].switchOn();
+        console.log("aftervuter : ", test[2].getPropulsionUnits()[0].getAfterburnerPowerState());
+        console.log("ATTENTION ACCELERATE!");
+        test[2].accelerate();
+        console.log("speed after acceleration:", test[2].getSpeed());
+
+        console.log("##########################");
+
+        console.log("Water Vechicle with ", test[3].getNumberOfPropellers(), " propellers and initial speed", test[3].getSpeed());
+        console.log("propellers spins  direction ", test[3].getPropulsionUnits()[0].getSpinDirection());
+        console.log("ATTENTION ACCELERATE!");
+        test[3].accelerate();
+        console.log("speed after acceleration: ", test[3].getSpeed());
+        console.log("The speed increases.");
+        test[3].spinDirectionCounterClockwise();
+        console.log("change spin direction to ", test[3].getPropulsionUnits()[0].getSpinDirection());
+        console.log("ATTENTION ACCELERATE!");
+        test[3].accelerate();
+        console.log("speed after the second acceleration: ", test[3].getSpeed());
+        console.log("The speed decreases.");
+
+        console.log("##########################");
+
+        console.log("Amphibious Vehicle with initial speed : ", test[4].getSpeed());
+        console.log("in mode ", test[4].mode);
+        console.log("ATTENTION ACCELERATE!");
+        test[4].accelerate();
+        console.log("speed after acceleration: ", test[4].getSpeed());
+        console.log("Ooo, the road is over. There is a river. We have to cross it...");
+        test[4].switchOnWaterMode();
+        console.log("switch mode to ", test[4].mode);
+        test[4].getWaterMode().spinDirectionCounterClockwise();
+        console.log("change spin direction to ", test[4].getWaterMode().getPropulsionUnits()[0].getSpinDirection());
+        console.log("ATTENTION ACCELERATE!");
+        test[4].accelerate();
+        console.log("speed after acceleration: ", test[4].getSpeed());
+        console.log("The speed decreases.");
+    </script>
+</body>
+</html>

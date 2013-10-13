@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Array Allocator</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+       Write a script that allocates array of 20 integers and initializes each element by its index multiplied by 5. 
+        Print the obtained array on the console.
+
+    </p>
+	<label for="tb-lenght">Array's lenght: </label>
+	<input type="text" id="tb-lenght" value="20" />
+	<br />
+    
+	<a href="#" onclick="AllocateArray()">Find min and max</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function AllocateArray() {
+	        var lenght = jsConsole.readFloat('#tb-lenght');
+	        var numbers = [];
+	        var index;
+	        numbers.length = lenght;
+	        for (var i = 0; i < numbers.length; i++) {
+	            numbers[i] = i * 5;
+	        }
+
+	        for (index in numbers) {
+	            jsConsole.write(numbers[index] + " ");
+	        }
+	    }
+	</script>
+</body>
+</html>

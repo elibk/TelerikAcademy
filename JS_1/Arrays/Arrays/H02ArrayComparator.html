@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Array Comparator</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+       Write a script that compares two char arrays lexicographically (letter by letter).
+    </p>
+	<label for="tb-sequence">Sequence: </label>
+	<input type="text" id="tb-sequence" value="a, b, c, d, w, e, a" />
+	<br />
+    <label for="tb-otherSequence">Sequence: </label>
+	<input type="text" id="tb-otherSequence" value="a, b, c, d, w, e, a" />
+	<br />
+    
+	<a href="#" onclick="compareArrays()">Campare sequence: </a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    
+	    function compareArrays() {
+	        var sequence = document.getElementById('tb-sequence').value;
+	        var firstArr = sequence.split(", ");
+	        var someSequence = document.getElementById('tb-otherSequence').value;
+	        var secondArr = someSequence.split(", ");
+	        firstArr["isBefore"] = true;
+	        secondArr["isBefore"] = true;
+
+	        for (var i = 0; i < firstArr.length  && i < secondArr.length; i++) {
+	            if (firstArr[i] < secondArr[i]) {
+	                secondArr.isBefore = false;
+	                break;
+	            }
+	            else if (firstArr[i] > secondArr[i]) {
+	                firstArr.isBefore = false;
+	                break;
+
+	            }
+	        }
+	        
+	        if (firstArr.isBefore) {
+
+	            if (secondArr.isBefore) {
+	                if (firstArr.length > secondArr.length) {
+	                    jsConsole.writeLine("Second Array is before second");
+	                }
+	                else if (firstArr.length < secondArr.length) {
+	                    jsConsole.writeLine("First Array is before second");
+	                }
+	                else {
+	                    jsConsole.writeLine("Equal arrays");
+	                }
+	            }
+	            else {
+	                jsConsole.writeLine("First Array is before second");
+	            }
+	            
+	        }
+	        else if (secondArr.isBefore) {
+	            
+	            jsConsole.writeLine("Second Array is before second");
+	        }
+	       
+
+	    }
+	</script>
+</body>
+</html>

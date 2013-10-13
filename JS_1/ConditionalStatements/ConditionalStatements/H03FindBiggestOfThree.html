@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Find the Biggest number</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <label for="tb-firstValue">Number: </label>
+	<input type="text" id="tb-firstValue" />
+	<br />
+	<label for="tb-secondValue">Number: </label>
+	<input type="text" id="tb-secondValue" />
+	<br />
+    <label for="tb-thirdValue">Number: </label>
+	<input type="text" id="tb-thirdValue" />
+	<br />
+	<a href="#" onclick="FindBiggestNumbert()">Find the Biggest number</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function FindBiggestNumbert() {
+	        var firstValue = jsConsole.readFloat("#tb-firstValue");
+	        var secondValue = jsConsole.readFloat("#tb-secondValue");
+	        var thirdValue = jsConsole.readFloat("#tb-thirdValue");
+
+	        if (firstValue >= secondValue && thirdValue <= secondValue) {
+	            jsConsole.writeLine("The biggest number is " + firstValue);
+	        }
+	       else if (firstValue >= secondValue && thirdValue >= secondValue) {
+	            if (firstValue > thirdValue) {
+	                jsConsole.writeLine("The biggest number is " + firstValue);
+	            }
+	            else if (firstValue <= thirdValue) {
+	                jsConsole.writeLine("The biggest number is " + thirdValue);
+	            }
+	        }
+	       else if (secondValue >= firstValue && thirdValue <= firstValue) {
+	            jsConsole.writeLine("The biggest number is " + secondValue);
+	        }
+	       else if (secondValue >= firstValue && thirdValue >= firstValue) {
+	            if (secondValue > thirdValue) {
+	                jsConsole.writeLine("The biggest number is " + secondValue);
+	            }
+	            else if (secondValue <= thirdValue) {
+	                jsConsole.writeLine("The biggest number is " + thirdValue);
+	            }
+	        }
+	    }
+	</script>
+</body>
+</html>

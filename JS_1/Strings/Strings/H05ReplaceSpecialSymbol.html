@@ -1,0 +1,72 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>replace Special Symbol</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+	    textarea {
+            width:200px;
+            height:200px;
+	    }
+	</style>
+</head>
+<body>
+    <p>
+        Write a function that replaces non breaking white-spaces in a text with & nbsp;
+	</p>
+   
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+
+	        var text = 'Some text... here we put some space          and here      and some here     ';
+	        var escaping = '&nbsp;';
+	        jsConsole.writeLine(text);
+	        jsConsole.writeLine('-----------------------------------------------------------------');
+	        text = replaceSpecialSymbol(text, escaping);
+	        jsConsole.writeLine("CHANGED : " + text);
+	        jsConsole.writeLine('-----------------------------------------------------------------');
+	    }
+
+	    function replaceSpecialSymbol(text, escapingSymbol) {
+	        
+	        if (escapingSymbol === '&nbsp;') {
+	            return text.split(' ').join(escapingSymbol);
+                
+	        }
+	        
+	    }
+
+	   
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Bit Checker</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <label for="tb-inputNumber">Number: </label>
+	<input type="text" id="tb-inputNumber" value ="8"/>
+	<br />
+    <label for="tb-position">Bit's position: </label>
+	<input type="text" id="tb-position" value ="3"/>
+	<br />
+	<a href="#" onclick="CheckBit()">Check Bit</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function CheckBit() {
+	        var number = jsConsole.readFloat("#tb-inputNumber");
+	        var position = jsConsole.readFloat("#tb-position");
+	        var putOne = 1 << position;
+	        var result = number & putOne;
+	        var final = result >> position;
+	        var statment = final==1;
+	        jsConsole.writeLine("It is <strong> " + statment + "</strong> that the bit at position " + position + " of number " + number + " is 1.");
+
+	    }
+	</script>
+</body>
+</html>
+

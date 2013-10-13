@@ -1,0 +1,80 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Age Checker</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+       Write a function that finds the youngest person in a given array of persons and prints his/hers full name
+       Each person have properties firstname, lastname and age, as shown:
+
+	</p>
+
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+
+	        var persons = [
+                { firstname: "Peter", lastname: "Petrov", age: 32 },
+                { firstname: "Mitko", lastname: "Petrov", age: 12 },
+                { firstname: "Pesho", lastname: "Petrov", age: 23 },
+                { firstname: "Gosho", lastname: "Petrov", age: 3 }, 
+                { firstname: "Bay", lastname: "Ivan", age: 81 }];
+
+	        var result = findYoungest(persons);
+
+            jsConsole.writeLine("The youngest person is " + result.firstname + " " + result.lastname + " Age:" + result.age)
+
+	    }
+
+	    function findYoungest(obj) {
+
+	        var youngest = obj[0];
+
+	        for (var prop in obj) {
+
+	            if (obj[prop].age < youngest.age) {
+	                youngest = obj[prop];
+	            }
+	        }
+
+
+	        return youngest;
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+
+

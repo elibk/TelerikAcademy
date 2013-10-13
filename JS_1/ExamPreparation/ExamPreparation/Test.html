@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <a href='#' onclick='matrix()'> Run </a>
+
+<script type="text/javascript"> 
+
+    function Solve(args) {
+
+        return matrix(5,5).toString();
+    }
+
+    function matrix(rows,cols) {
+	 var array = [];
+	 var row;
+	 var col;
+	 var ind = 0;
+	 for (row = 0; row < rows; row++) {
+	 
+	   array[row] = [];
+	   for (col = 0; col < cols; col++) {
+			array[row][col] = ind++;
+		
+		}
+		
+	 }
+	 return array;
+	 //for (row = 0; row < 3; row++){
+	 
+	 //    for (col = 0; col < 6; col++) {
+	 
+	 //   	document.write(array[row][col]);
+			
+	 //   }
+	 //}
+ 
+ }
+ 
+</script>
+</body>
+</html>

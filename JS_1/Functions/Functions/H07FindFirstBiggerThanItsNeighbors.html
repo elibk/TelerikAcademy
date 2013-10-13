@@ -1,0 +1,79 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Find First Bigger Than Its Neighbors</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}   
+	</style>
+</head>
+<body>
+    <p>
+       Write a Function that returns the index of the first element in array that is bigger than its neighbors,
+         or -1, if there’s no such element.
+
+    </p>
+	
+	<label for="tb-array">Array </label>
+	<input type="text" id="tb-array" value="1, 2, 23, 12, 12, 1, 12, 12" />
+	<br />
+    
+	<a href="#" onclick="main()">Count </a>
+    
+	<div id="console">
+	</div>  
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script src="BiggerThanItsNeighborsChecker.js"></script>
+	<script>
+	    function main() {
+	        var array = document.getElementById('tb-array').value.split(', ');
+	        array = intParserArray(array);
+	        var biggerIndex = returnIndexOfFirstBiggerThanItsNeighbors(array);
+	        if (biggerIndex > 0) {
+	            jsConsole.writeLine("Number " + array[biggerIndex] + " under index " + biggerIndex + " is bigger than its neighbors");
+	        }
+	        else {
+	            jsConsole.writeLine("Not found element bigger than its neigbors.");
+	        }
+	        
+	    }
+
+	    function returnIndexOfFirstBiggerThanItsNeighbors(array) {
+
+	        for (var i = 0; i < array.length; i++) {
+
+	            if (isBiggerThanItsNeighbors(array,i)) {
+	                return i;
+	            }
+	        }
+
+	        return -1;
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->

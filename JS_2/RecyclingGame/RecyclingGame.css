@@ -1,0 +1,42 @@
+﻿body, img, button {
+    margin : 0;
+    padding : 0
+}
+
+body {
+    font-size:25px;
+    background-image:url(pics_recycling/start-screen.jpg);
+    
+}
+
+.bin {
+    margin : 50px
+
+}
+
+a {
+    display : inline-block;
+    font-size: 25px;
+    background-color:green;
+    color: white;
+    padding : 10px;
+}
+
+    a.control {
+        display: none;
+    }
+    
+
+input#timer {
+    background-color:green;
+    text-align:center;
+    font-size:20px;
+    color:white;
+}
+
+div#scores {
+
+    font-size:25px;
+    background-color:green;
+    color:white;
+}

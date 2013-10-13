@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Find The Most FrequentNumber</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+      Write a program that finds the most frequent number in an array. 
+    </p>
+	<label for="tb-sequence">Sequence: </label>
+	<input type="text" id="tb-sequence" value="5, 7, 7, 5, 3, 3, 2, 1, 1, 2" />
+	<br />
+   
+    
+	<a href="#" onclick="findTheMostFrequentNumber()">Finds the most frequent number.</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    //FOR SORTING NUMBERS
+	    function orderBy(a, b) {
+	        return (a == b) ? 0 : (a > b) ? 1 : -1 
+	    };
+
+
+
+	    function findTheMostFrequentNumber() {
+
+	        var  maxLen = 0,
+                 currentLen = 1,
+                 mostCommonNum = 0,
+                 i;
+	        var array = document.getElementById('tb-sequence').value.split(", ");
+	        array.sort(orderBy);
+	        for ( i = 0; i < array.length - 1; i++){
+                if (array[i] === array[i + 1]){
+                    currentLen++;
+	             }
+                else {
+
+                    if (maxLen < currentLen) {
+
+	                    mostCommonNum = array[i];
+	                    maxLen = currentLen;
+	                }
+                    else if (maxLen === currentLen && maxLen > 1) {
+
+                        jsConsole.writeLine(array[i] + " (" + maxLen + " times).");
+	                }
+
+	            currentLen = 1;
+	            }
+	        }
+
+	        if (maxLen < currentLen){
+	            mostCommonNum = array[array.length - 1];
+	            maxLen = currentLen;
+	        }
+	        else if (maxLen === currentLen && maxLen > 1){
+	            jsConsole.writeLine(array[array.length - 1] + " (" + maxLen + " times).");
+	        }
+
+	        jsConsole.writeLine(mostCommonNum + " ("+ maxLen + " times)." );
+	         
+	       
+	    }
+
+	</script>
+</body>
+</html>

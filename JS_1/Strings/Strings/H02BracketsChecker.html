@@ -1,0 +1,84 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Brackets Checker</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+    <p>
+        Write a JavaScript function to check if in a given expression the brackets are put correctly.
+        Example of correct expression: ((a+b)/5-d).
+        Example of incorrect expression: )(a+b)).
+
+	</p>
+    <label for="tb-string">Expression :</label>
+    <input  type="text" id="tb-string" value=")(a+b))" />
+    <br />
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+
+	        var str = document.getElementById('tb-string').value.toString();
+	        
+	        jsConsole.writeLine('In expression | ' + str + ' | brackets are put correctly -> ' + checkBrackets(str));
+
+
+	    }
+
+	    function checkBrackets(str) {
+	        var bracketsCount = 0;
+	       
+	        var i;
+	        for (i = 0; i < str.length; i++) {
+	            if (str.charAt(i) === '(') {
+	                bracketsCount++;
+	            }
+	            else if (str.charAt(i) === ')') {
+	                bracketsCount--;
+	            }
+
+	            if (bracketsCount < 0) {
+	                return false;
+	            }
+	        }
+
+	        if (bracketsCount !== 0) {
+	            return false;
+	        }
+
+	        return true;
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->

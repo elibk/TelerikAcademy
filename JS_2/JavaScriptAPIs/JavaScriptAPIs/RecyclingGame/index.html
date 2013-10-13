@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="RecyclingGame.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <a href="#" id="new-game" onclick="onClickNewGame()">New Game</a>
+        <a href="#" id="pause" onclick="onClickPause()" class="control">Pause</a>
+        <a href="#" id="resume" onclick="onClickResume()" class="control">Resume</a>
+        <br />
+        <input type="text" id="timer" />
+        <br />
+        <img src="pics_recycling\glass-can-closed.png" class ="bin"  id="glass-can-closed"/>
+        <img src="pics_recycling\glass-can-open.png" class ="bin" id="glass-can-open"/>
+        <br/>
+        <img src="pics_recycling\paper-can-closed.png" class ="bin" id="paper-can-closed"/>
+        <img src="pics_recycling\paper-can-open.png" class ="bin" id="paper-can-open"/>
+        <br/>
+        <img src="pics_recycling\plastic-and-iron-can-closed.png" class ="bin" id="plastic-and-iron-can-closed" />
+        <img src="pics_recycling\plastic-and-iron-can-open.png" class ="bin" id="plastic-and-iron-can-open" />
+        <div id="scores"></div>
+    </div>
+    <script src="web-storage-objects.js"></script>
+    <script  type="text/javascript" src="cross-browser-events.js"></script>
+    <script  type="text/javascript" src="Events.js"></script>
+    <script  type="text/javascript" src="ScoreManager.js"></script>
+    <script  type="text/javascript" src="BinsManager.js"></script>
+    <script  type="text/javascript" src="GameManager.js"></script>
+    <script  type="text/javascript" src="Timer.js"></script>
+    
+    <script src="TrashGenerator.js"></script>
+    
+    <script>
+     // localStorage.clear();
+    </script>
+    
+</body>
+</html>

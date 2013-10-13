@@ -1,0 +1,71 @@
+﻿<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Substring Finder</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+	    textarea {
+            width:200px;
+            height:200px;
+	    }
+	</style>
+</head>
+<body>
+    <p>
+        Write a JavaScript function that finds how many times a 
+        substring is contained in a given text (perform case insensitive search).
+	</p>
+    <label for="tb-string">Searched word :</label>
+    <input  type="text" id="tb-string" value="in" />
+    <textarea id="tb-text"> We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.</textarea>
+    <br />
+	<a href="#" onclick="main()">Run</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	    function main() {
+
+	        var text = document.getElementById('tb-text').value.toString();
+	        var str = document.getElementById('tb-string').value.toString();
+	        
+	        jsConsole.writeLine("The count of string '" + str + "' (case-insensitive search) is: " + countOccurenceOfAWord(text, str));
+	    }
+
+	    function countOccurenceOfAWord(text, word) {
+	        
+	       strArr = text.toLowerCase().split(word.toLowerCase());
+
+	       return count = strArr.length - 1;
+	       
+	    }
+
+	</script>
+</body>
+</html>
+<!--CSS and jsConsole are made by technical trainer Doncho Minkov-->
