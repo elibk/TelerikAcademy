@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<repositories>
+  <repository path="..\Supermarket.Client\packages.config" />
+  <repository path="..\Supermarket.Data\packages.config" />
+  <repository path="..\Supermarket.MongoDB\packages.config" />
+  <repository path="..\Supermarket.Reports\packages.config" />
+  <repository path="..\Supermarket.Sqlite\packages.config" />
+</repositories>

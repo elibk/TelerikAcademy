@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<?xml-stylesheet type="text/xsl" href="student.xsl"?>
+<students culture="en-US" xmlns="urn:students">
+    <student sex="male" birth-date="1989-04-12">
+        <name>Pesho</name>
+        <phone>0883 33 33 33</phone>
+        <email>academy@telerik.bg</email>
+        <course>C#1</course>
+        <speciality>Front-end</speciality>
+        <facultynumber>2001323</facultynumber>
+    </student>
+    <student sex="female" birth-date="1990-04-24">
+        <name>Mariika</name>
+        <phone>0888 88 88 88</phone>
+        <email>mara@mail.bg</email>
+        <course>C#1</course>
+        <speciality>Back-end</speciality>
+        <facultynumber>2001223</facultynumber>
+         <exams>
+               <exam>
+                <name>OOP</name>
+                <tutor>Niki</tutor>
+                <score>100</score>
+              </exam>
+        </exams>
+    </student>
+    <student sex="male" birth-date="1990-09-24">
+        <name>Kiro</name>
+        <phone>0899 99 99 99</phone>
+        <email>kiro@mail.bg</email>
+        <course>Data bases</course>
+        <speciality>CTT</speciality>
+        <facultynumber>2001214</facultynumber>
+        <exams>
+          <exam>
+            <name>C#1</name>
+            <tutor>Nakov</tutor>
+            <score>123</score>
+          </exam>
+         <exam>
+            <name>C#2</name>
+            <tutor>Joro</tutor>
+            <score>350</score>
+          </exam>
+           <exam>
+            <name>OOP</name>
+            <tutor>Nakov</tutor>
+            <score>200</score>
+          </exam>
+        </exams>
+    </student>
+</students>
