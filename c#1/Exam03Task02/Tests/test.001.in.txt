@@ -1,0 +1,17 @@
+0000
+2
+500
+Collect
+500.5
+2222
+Collect
+500.5
+0000
+Change pin
+1111
+Change pin
+0000
+1111
+Collect
+500
+1111

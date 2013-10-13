@@ -1,0 +1,7 @@
+Incorrect pin.
+Incorrect pin.
+Your pin code has been changed.
+Incorrect pin.
+Incorrect pin.
+The limit of incorrect pin codes has been reached. Please contact your bank.
+Goodbye.

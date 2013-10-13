@@ -1,0 +1,132 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+class FallingRocks
+{
+
+    static int rockPositionX = 0;
+    static int rockPositionY = 0;
+    static int rockPositionX2 = 15;
+    static int rockPositionY2 = 0;
+    static int rockPositionX3 = 7;
+    static int rockPositionY3 = 0;
+    static int playerPosition = 0;
+    static int playerSize = 27;
+    static int result = 10;
+    static Random randomRockPosition = new Random();
+    static Random randomRockType = new Random();
+
+    static void RemoveScrollBars()
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.BufferHeight = Console.WindowHeight;
+        Console.BufferWidth = Console.WindowWidth;
+    }
+
+    static void Drowplayer()
+    {
+        for (int x = playerPosition; x < playerPosition + playerSize; x++)
+        {
+            PrintAtPosition(x, Console.WindowHeight-2, '_');
+
+        }
+    }
+ 
+
+    static void PrintAtPosition(int x, int y, char symbol)
+    {
+        Console.SetCursorPosition(x, y);
+        Console.WriteLine(symbol);
+    }
+
+    static void SetInitialPositions()
+    {
+        playerPosition = Console.WindowWidth / 2 - playerSize / 2;
+
+    }
+
+
+    private static void MovePlayerRight()
+    {
+        if (playerPosition < (Console.WindowWidth -1) - playerSize)
+        {
+            playerPosition++;
+        }
+    }
+
+    private static void MovePlayerLeft()
+    {
+        if (playerPosition > 0)
+        {
+            playerPosition--;
+        }
+    }
+
+    static void PrintResult()
+    {
+        Console.SetCursorPosition(Console.WindowWidth / 2 - 1, 0);
+        Console.Write(result);
+    }
+
+    static void Main()
+    {
+        RemoveScrollBars();
+        SetInitialPositions();
+        while (true)
+        {
+            int RockPositionX = randomRockPosition.Next(1, 80);
+            int RockType = randomRockType.Next(33, 44);
+            rockPositionX = RockPositionX;
+           
+            while (rockPositionY < 23)
+            {
+                Drowplayer();
+                PrintResult();
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo keyInfo = Console.ReadKey();
+                    if (keyInfo.Key == ConsoleKey.LeftArrow)
+                    {
+                        MovePlayerLeft();
+                    }
+                    if (keyInfo.Key == ConsoleKey.RightArrow)
+                    {
+                        MovePlayerRight();
+                    }
+                }
+                PrintAtPosition(rockPositionX, rockPositionY, (char)RockType);
+                rockPositionY++;
+                if (rockPositionY >= Console.WindowHeight - 2)
+                {
+                    if (rockPositionX >= playerPosition
+                        && rockPositionX < playerPosition + playerSize)
+                    {
+                        result = result-10;
+                       
+                    }
+                }
+                if (result == 0)
+                {
+                    Console.SetCursorPosition(Console.WindowWidth / 2 -10, Console.WindowHeight / 2);
+                    Console.WriteLine("G A M E   O V E R !!!");
+                    Console.SetCursorPosition(Console.WindowWidth / 2 - 10, Console.WindowHeight / 2);
+                    Console.WriteLine("T R Y   A G A I N!!!");
+
+
+                    result = 100;
+                    Console.ReadKey();
+                }
+
+                Thread.Sleep(150);
+                Console.Clear();
+
+            }
+            rockPositionY = 0;
+        }
+    }
+}
+

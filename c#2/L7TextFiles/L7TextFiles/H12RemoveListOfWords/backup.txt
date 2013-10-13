@@ -1,0 +1,8 @@
+The most common relative directions are , , forward, backward, , and .
+No absolute direction corresponds to any of the uprelative directions.
+This is a consequence of the translational  invariance of the laws of physics: 
+nature, loosely speaking, behaves the same no matter what direction one moves.
+As demonstrated by the Michelson-Morley null result, there is no absolute inertial frame of reference.
+There are definite relationships between the relative directions, however. Left and , forward and backward,
+and  and  are three pairs of complementary directions, each pair orthogonal to both of the others.
+Relative directions are upalso known as egocentric coordinates .

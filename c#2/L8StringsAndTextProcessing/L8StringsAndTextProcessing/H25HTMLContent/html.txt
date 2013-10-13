@@ -1,0 +1,21 @@
+﻿<section id="MainContent">
+<h1>Курс "C# програмиране - част II"</h1>
+<article>
+    <h2 class="courseHeading"><a href="/Courses/Courses/Details/20">C# програмиране - част II</a></h2>
+    <div class="courseInformation">
+        <dl class="courseDescription">
+            <dt>
+                <label for="Description">Описание</label>:
+            </dt>
+            <dd>
+			Безплатният курс "C# програмиране - част II" е продължение на навлизането в <strong>основите на програмирането</strong>. Изучават се малко по-сложни, но все пак базови, концепции от програмирането като използване на <strong>масиви</strong> за обработка на редици и матрици от елементи, алгоритми върху редици и матрици, работа с <strong>методи</strong> (дефиниране и извикване, използване на параметри), <strong>бройни системи </strong>и преминаване между тях, работа с <strong>обекти</strong> от стандартната библиотека на .NET (създаване на обекти и извикване на свойства и методи), обработка на грешки и работа с <strong>изключения</strong>, работа със <strong>стрингове</strong> и обработка на текст, алгоритми за парсване на текст и работа с <strong>текстови файлове</strong>. Курсът завършва с <strong>практически изпит</strong> по програмиране.
+            </dd>
+        </dl>
+
+<html>
+  <head><title>News</title></head>
+  <body><p><a href="http://academy.telerik.com">Telerik
+    Academy</a>aims to provide free real-world practical
+    training for young people who want to turn into
+    skillful .NET software engineers.</p></body>
+</html>

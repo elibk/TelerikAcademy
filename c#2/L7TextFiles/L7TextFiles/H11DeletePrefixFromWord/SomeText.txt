@@ -1,0 +1,21 @@
+Software ing is an investigation conducted to provide stakeholders with information about the quality of the product or service 
+under test.Software ing can also provide an objective, independent view of the software to allow the 
+business to appreciate and understand the risks of software 88implementation. Test techniques include, but are not limited to, 
+the process of executing a program or application with the 
+intent of finding software bugs (errors or other defects).
+Software ing can be stated as the process of validating and verifying that a computer program/application/product:
+
+   __ meets the requirements that guided its design and development,
+   _works as expected,
+    cantest be implemented with the same characteristics,
+    and satisfies the needs of stakeholders.
+
+Software ing, depending on the ing method employed, can be implemented at any time in the development process. 
+Traditionally most OADSF the test effort occurs after the requirements have been defined and the coding process has been completed,
+ but in the Agile approaches most of the test 098effort is on-going. As such, the methodology of the test is governed 
+ by the chosen software development methodology.
+
+Different software development models will focus the test effort at different points in the development process. 
+Newer development models, such as Agile, often employ driven development and place an increased portion of 
+the ing in the hands of the developer, before it reaches a formal team of ers. In a more traditional model, 
+most of the test execution occurs after the requirements have been defined and the coding process has been completed.

@@ -1,0 +1,2 @@
+The limit of incorrect pin codes has been reached. Please contact your bank.
+Goodbye.

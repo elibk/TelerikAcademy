@@ -1,0 +1,328 @@
+1010
+1
+200.25
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+Collect
+1010
+200.26
+Change pin
+1010
+0101
+Collect
+0101
+200.26
+Change pin
+0101
+1010
+End

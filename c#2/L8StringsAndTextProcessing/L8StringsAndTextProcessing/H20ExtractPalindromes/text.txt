@@ -1,0 +1,16 @@
+﻿The most familiar palindromes, in English at least, are character-by-character: 
+The written characters read the same backward as forward. Some examples of common palindromic words: civic, radar, level, 
+rotor, kayak, reviver, racecar, redder, madam, malayalam, and refer. There are also palindromes where the unit of reversal 
+is the word ("So patient a doctor to doctor a patient so") or line (as in the poem "Doppelganger" by J.A. Lindon). These 
+are referred to as "word-unit palindromes" and "line-unit palindromes" respectively.[4] Word-unit palindromes were popularized 
+in the recreational linguistics community by J.A. Lindon in the 1960s, but occasional examples in English are found from at 
+least the 19th century, and several in French and Latin date to the middle ages.
+Some people have names that are palindromes. Included are given names (Ada, Anna, Bob, Aviva), 
+surnames (Harrah, Renner, Salas) or both (Eve, Hannah, Maham, Otto). Lon Nol (1913–1985) was Prime 
+Minister of Cambodia. Nisio Isin is a Japanese novelist and manga writer, whose real name (西尾 維新, Nishio Ishin) 
+is a palindrome when romanized using the Kunrei-shiki or the Nihon-shiki systems. (It is often written as NisiOisiN 
+to emphasize this). Some persons have changed their name in order to make of it a palindrome BB (one example is actor Robert Trebor),
+while others were given a palindromic name at birth (such as the philologist Revilo P. Oliver).
+Palindromic names are very common in Finland. Examples include Olavi Valo, Emma Lamme, Sanna Rannas, Anni Linna and Asko Oksa.
+There are also palindromic names in fictional media. "Stanley Yelnats" is the name of a character in Holes, a 1991 novel and 2003 film. 
+Four of the fictional Pokémon species have palindromic names in English (Eevee, Girafarig, Ho-Oh, and Alomomola).
