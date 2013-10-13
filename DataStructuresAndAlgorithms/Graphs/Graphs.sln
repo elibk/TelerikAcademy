@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salaries", "Salaries\Salaries.csproj", "{7FF22A05-54A3-49A3-980D-9C5B736C4E23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendsOfPesho", "FriendsOfPesho\FriendsOfPesho.csproj", "{8EEDDDAB-7E73-43D6-9CD1-A8447FDBD5B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVCompany", "TVCompany\TVCompany.csproj", "{EE8BB26C-3E73-4E2A-A9B1-66BE2E1E0A3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FF22A05-54A3-49A3-980D-9C5B736C4E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF22A05-54A3-49A3-980D-9C5B736C4E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF22A05-54A3-49A3-980D-9C5B736C4E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF22A05-54A3-49A3-980D-9C5B736C4E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EEDDDAB-7E73-43D6-9CD1-A8447FDBD5B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEDDDAB-7E73-43D6-9CD1-A8447FDBD5B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEDDDAB-7E73-43D6-9CD1-A8447FDBD5B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEDDDAB-7E73-43D6-9CD1-A8447FDBD5B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE8BB26C-3E73-4E2A-A9B1-66BE2E1E0A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8BB26C-3E73-4E2A-A9B1-66BE2E1E0A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8BB26C-3E73-4E2A-A9B1-66BE2E1E0A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8BB26C-3E73-4E2A-A9B1-66BE2E1E0A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

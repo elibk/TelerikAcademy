@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H01KnapsackProblem", "H01KnapsackProblem\H01KnapsackProblem.csproj", "{5369A5FA-D20C-45E5-ADFC-6563418AF87A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H01KnapsackProblem.Test", "H01KnapsackProblem.Test\H01KnapsackProblem.Test.csproj", "{2B7BF1C9-E314-475A-B775-E719CFF71C88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H02MinimumEditDistance", "H02MinimumEditDistance\H02MinimumEditDistance.csproj", "{37B6287F-CDF2-411D-905E-E757C381A7F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H02MinimumEditDistance.Test", "H02MinimumEditDistance.Test\H02MinimumEditDistance.Test.csproj", "{C4388E09-DE1C-4728-81D5-E05D56FD3080}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5369A5FA-D20C-45E5-ADFC-6563418AF87A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5369A5FA-D20C-45E5-ADFC-6563418AF87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5369A5FA-D20C-45E5-ADFC-6563418AF87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5369A5FA-D20C-45E5-ADFC-6563418AF87A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B7BF1C9-E314-475A-B775-E719CFF71C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7BF1C9-E314-475A-B775-E719CFF71C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7BF1C9-E314-475A-B775-E719CFF71C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7BF1C9-E314-475A-B775-E719CFF71C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B6287F-CDF2-411D-905E-E757C381A7F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B6287F-CDF2-411D-905E-E757C381A7F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B6287F-CDF2-411D-905E-E757C381A7F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B6287F-CDF2-411D-905E-E757C381A7F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4388E09-DE1C-4728-81D5-E05D56FD3080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4388E09-DE1C-4728-81D5-E05D56FD3080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4388E09-DE1C-4728-81D5-E05D56FD3080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4388E09-DE1C-4728-81D5-E05D56FD3080}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
