@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <link href="styles/authForm.css" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
+     <title>Battle game</title>
+     <script src="Scripts/libs/jquery-2.0.3.js"></script>
+     <script src="Scripts/libs/require.js" data-main="Scripts/app-config"></script>
+    
+
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <header>
+            <nav>
+
+            </nav>
+        </header>
+
+        <div id="content">
+
+        </div>
+
+    </div>
+
+    <script type="x-mustache-template" id="nav-loged-template">
+            <p>
+                Hello   
+                {{#nickname}}	
+			        {{nickname}}
+                {{/nickname}}
+                {{^nickname}}	
+			        stranger
+                {{/nickname}},
+            </p>
+        <ul>
+            <li>
+			    <a href="#/">Home</a>
+		    </li>
+            <li>
+			    <a href="#/activeGames">Active games</a>
+		    </li>
+            <li>
+			    <a href="#/myGames">My games</a>
+		    </li>
+            <li>
+			    <a href="#/createGame">Create new game</a>
+		    </li>
+            <li>
+			    <a href="#/logout" id="logout">Log out</a>
+		    </li>
+		</ul>
+	</script>
+
+    <script type="x-mustache-template" id="nav-notloged-template">
+            <p>
+                Hello   
+                {{#nickname}}	
+			        {{nickname}}
+                {{/nickname}}
+                {{^nickname}}	
+			        stranger
+                {{/nickname}},
+            </p>
+         <ul>
+            <li>
+			    <a href="#/">Home</a>
+		    </li>
+            <li>
+			    <a href="#/auth">Login/Register</a>
+		    </li>   
+		</ul>
+	</script>
+
+     <script type="x-mustache-template" id="greeting-template">
+         <section>
+            Wellcome to <h1>BATTLE GAME</h1>! 
+		</section>
+	</script>
+
+    <script type="x-mustache-template" id="my-games-template">
+         <table>
+                <caption>My games</caprion> 
+                    <thead>
+                        <tr>
+					        <th>
+						        Title							
+					        </th>
+                            <th>
+                                Creator
+                            </th>
+                            <th>
+                                <strong>Status</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#games}}
+                        <tr data-id="{{id}}" class="{{status}}" data-creator="{{creator}}">
+					        <td>
+						        {{title}}							
+					        </td>
+                            <td>
+                                <strong>{{creator}}</strong>
+                            </td>
+                            <td>
+                                <strong>{{status}}</strong>
+                            </td>
+                        </tr>
+				        {{/games}}
+				        {{^games}}	
+                            <tr>
+					            <td : colspan='3'>
+						            No games, yet	  						
+					            </td>
+                            </tr>   
+					
+				        {{/games}}
+                </tbody>
+			</table>			
+	</script>
+
+    <script type="x-mustache-template" id="active-games-template">
+         <table>
+                <caption>Active games</caprion> 
+                    <thead>
+                        <tr>
+					        <th>
+						        Title							
+					        </th>
+                            <th>
+                                Creator
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#games}}
+                        <tr data-id="{{id}}" class="active">
+					        <td>
+						        {{title}}							
+					        </td>
+                            <td>
+                                <strong>{{creator}}</strong>
+                            </td>
+                        </tr>
+				        {{/games}}
+				        {{^games}}	
+                            <tr>
+					            <td : colspan='2'>
+						            No games, yet	  						
+					            </td>
+                            </tr>   
+				        {{/games}}
+                </tbody>
+			</table>			
+	</script>
+
+     <script type="x-mustache-template" id="login-register-template">
+         <section>
+            <button id="btn-show-register" class="btn-login-form">Register</button>
+            <button id="btn-show-login" class="btn-login-form current">Login</button>
+            <form id="form-register" class="invisible">
+                <fieldset>
+                    <legend>Registration form</legend>
+
+                    <label for="register-username-input">Username: </label>
+                    <input type="text" id="register-username-input" placeholder="Enter username" /><br />
+
+                    <label for="register-nickname-input">Nickname: </label>
+                    <input type="text" id="register-nickname-input" placeholder="Enter username" /><br />
+
+                    <label for="register-password-input">Password: </label>
+                    <input type="password" id="register-password-input" placeholder="Enter password" /><br />
+
+                    <label for="tb-repeat-pass">Repeat password: </label>
+                    <input type="password" id="tb-repeat-pass" placeholder="Repeat the password" /><br />
+                    <button id="register-button">Register</button>
+                </fieldset>
+            </form>
+            <form id="form-login" >
+                <fieldset>
+                    <legend>Login form</legend>
+
+                    <label for="login-username-input">Username: </label>
+                    <input type="text" id="login-username-input" placeholder="Enter username" /><br />
+
+                    <label for="login-password-input">Password: </label>
+                    <input type="text" id="login-password-input" placeholder="Enter password" /><br />
+                    <button id="login-button">Login</button>
+                </fieldset>
+            </form>
+        <div id="error-box"></div>
+		</section>
+	</script>
+       
+     <script type="x-mustache-template" id="create-game-template">
+         <section>
+            <label for="create-game-title-input">Title: </label>
+            <input type="text" id="create-game-title-input" />
+            <label for="create-game-password-input">Password: </label>
+            <input type="password" id="create-game-password-input" />
+          <label for="create-game-password-repeated-input">Password repeated: </label>
+            <input type="password" id="create-game-password-repeated-input" />
+            <button id="create-game-button">Create Game</button>
+          <div id="error-box"></div>
+		</section>
+	</script>
+</body>
+</html>

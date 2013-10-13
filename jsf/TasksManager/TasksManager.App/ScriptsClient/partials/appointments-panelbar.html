@@ -1,0 +1,33 @@
+﻿<div id="example" class="k-content">
+            <div id="organizer">
+                <ul id="panelbar" data-role="panelbar" data-expandMode= "single">
+                <li class="k-state-active">
+                    <span class="k-link k-state-selected">My Apointments</span>
+                    <div style="padding: 10px;">
+                        <div>
+                            <label for="app-by-date">Get appointments by date:</label>
+                            <input type="text" data-bind="value: pickedDate" id="app-by-date" />
+                            <button class ="k-button" data-bind="click: getByDate">Get</button>
+                        </div>
+                         <div>
+                            <a class ="k-button" href="#/appointments/current">Get Current</a>
+                        </div>   
+                        <div>
+                            <a class ="k-button" href="#/appointments/today">Get Todays</a>
+                        </div>                 
+                        <div>                   
+                            <a class ="k-button" href="#/appointments/upcomming">Get Upcomming</a>
+                        </div>                 
+                         <div>                  
+                            <a class ="k-button" href="#/appointments/all" >Get All</a>
+                        </div>
+                        <div>
+                            <span data-bind="text: message" style="color:red"></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+                <div id="bottom"></div>
+            </div>
+     <a class ="k-button" href="#/appointments/create">Create new appointment</a> 
+     </div>

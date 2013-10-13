@@ -1,0 +1,15 @@
+﻿<section>
+    <label for="create-list-title-input" >Title: </label>
+    <input type="text" id="create-list-title-input" data-bind="value: title" />
+
+    <textarea id="create-toDo-content-input" data-bind="value: currentToDocontent"></textarea>
+
+    <button data-bind="click: addToDo">Add TODO:</button>
+    <button data-bind="click: createList">Create List:</button>
+     <div data-role="grid"
+        data-bind="source: slectedToDos"
+        data-editable="false"
+        data-columns='[{"field": "text", "title": "ToDo-s"}]'>
+    </div>
+    <span data-bind="text: message"></span>
+</section>

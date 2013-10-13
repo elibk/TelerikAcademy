@@ -1,0 +1,32 @@
+﻿body, html, span, body, div {
+    margin:0;
+    padding:0;
+}
+
+.task-button {
+    display:block;
+    padding:5px;
+    margin:5px;
+    border: 1px solid black;
+    border-radius:10px;
+    background-color: #FFD181;
+    width:30%;
+}
+    .task-button:hover {
+        cursor:pointer;
+        background-color: #B8EC9B;
+        text-decoration:underline;
+    }
+
+table {
+
+    width:100px;
+    border: 1px solid black;
+    border-collapse:collapse;
+}
+
+td, th {
+
+    padding:15px;
+    margin : 5px;
+}

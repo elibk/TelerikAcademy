@@ -1,0 +1,15 @@
+﻿<section>
+    <label for="create-appointment-subject-input" >Title: </label>
+    <input type="text" id="create-appointment-subject-input" data-bind="value: subject" />
+    <label for="create-appointment-description-input" >Description: </label>
+    <textarea id="create-appointment-description-input" data-bind="value: description"></textarea>
+
+    <label for="app-date">Date of the appointment:</label>
+    <input type="text" data-bind="value: pickedDate" id="app-date" />
+
+    
+    <label for="app-duration">Duration(in minutes):</label>
+    <input type="number" data-bind="value: duration" id="app-duration" />
+    <button class ="k-button" data-bind="click: createAppointment">Create</button>
+     <span data-bind="text: message" style="color:red"></span>
+</section>

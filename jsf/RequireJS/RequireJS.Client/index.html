@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="styles/styles.css" rel="stylesheet" />
+    <link href="Content/kendo/2013.2.716/kendo.default.min.css" rel="stylesheet" />
+    <link href="Content/kendo/2013.2.716/kendo.common.min.css" rel="stylesheet" />
+    <title>Require js</title>
+   <script src="Scripts/libs/require.js" data-main="Scripts/app-config"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <header>
+            <nav>
+			<ul>
+                <li>
+					<a href="#/">Home</a>
+				</li>
+			</ul>
+		    </nav>
+        </header>
+
+        <div id="content"></div>
+    </div>
+
+    <script type="x-mustache-template" id="task02-template">	
+			<div id="studentsComboBox">
+            </div>
+            <div id="marksDisplayContainer">
+            </div>
+	</script>
+
+    
+    <script type="x-mustache-template" id="home-template">	
+         <a href="#/task01" id="btnTask01" class="task-button">Task 1</a>
+         <a href="#/task02" id="btnTask02" class="task-button">Task 2</a>
+	</script>
+    
+     <script type="x-mustache-template" id="simple-student">
+        <div data-id="{{id}}">
+        {{#firstName}}	
+			<strong>{{firstName}} {{lastName}}</strong>
+            <strong>{{grade}}-th grade</strong>
+        {{/firstName}}
+        {{^firstName}}	
+			<strong>No student entriy exsists.</strong>
+        {{/firstName}}
+        <div>
+	</script>
+
+     <script type="x-mustache-template" id="marks-template">
+         <table>
+                <caption>Marks</caprion> 
+                    {{#marks}}
+                        <tr>
+					        <td>
+						        {{subject}}							
+					        </td>
+                            <td>
+                                <strong>{{score}}</strong>
+                            </td>
+                        </tr>
+				        {{/marks}}
+				        {{^marks}}	
+                            <tr>
+					            <td : colspan='2'>
+						            This student has no marks, yet	  						
+					            </td>
+                            </tr>   
+					
+				        {{/marks}}
+                    <thead>
+                        <tr>
+					        <th>
+						        Subject							
+					        </th>
+                            <th>
+                                <strong>Score</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                </tbody>
+			</table>			
+	</script>
+</body>
+</html>

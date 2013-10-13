@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="styles/styles.css" rel="stylesheet" />
+    <title>Mustache-Homework</title>
+    <script src="Scripts/jquery-2.0.3.js"></script>
+    <script src="Scripts/mustache.js"></script>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/entities.js"></script>
+    <script src="Scripts/table-view.js"></script>
+
+    <script src="Scripts/rsvp.min.js"></script>
+
+    <script src="Scripts/http-requester.js"></script>
+    <script src="Scripts/data-persister.js"></script>
+
+    <script src="Scripts/task01.js"></script>
+    <script src="Scripts/task02.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <span id="btnTask01" class="k-button">Task 1</span>
+        <span id="btnTask02" class="k-button">Task 2</span>
+
+
+        <div id="content"></div>
+
+    </div>
+    <script type="x-mustache-template" id="person-template">
+        {{#fullname}}	
+			<strong>{{fullname}}</strong>
+        {{/fullname}}
+        {{^fullname}}	
+			<strong>No student entriy exsists.</strong>
+        {{/fullname}}
+			<table>
+                <caption>Marks</caprion> 
+                    {{#marks}}
+                        <tr>
+					        <td>
+						        {{subject}}							
+					        </td>
+                            <td>
+                                <strong>{{score}}</strong>
+                            </td>
+                        </tr>
+				        {{/marks}}
+				        {{^marks}}	
+                            <tr>
+					            <td : colspan='2'>
+						            This student has no marks, yet	  						
+					            </td>
+                            </tr>   
+					
+				        {{/marks}}
+                    <thead>
+                        <tr>
+					        <th>
+						        Subject							
+					        </th>
+                            <th>
+                                <strong>Score</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                </tbody>
+			</table>			
+	</script>
+
+     <script type="x-mustache-template" id="simple-student">
+        <div class="k-button">
+        {{#firstName}}	
+			<strong>{{firstName}} {{lastName}}</strong>
+            <strong>{{age}} years old,</strong>
+            <strong>{{grade}}-th grade</strong>
+        {{/firstName}}
+        {{^firstName}}	
+			<strong>No student entriy exsists.</strong>
+        {{/firstName}}
+        <div>
+	</script>
+
+     <script type="x-mustache-template" id="details-student">
+         {{#firstName}}	
+			<strong>{{firstName}} {{lastName}}</strong>
+            <strong>{{age}} years old,</strong>
+            <strong>{{grade}}-th grade</strong>
+        {{/firstName}}   
+         <table>
+                <caption>Marks</caprion> 
+                    {{#marks}}
+                        <tr>
+					        <td>
+						        {{subject}}							
+					        </td>
+                            <td>
+                                <strong>{{score}}</strong>
+                            </td>
+                        </tr>
+				        {{/marks}}
+				        {{^marks}}	
+                            <tr>
+					            <td : colspan='2'>
+						            This student has no marks, yet	  						
+					            </td>
+                            </tr>   
+					
+				        {{/marks}}
+                    <thead>
+                        <tr>
+					        <th>
+						        Subject							
+					        </th>
+                            <th>
+                                <strong>Score</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                </tbody>
+			</table>			
+	</script>
+
+      
+        <script>
+
+            $(document).ready(function () {
+
+                $('#btnTask01').on('click', task01);
+                $('#btnTask02').on('click', task02);
+            });
+
+
+        </script>
+</body>
+</html>

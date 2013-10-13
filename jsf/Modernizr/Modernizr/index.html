@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="styles/styles.css" rel="stylesheet" />
+
+     <title>Modernizr</title>
+
+    <script src="scripts/mustache.js"></script>
+    <script src="scripts/underscore.js"></script>
+    <script src="scripts/q.js"></script>
+    <script src="scripts/jquery-1.9.1.js"></script>
+    <script src="scripts/ua-parser.js"></script>
+    <script src="scripts/modernizr-2.6.2.js"></script>
+   
+
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <span id="btnTask01" class="k-button">Task 1</span>
+        <span id="btnTask02" class="k-button">Task 2</span>
+         <span id="btnTask03" class="k-button">Task 3</span>
+        <div id="content">
+
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#btnTask01').on('click', task01);
+            $('#btnTask02').on('click', task02);
+            $('#btnTask03').on('click', task03);
+        });
+
+        function task01() {
+
+            var template = Mustache.compile(document.getElementById("task01-template").innerHTML);
+            $('#content').html(template());
+
+            console.log(navigator.userAgent.toString());
+
+            // var result = UAParser('Mozilla/5.0 (Linux; U; Android 4.0.3; de-ch; HTC Sensation Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'); 
+            //example with mobile ua 
+
+            var result = UAParser();
+
+            $("#browser-info").html(
+
+                " Browser ->" + result.browser.name + " version -> " + result.browser.version + "<br/>" +
+                " OS -> " + result.os.name + " version -> " + result.os.version + "<br/>" +
+                " Device type -> " + result.device.type
+                );
+
+            console.log("Browser ->", result.browser.name, " version -> ", result.browser.version);
+
+            console.log("OS -> ", result.os.name, " version -> ", result.os.version);
+
+            console.log("Device type -> ", result.device.type);
+
+            jQuery(function ($) {
+                var target = $('#features');
+                var features = [];
+                var traverse = function (object) {
+
+                    for (property in object) {
+                        if (typeof object[property] == 'object') {
+                            traverse(object[property], property);
+                        } else if (typeof object[property] == 'boolean') {
+
+                            features.push({ name: property, value: object[property] ? 'Yes' : 'Nope' });
+                        }
+                    }
+                };
+
+                traverse(Modernizr);
+
+                features = _.sortBy(features, function (feature) {
+
+                    return feature.name;
+
+                });
+
+                for (var i = 0; i < features.length; i++) {
+
+                    var
+                        tr = $('<tr />'),
+                        name = $('<th />', {
+                            text: features[i].name
+                        }),
+                        value = $('<td />', {
+                            text: features[i].value
+                        });
+
+                    target.append(tr.append(name).append(value));
+
+                }
+            });
+        }
+
+        function task02() {
+
+            var template = Mustache.compile(document.getElementById("task02-template").innerHTML);
+            $('#content').html(template());
+
+            Modernizr.load([{
+                test: Modernizr.canvas,
+                nope: 'scripts/polyfills/flashcanvas.js',
+                complete: function () {
+                    drawSmaile();
+                }
+            }
+            ]);
+
+            Modernizr.load({
+                test: Modernizr.geolocation,
+                nope: 'scripts/polyfills/geolocation.js',
+                complete: function () {
+                    getCurrentPosition();
+                }
+            });
+
+            var locationElement = document.getElementById("location-element");
+
+            function getGeolocationPositionPromise() {
+                var deferred = Q.defer();
+
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        deferred.resolve(position);
+                    },
+                    function (error) {
+                        deferred.reject(error);
+                    });
+
+                return deferred.promise;
+            }
+
+            function parseLatAndLongCoords(geolocationPosition) {
+                if (geolocationPosition.coords) {
+                    return { lat: geolocationPosition.coords.latitude, long: geolocationPosition.coords.longitude };
+                }
+                else {
+                    throw { message: "No coords element found", name: "UserException" };
+                }
+            }
+
+            function createGeolocationImage(coordsObj) {
+
+                var imgElement = document.createElement("img");
+
+                var imgSrc = "http://maps.googleapis.com/maps/api/staticmap?center=" + coordsObj.lat + "," + coordsObj.long + "&zoom=13&size=500x500&sensor=false";
+
+                imgElement.setAttribute("src", imgSrc);
+
+                locationElement.appendChild(imgElement);
+            }
+
+            function drawSmaile() {
+
+                var canvas = document.getElementById('smaile');
+                var context = canvas.getContext('2d');
+
+
+                // The Face
+                context.strokeStyle = '#000000';
+                context.fillStyle = '#FFFF00';
+                context.lineWidth = 4;
+                context.beginPath();
+                context.arc(100, 75, 50, 0 * Math.PI, 2 * Math.PI, true);
+                context.closePath();
+                context.stroke();
+                context.fill();
+
+
+                // The Smile
+                context.strokeStyle = '#FF0000';
+                context.lineWidth = 2;
+                context.beginPath();
+                context.arc(100, 65, 40, 0.2 * Math.PI, 0.8 * Math.PI, false);
+                //context.closePath(); 
+                context.stroke();
+                //context.fill();
+
+                // The Left eye
+                context.strokeStyle = '#000000';
+                context.fillStyle = '#000000';
+                context.beginPath();
+                context.arc(80, 60, 10, 0 * Math.PI, 2 * Math.PI, false);
+                context.closePath();
+                context.stroke();
+                context.fill();
+
+                // The Right Eye
+                context.strokeStyle = '#000000';
+                context.fillStyle = '#000000';
+                context.beginPath();
+                context.arc(120, 60, 10, 0 * Math.PI, 2 * Math.PI, false);
+                context.closePath();
+                context.stroke();
+                context.fill();
+            };
+
+            function getCurrentPosition() {
+                getGeolocationPositionPromise().
+                then(parseLatAndLongCoords).
+                then(createGeolocationImage).
+                done();
+            }
+
+            function saveInStorage() {
+
+                var newValue = $('#txtInput').val();
+
+                if (newValue.length < 1) {
+
+                    alert("Can not save empty value");
+                }
+
+                var previousValues = localStorage.getItem('modernizrHomework');
+
+                if (!previousValues) {
+                    previousValues = '';
+                }
+
+                localStorage.setItem('modernizrHomework', previousValues + ' ' + newValue);
+            }
+
+            function loadFromStorage() {
+
+                var values = localStorage.getItem('modernizrHomework');
+
+                $('#storageValues').html(values);
+
+            }
+
+            $('#btnSaveInLocalStorage').on('click', function () {
+
+                Modernizr.load({
+                    test: Modernizr.localstorage,
+                    nope: 'scripts/polyfills/storage.js',
+                    complete: function () {
+                        saveInStorage();
+                    }
+                });
+
+            });
+
+            $('#btnLoadFromStorage').on('click', function () {
+
+                Modernizr.load({
+                    test: Modernizr.localstorage,
+                    nope: ['http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js','scripts/polyfills/storage.js'],
+                    complete: function () {
+                        loadFromStorage();
+                    }
+                });
+
+            });
+
+        }
+
+        function task03() {
+
+            $('#content').html('<label for="datePicker"> Pick a date</label> <input id="datePicker" type="date"/>');
+
+            Modernizr.load({
+                test: Modernizr.inputtypes.date,
+                nope: ['http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css', 'scripts/task03.js']
+              
+            });
+        }
+
+    </script>
+
+    <script type="x-mustache-template" id="task02-template">	
+	    <label for="txtInput">Enter some value:</label>
+        <input id="txtInput" type="text"/>
+
+        <button id="btnSaveInLocalStorage">Save in storage</button>
+
+         <button id="btnLoadFromStorage">Load from storage</button>
+
+        <div id="storageValues"></div>
+         <div id="location-element">
+            </div>
+
+        <p id="browser-info"></p>
+
+        <table id="features">
+            
+        </table>
+
+        <canvas id="smaile" width="578" height="200"></canvas>
+	</script>
+
+    <script type="x-mustache-template" id="task01-template">	
+    <p id="browser-info"></p>
+
+    <table id="features">
+            
+    </table>
+	</script>
+</body>
+</html>

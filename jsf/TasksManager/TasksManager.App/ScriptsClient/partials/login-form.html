@@ -1,0 +1,14 @@
+﻿<fieldset>
+	<legend>Login user</legend>
+	<label for="tb-username">Username: </label>
+	<input type="text" data-bind="value: username" id="tb-username" /><br />
+	<label for="tb-password">Password: </label>
+	<input type="text" data-bind="value: password" id="tb-password" /><br />
+    <label for="tb-password-repeated">Repeat: </label>
+    <input type="text" data-bind="value: passwordRepeated" id="tb-password-repeated" /><br />
+    <label for="tb-email">Email: </label>
+    <input type="email" data-bind="value: email" id="tb-email" /> 
+	<button data-bind="click: loginUser">Login</button>
+	<button data-bind="events: { click: registerUser }">Register</button>
+	<span data-bind="text: message"></span>
+</fieldset>

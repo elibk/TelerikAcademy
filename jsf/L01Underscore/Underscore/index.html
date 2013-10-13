@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link href="styles/styles.css" rel="stylesheet" />
+        <title>Underscore</title>
+        <script src="lib/jquery-1.9.1.js"></script>
+        <script src="lib/underscore.js"></script>
+        <script src="lib/kendo.custom.min.js"></script>
+        <script src="scripts/class.js"></script>
+        <script src="scripts/person.js"></script>
+        <script src="scripts/student.js"></script>
+        <script src="scripts/animal.js"></script>
+        <script src="scripts/book.js"></script>
+
+        <script src="scripts/task01.js"></script>
+        <script src="scripts/task02.js"></script>
+        <script src="scripts/task03.js"></script>
+        <script src="scripts/task04.js"></script>
+        <script src="scripts/task05.js"></script>
+        <script src="scripts/task06.js"></script>
+        <script src="scripts/task07.js"></script>
+
+    </head>
+    <body>
+
+        <span id="btnConsoleClear" class="k-button">CLEAR THE CONSOLE</span>
+        <span id="btnTask01" class="k-button">Task 1 -> the result on the console.</span>
+        <span id="btnTask02" class="k-button">Task 2 -> the result on the console.</span>
+        <span id="btnTask03" class="k-button">Task 3 -> the result on the console.</span>
+        <span id="btnTask04" class="k-button">Task 4 -> the result on the console.</span>
+        <span id="btnTask05" class="k-button">Task 5 -> the result on the console.</span>
+         <span id="btnTask06" class="k-button">Task 6 -> the result on the console.</span>
+        <span id="btnTask07" class="k-button">Task 7 -> the result on the console.</span>
+
+        <script>
+
+            $(document).ready(function () {
+               
+                $('#btnConsoleClear').on('click', function () {
+                    console.clear();
+                });
+
+                $('#btnTask01').on('click', task01);
+                $('#btnTask02').on('click', task02);
+                $('#btnTask03').on('click', task03);
+                $('#btnTask04').on('click', task04);
+                $('#btnTask05').on('click', task05);
+                $('#btnTask06').on('click', task06);
+                $('#btnTask07').on('click', task07);
+
+               
+            });
+            
+            
+        </script>
+    </body>
+</html>
+        

@@ -1,0 +1,21 @@
+размера на архива стана по-голям от допустимите 16MB, които приема систематата. Това е заради големия размер на Nuget Packages в solution-а.
+
+[How To] Remove And Restore Nuget Packages - Reduce Solution Size On Disk
+
+
+1. Enabling package restore during build
+
+Tools -> Options -> Package Manager -> General
+
+Избирате Allow NuGet to download missing packages during build
+
+2. Десен бутон върху solution-a и Enable NuGet Package Restore
+
+3. Изтривате папката packages и си намалявате размера на solution-a
+
+Restore: Отваряте solution-a, десен бутон вурху solution-а и Manage NuGet Packages for this solution... -> има бутон Restore, който ще инсталира всички нужни NuGet Packages
+
+http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages
+
+
+Заради последните промени с cors-а и фикса в xml-a на конзолата се появяват доста грешки, въпреки това приложението работи по очаквания начин.

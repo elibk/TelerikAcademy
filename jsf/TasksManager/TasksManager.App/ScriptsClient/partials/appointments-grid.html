@@ -1,0 +1,18 @@
+﻿<div width="600px">
+    <div data-role="grid"
+        data-bind="source: apointments"
+        data-editable="false"
+        data-sortable="true"
+        data-pageable=" {
+                    input: true,
+                    numeric: false,
+                    pageSize:5
+                }"
+        data-columns='[{"field": "subject", "title": "Subject"},
+        {"field": "createdAt", "title": "Crated at"},
+         {"field": "description", "title": "Description"},
+        {"field": "appointmentDate", "title": "Appointment Date"},
+         {"field": "duration", "title": "Duration"},
+        {"field": "state", "title": "State"}]'>
+    </div>
+</div>
