@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H0102ExtensionMethods", "H0102ExtensionMethods\H0102ExtensionMethods.csproj", "{72861C91-C72A-4EF1-8B28-9116EFA41B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H03040506LambdaAndLINQ", "H03040506LambdaAndLINQ\H03040506LambdaAndLINQ.csproj", "{C46BF0C5-2923-465D-AD4F-10411002CAE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H0708TimerAndEvents", "H0708TimerAndEvents\H0708TimerAndEvents.csproj", "{2471CED4-E40D-42E1-BF3B-9E9970F08448}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72861C91-C72A-4EF1-8B28-9116EFA41B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72861C91-C72A-4EF1-8B28-9116EFA41B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72861C91-C72A-4EF1-8B28-9116EFA41B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72861C91-C72A-4EF1-8B28-9116EFA41B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C46BF0C5-2923-465D-AD4F-10411002CAE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C46BF0C5-2923-465D-AD4F-10411002CAE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C46BF0C5-2923-465D-AD4F-10411002CAE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C46BF0C5-2923-465D-AD4F-10411002CAE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2471CED4-E40D-42E1-BF3B-9E9970F08448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2471CED4-E40D-42E1-BF3B-9E9970F08448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2471CED4-E40D-42E1-BF3B-9E9970F08448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2471CED4-E40D-42E1-BF3B-9E9970F08448}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

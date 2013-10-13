@@ -1,0 +1,6 @@
+2000|Ivan|Ivanov|24||Manager
+2001|Dimitar|Dimitrov|35|6|Normal|
+2002|Goergi|Kalinov|32|2|ForDemotion|
+2003|Pavel|Ivanov|44|9|ForPromotion|
+2004|Yoana|Dimitrova|29|5|Normal|
+2005|Neli|Ivanova|24|4|Normal|

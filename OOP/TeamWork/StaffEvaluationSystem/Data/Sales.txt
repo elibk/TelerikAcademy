@@ -1,0 +1,6 @@
+3000|Petko|Petkov|32||Manager
+3001|Iliq|Mihajlov|23|9|ForPromotion|
+3002|Ivan|Petrunov|29|3|Normal|
+3003|Kapka|Georgieva|43|7|Normal|
+3004|Malinka|Kirilova|56|8|Normal|
+3005|Krasimir|Evgeniev|31|5|Normal|

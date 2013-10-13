@@ -1,0 +1,6 @@
+1000|Petur|Petrov|36||Manager
+1001|Ivan|Petrov|28|4|Normal|
+1002|Petur|Milanov|26|5|Normal|
+1003|Georgi|Negovanski|30|7|Normal|
+1004|Ivailo|Draganov|24|7|Normal|
+1005|Mariq|Ivanova|24|6|Normal|

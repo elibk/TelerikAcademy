@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StaffEvaluation.Common.Client" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAACAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaffEvaluation.Common.Department" Collapsed="true">
+    <Position X="3.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAQAAAAEACCAAAAgAAAAAAA=</HashCode>
+      <FileName>Department.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaffEvaluation.Common.EvaluationSystemException" Collapsed="true">
+    <Position X="8.25" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EvaluationSystemException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaffEvaluation.Common.Manager" Collapsed="true">
+    <Position X="1.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaffEvaluation.Common.OperationEventsListener" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAACAAAAAAACCEAAAA=</HashCode>
+      <FileName>OperationEventsListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaffEvaluation.Common.Person" Collapsed="true">
+    <Position X="1.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEgAAABAQAAEAUAAEQAAAAAAAAAAAAAACAAAAAg=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StaffEvaluation.Common.Report" Collapsed="true">
+    <Position X="5.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAARAAAAAAAAAAAIAAAAAAAAAAAAAAAgAAAAAAAQA=</HashCode>
+      <FileName>Report.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaffEvaluation.Common.Staff" Collapsed="true">
+    <Position X="2.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAgAAAAAAAAEAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Staff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaffEvaluation.Common.StaffEvaluationList&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAKAAQAAAAAAMAAAQAAAAgAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>StuffEvaluationList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StaffEvaluation.Common.StaffEventArgs" Collapsed="true">
+    <Position X="8.75" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>StuffEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaffEvaluation.Common.SuperFileLoader" Collapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAQAAAAAAAAAAAAJAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>SuperFileLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaffEvaluation.Common.SuperFileWriter" Collapsed="true">
+    <Position X="7.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>SuperFileWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaffEvaluation.Common.Worker">
+    <Position X="3.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAEgEAAAAAAAEAAAAAAAAAAAAAAAEAAAABAAAAAA=</HashCode>
+      <FileName>Worker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="StaffEvaluation.Common.IEvaluetable" Collapsed="true">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEvaluetable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="StaffEvaluation.Common.IPerson" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>IPerson.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="StaffEvaluation.Common.ITableable" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ITableable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="StaffEvaluation.Common.WorkerStatus" Collapsed="true">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAABAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorkerStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
