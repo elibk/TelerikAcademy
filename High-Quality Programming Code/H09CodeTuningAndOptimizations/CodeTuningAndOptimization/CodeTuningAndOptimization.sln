@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H02BasicMathTest", "H02BasicMathTest\H02BasicMathTest.csproj", "{6FF94842-6FE8-40C6-A97C-BF292FF51810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H03MathFunctions", "H03MathFunctions\H03MathFunctions.csproj", "{B5C2D03B-7490-4008-9624-B8935F253578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H04SortFunctions", "H04SortFunctions\H04SortFunctions.csproj", "{5EE71C6D-99B9-4758-99FA-6670714F2EE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FF94842-6FE8-40C6-A97C-BF292FF51810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FF94842-6FE8-40C6-A97C-BF292FF51810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FF94842-6FE8-40C6-A97C-BF292FF51810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FF94842-6FE8-40C6-A97C-BF292FF51810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C2D03B-7490-4008-9624-B8935F253578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C2D03B-7490-4008-9624-B8935F253578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C2D03B-7490-4008-9624-B8935F253578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C2D03B-7490-4008-9624-B8935F253578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EE71C6D-99B9-4758-99FA-6670714F2EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE71C6D-99B9-4758-99FA-6670714F2EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE71C6D-99B9-4758-99FA-6670714F2EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE71C6D-99B9-4758-99FA-6670714F2EE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

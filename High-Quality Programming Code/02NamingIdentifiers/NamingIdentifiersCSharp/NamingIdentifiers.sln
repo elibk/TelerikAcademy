@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H01BoolToStringConverter", "H01BoolToStringConverter\H01BoolToStringConverter.csproj", "{FADCCCFB-BA37-4963-A4DB-926638CC9524}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H02PersonMaker", "H02PersonMaker\H02PersonMaker.csproj", "{1F284827-1105-498A-BF19-3C8AC8C62ED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H04Minesweeper", "H04Minesweeper\H04Minesweeper.csproj", "{D7990FD0-559C-4F1B-8ED0-265AF40EB9FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FADCCCFB-BA37-4963-A4DB-926638CC9524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FADCCCFB-BA37-4963-A4DB-926638CC9524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FADCCCFB-BA37-4963-A4DB-926638CC9524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FADCCCFB-BA37-4963-A4DB-926638CC9524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F284827-1105-498A-BF19-3C8AC8C62ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F284827-1105-498A-BF19-3C8AC8C62ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F284827-1105-498A-BF19-3C8AC8C62ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F284827-1105-498A-BF19-3C8AC8C62ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7990FD0-559C-4F1B-8ED0-265AF40EB9FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7990FD0-559C-4F1B-8ED0-265AF40EB9FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7990FD0-559C-4F1B-8ED0-265AF40EB9FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7990FD0-559C-4F1B-8ED0-265AF40EB9FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

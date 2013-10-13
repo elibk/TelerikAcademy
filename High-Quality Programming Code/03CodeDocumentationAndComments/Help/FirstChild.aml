@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="8e032720-4aa4-4e3d-ae1e-df69049e7301" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>Required introduction</para>
+    </introduction>
+    <!-- Add one or more top-level section elements.  These are collapsible.
+         If using <autoOutline />, add an address attribute to identify it
+         and specify a title so that it can be jumped to with a hyperlink. -->
+    <section address="Section1">
+      <title>Optional section title</title>
+      <content>
+        Autoline
+        <autoOutline />
+        <para>Add one or more sections with content</para>
+      </content>
+     
+         <codeInline> <section address="SubSection1">
+              <title>Sub-section 1</title>
+              <content>
+                  <para>Sub-section content.</para>
+              </content>
+          </section>
+          <section address="SubSection2">
+              <title>Sub-section 2</title>
+              <content>
+                  <para>Sub-section content.</para>
+              </content>
+          </section></codeInline>
+    </section>
+    <section>    
+
+<title>Entity Overview</title>     
+
+<content>     
+
+ <para>Some text here!</para>       
+
+<mediaLink>         
+
+<image placement="right" xlink:href="img-03"/>       
+
+</mediaLink>            
+
+</content>   
+
+</section>  
+    <relatedTopics>
+      <link xlink:href="921b6aeb-4ca7-46e1-8105-651a3f07abcb" />
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

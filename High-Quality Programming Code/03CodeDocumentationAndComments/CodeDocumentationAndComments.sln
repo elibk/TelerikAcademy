@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.ILS.Common", "Telerik.ILS.Common\Telerik.ILS.Common.csproj", "{88E7D861-10B5-4C76-8ABC-C264477340AB}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Documentation1", "Documentation1\Documentation1.shfbproj", "{7F5F20DD-23B3-4B8E-92BA-BE8DD91550F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88E7D861-10B5-4C76-8ABC-C264477340AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E7D861-10B5-4C76-8ABC-C264477340AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E7D861-10B5-4C76-8ABC-C264477340AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E7D861-10B5-4C76-8ABC-C264477340AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F5F20DD-23B3-4B8E-92BA-BE8DD91550F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F5F20DD-23B3-4B8E-92BA-BE8DD91550F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F5F20DD-23B3-4B8E-92BA-BE8DD91550F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F5F20DD-23B3-4B8E-92BA-BE8DD91550F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
